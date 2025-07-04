@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function HomPage() {
+export default function HomePage() {
   return <div>Home</div>;
 }
