@@ -23,4 +23,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+button{
+cursor: pointer;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1;
+  scale: 1; } /* Start and end at full opacity */
+  50% { opacity: 0.6; scale: 0.8; } /* Dip to lower opacity in the middle */
+}
+
+.hover-flicker:hover {
+  animation: flicker 0.7s ease-in-out;
+}
+
+.group-hover-flicker {
+  animation: none; /* Ensure no animation by default */
+}
+
+.group:hover .group-hover-flicker {
+  animation: flicker 0.7s ease-in-out; /* Run animation once on group hover */
+}
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  16.6% { transform: rotate(10deg); }
+  33.3% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  66.6% { transform: rotate(-10deg); }
+  83.3% { transform: rotate(10deg); }
+}
+
+.hover-shake:hover {
+  animation: shake 0.7s ease-in-out;
+}
+
+.group-hover-shake {
+  animation: none;
+}
+
+.group:hover .group-hover-shake {
+  animation: shake 0.7s ease-in-out;
 }
