@@ -22,7 +22,7 @@ export default function Section1() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col w-full">
       <div className="relative bg-[url('/bg.png')] bg-cover bg-center h-[42lh] overflow-hidden p-5">
         <div className="bg-slate-900 absolute top-0 left-0 h-full w-64"></div>
         <div className="absolute h-full w-full top-0 left-0 pl-64">
