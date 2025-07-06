@@ -7,7 +7,7 @@ export default function AboutSection() {
   return (
     <div className="w-full p-5 grid grid-cols-[1.08fr_1fr]">
       <div className="relative  bg-[url('/img2.png')] bg-cover aspect-square">
-        <div className="absolute w-full h-full top-0 left-0 bg-white/40" />
+        <div className="absolute w-full h-full top-0 left-0 bg-white/50" />
         <img
           src="img3.webp"
           alt="img3"
