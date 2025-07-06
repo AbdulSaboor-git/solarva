@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Section2_SpinningLogo() {
+export default function AboutSection_SpinningLogo() {
   return (
     <div className="absolute z-20 aspect-square rounded-full bg-white mt-32 ml-16 flex items-center justify-center">
       <svg

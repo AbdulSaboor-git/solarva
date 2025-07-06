@@ -1,10 +1,10 @@
 "use client";
 import Header from "@/components/header";
 import React, { useEffect, useState } from "react";
-import Section1_Top from "./section1_top";
+import Section1_Top from "./main_section_top";
 import Button1 from "@/components/button1";
 
-export default function Section1() {
+export default function MainSection() {
   const [offsetY, setOffsetY] = useState(0);
   let employees = 20;
   let satisfaction = 100;

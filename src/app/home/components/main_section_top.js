@@ -13,7 +13,7 @@ import {
 const email = "solarva@gmail.com";
 const address = "213 Madison street, London";
 
-export default function Section1_Top() {
+export default function MainSection_Top() {
   const socials = [
     { name: "Facebook", icon: RiFacebookFill },
     { name: "Instagram", icon: RiInstagramFill },

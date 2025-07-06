@@ -1,17 +1,17 @@
 import React from "react";
-import Section2_SpinningLogo from "./section2_spinning_logo";
+import Section2_SpinningLogo from "./about_section_spinning_logo";
 import { RiCheckFill } from "react-icons/ri";
 import Button1 from "@/components/button1";
 
-export default function Section2() {
+export default function AboutSection() {
   return (
-    <div className="w-full p-5 grid grid-cols-[1.1fr_1fr]">
-      <div className="relative bg-[url('/img2.png')] bg-cover aspect-square">
+    <div className="w-full p-5 grid grid-cols-[1.08fr_1fr]">
+      <div className="relative  bg-[url('/img2.png')] bg-cover aspect-square">
         <div className="absolute w-full h-full top-0 left-0 bg-white/40" />
         <img
           src="img3.webp"
           alt="img3"
-          className="absolute left-0 bottom-0 z-10 w-[320px] aspect-auto"
+          className="absolute left-0 bottom-0 z-10 w-[310px] aspect-auto"
         />
         <img
           src="img4.webp"
@@ -27,7 +27,7 @@ export default function Section2() {
           <Section2_SpinningLogo />
         </div>
       </div>
-      <div className="flex w-fit flex-col gap-7  items-start justify-center p-6 pl-20">
+      <div className="flex flex-col gap-7  items-start justify-center p-6 pl-20">
         <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
           ABOUT COMPANY
         </div>
