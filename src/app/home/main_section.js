@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header";
 import React, { useEffect, useState } from "react";
-import Section1_Top from "./main_section_top";
+import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
 
 export default function MainSection() {

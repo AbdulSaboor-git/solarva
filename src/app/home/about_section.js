@@ -1,5 +1,5 @@
 import React from "react";
-import Section2_SpinningLogo from "./about_section_spinning_logo";
+import Section2_SpinningLogo from "./components/about_section_spinning_logo";
 import { RiCheckFill } from "react-icons/ri";
 import Button1 from "@/components/button1";
 
