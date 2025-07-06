@@ -63,15 +63,18 @@ export default function WhyUsSection() {
           {services?.map((service) => (
             <div
               key={service.id}
-              className="flex flex-col gap-5 justify-start pt-12 "
+              className="flex flex-col gap-5 justify-start pt-12 group"
             >
               <div className="w-fit">
-                <div className="rounded-full w-fit text-gray-100 bg-green-600 p-3 mb-2">
+                <div className="rounded-full relative z-10 w-fit text-gray-100 bg-green-600 p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">
                   <service.logo size={30} />
                 </div>
-                {/* <div className="p-3 bg-gray-500 aspect-square rounded-full" /> */}
+                <div className="bg-gray-500 aspect-square rounded-full scale-85 scale-y-[40%] -mt-9 opacity-0 group-hover:opacity-50 blur-md  transition-all duration-500" />
               </div>
-              <h1 className="text-blue-950 font-bold text-2xl tracking-normal line-clamp-1">
+              <h1
+                // onClick={}
+                className="text-blue-950 cursor-pointer group-hover:text-green-600 transition-all duration-500 font-bold text-2xl tracking-normal line-clamp-1"
+              >
                 {service.title}
               </h1>
               <p className="text-gray-500 tracking-wide text-lg min-h-[81px] line-clamp-3">
