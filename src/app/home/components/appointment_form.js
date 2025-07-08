@@ -30,7 +30,7 @@ export default function AppointmentForm({ services }) {
           <input
             className="p-4 px-6 w-full pr-14 bg-gray-100 placeholder-gray-500 rounded-lg outline-none"
             type="text"
-            placeholder="Your Name"
+            placeholder="Email Address"
           />
           <div className="absolute top-1/2 -translate-y-1/2 right-6 z-10 w-fit ">
             <IoMailOpenOutline size={22} />
@@ -40,7 +40,7 @@ export default function AppointmentForm({ services }) {
           <input
             className="p-4 px-6 w-full pr-14 bg-gray-100 placeholder-gray-500 rounded-lg outline-none"
             type="text"
-            placeholder="Your Name"
+            placeholder="Phone"
           />
           <div className="absolute top-1/2 -translate-y-1/2 right-6 z-10 w-fit ">
             <MdOutlinePhone size={22} />
