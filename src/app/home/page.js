@@ -3,6 +3,7 @@ import MainSection from "./main_section";
 import AboutSection from "./about_section";
 import ServicesSection from "./services_section";
 import WhyUsSection from "./why_us_section";
+import SkillsSection from "./skills_section";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <AboutSection />
       <ServicesSection />
       <WhyUsSection />
+      <SkillsSection />
     </div>
   );
 }

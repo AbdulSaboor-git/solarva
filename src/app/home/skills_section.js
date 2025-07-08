@@ -1,0 +1,72 @@
+"use client";
+import ProgressBar from "@/components/progress_bar";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+export default function SkillsSection() {
+  return (
+    <div className="w-full grid grid-cols-2">
+      <div className="relative h-full">
+        <div className="h-full w-full bg-gradient-to-tr from-gray-100  to-blue-200  max-w-[60%]" />
+        <div className="absolute w-full h-[600px]  right-0 top-20 z-10 aspect-auto">
+          <img
+            src="img6.webp"
+            alt="img6"
+            className="absolute w-[500px] right-0 bottom-0"
+          />
+          <div className="flex flex-col gap-8 p-12 py-14 bg-green-600 w-[350px] absolute left-6 bottom-0 overflow-hidden">
+            <div className="h-full">
+              <Swiper slidesPerView={1} loop={true} spaceBetween={30}>
+                <SwiperSlide>
+                  <div className="text-gray-100 text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
+                    We’re finding ways to bring energy to more people in more
+                    ways every day, so that all of us can be part of the
+                    changing energy system.
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="text-gray-100 text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
+                    We’re finding ways to bring energy to more people in more
+                    ways every day, so that all of us can be part of the
+                    changing energy system.
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+            <hr className="text-gray-300/70" />
+            <div className="flex gap-3 items-center justify-between">
+              <div className="flex items-center justify-start">
+                <div className="bg-[url('/user1.jpg')] bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
+                <div className="bg-[url('/user2.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
+                <div className="bg-[url('/user3.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
+                <div className="bg-yellow-400 flex items-center justify-center text-gray-800 font-medium -ml-7 rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 ">
+                  17K+
+                </div>
+              </div>
+              <div className="font-semibold text-gray-100">
+                Solar Users in USA
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-7 items-start justify-center p-6 pl-12 mt-44">
+        <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
+          COMPANY SKILLS
+        </div>
+        <div className="text-5xl font-semibold">
+          Trusted Solar services since beginning
+        </div>
+        <div className="text-gray-500 text-lg">
+          We’re finding ways to bring energy to more people in more ways every
+          day, so that all of us can be part of the changing energy system.
+        </div>
+        <div className="flex flex-col gap-6 w-full max-w-md pb-30">
+          <ProgressBar value={87} title={"Solar Installation"} />
+          <ProgressBar value={75} title={"Solar Cleaning"} />
+          <ProgressBar value={69} title={"Connecting Grids"} />
+        </div>
+      </div>
+    </div>
+  );
+}
