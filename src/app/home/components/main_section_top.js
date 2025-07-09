@@ -13,7 +13,7 @@ import {
 const email = "solarva@gmail.com";
 const address = "213 Madison street, London";
 
-export default function MainSection_Top() {
+export default function MainSection_Top({ className }) {
   const socials = [
     { name: "Facebook", icon: RiFacebookFill },
     { name: "Instagram", icon: RiInstagramFill },
@@ -22,7 +22,9 @@ export default function MainSection_Top() {
     { name: "Whatsapp", icon: RiWhatsappFill },
   ];
   return (
-    <div className="flex flex-row w-full items-center justify-end gap-10">
+    <div
+      className={`${className} flex flex-row w-full items-center justify-end gap-10`}
+    >
       <div className="flex flex-row w-full items-center justify-start gap-6">
         <div className="flex flex-row items-center gap-4 group cursor-pointer">
           <div className="bg-green-600 p-2 rounded-full">

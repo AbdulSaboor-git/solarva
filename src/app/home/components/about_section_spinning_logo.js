@@ -1,13 +1,23 @@
 import React from "react";
 
-export default function AboutSection_SpinningLogo() {
+export default function AboutSection_SpinningLogo({
+  className,
+  diameter,
+  padding,
+  logoSize,
+}) {
   return (
-    <div className="absolute z-20 aspect-square rounded-full bg-white mt-32 ml-16 flex items-center justify-center">
+    <div
+      className={`${className} absolute z-20 aspect-square rounded-full bg-white flex items-center justify-center`}
+    >
       <svg
         viewBox="0 0 300 300"
-        width={240}
-        height={240}
-        className="text-green-600 p-2 animate-[spin_24s_linear_infinite]"
+        width={diameter}
+        height={diameter}
+        className={`text-green-600 animate-[spin_24s_linear_infinite]`}
+        style={{
+          padding: padding,
+        }}
       >
         {/* Circular Path */}
         <defs>
@@ -30,7 +40,14 @@ export default function AboutSection_SpinningLogo() {
           </textPath>
         </text>
       </svg>
-      <img src="icon_solarva.png" alt="icon" className="absolute" />
+      <img
+        src="icon_solarva.png"
+        alt="icon"
+        className={`absolute aspect-square]`}
+        style={{
+          width: logoSize,
+        }}
+      />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import {
 } from "react-icons/ri";
 import NavbarButton from "./navbar_button";
 
-export default function Header() {
+export default function Header({ className }) {
   const CartItems = [1, 4, 2];
   const buttons = [
     {
@@ -29,7 +29,10 @@ export default function Header() {
     },
   ];
   return (
-    <div className="grid grid-cols-[0.7fr_3fr_0.7fr] items-center gap-6 bg-gradient-to-r from-blue-950 to-slate-800 w-full px-8 rounded-lg">
+    <div
+      className={`${className} grid grid-cols-[0.7fr_3fr_0.7fr] 
+    items-center gap-6 bg-gradient-to-r from-blue-950 to-slate-800 w-full px-8 rounded-lg`}
+    >
       <img src="logo.png" alt="logo" className="h-9 cursor-pointer" />
       <div className="flex flex-row gap-1.5 items-center px-4 justify-center">
         {buttons.map((btn, i) => (

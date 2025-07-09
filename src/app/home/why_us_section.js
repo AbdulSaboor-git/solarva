@@ -44,26 +44,26 @@ let services = [
 ];
 export default function WhyUsSection() {
   return (
-    <div className="flex w-full flex-col items-center p-6 gap-6">
-      <div className="flex flex-col gap-5 items-center justify-center tracking-wide p-6 max-w-3xl">
-        <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
+    <div className="flex w-full flex-col items-center p-5 sm:p-6 gap-6">
+      <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
+        <div className="bg-green-600 font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           WHY CHOOSE US
         </div>
-        <div className="text-5xl font-semibold text-center">
+        <div className="text-4xl w-full sm:text-5xl font-semibold text-center">
           Reasons that make us best solar professionals
         </div>
-        <div className="text-gray-500 text-center text-lg mt-2">
+        <div className="text-gray-500 text-center text-lg mt-1 sm:mt-2">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
           Because Powering Progress.
         </div>
       </div>
-      <div className="flex flex-row gap-8 justify-end w-full">
-        <div className="grid w-full grid-cols-2 gap-8 h-fit ">
+      <div className="flex flex-col sm:flex-row gap-12 sm:gap-8 justify-end w-full">
+        <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 h-fit ">
           {services?.map((service) => (
             <div
               key={service.id}
-              className="flex flex-col gap-5 justify-start pt-12 group"
+              className="flex flex-col gap-3 sm:gap-5 justify-start pt-12 group"
             >
               <div className="w-fit">
                 <div className="rounded-full relative z-10 w-fit text-gray-100 bg-green-600 p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">

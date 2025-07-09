@@ -5,33 +5,50 @@ import Button1 from "@/components/button1";
 
 export default function AboutSection() {
   return (
-    <div className="w-full p-5 grid grid-cols-[1.08fr_1fr]">
+    <div className="w-full p-5 grid grid-cols-1 gap-20 sm:gap-0 sm:grid-cols-[1.08fr_1fr] ">
       <div className="relative  bg-[url('/img2.png')] bg-cover aspect-square">
         <div className="absolute w-full h-full top-0 left-0 bg-white/50" />
-        <img
-          src="img3.webp"
-          alt="img3"
-          className="absolute left-0 bottom-0 z-10 w-[310px] aspect-auto"
-        />
-        <img
-          src="img4.webp"
-          alt="img3"
-          className="absolute right-5 top-0 w-[280px] aspect-auto z-10"
-        />
-        <img
-          src="img5.webp"
-          alt="img3"
-          className="absolute right-5 -bottom-10 w-[270px] z-10"
-        />
+        <div className="absolute h-[280px] sm:h-auto max-w-[165px] sm:max-w-[310px] left-0 bottom-0 z-10 overflow-hidden">
+          <img
+            src="img3.webp"
+            alt="img3"
+            className="scale-[1.30] sm:scale-100"
+          />
+        </div>
+        <div className="absolute h-[190px] place-content-start sm:h-auto right-0 sm:right-5 top-0 max-w-[145px] sm:max-w-[280px] aspect-auto z-10 overflow-hidden">
+          <img
+            src="img4.webp"
+            alt="img3"
+            className="scale-[1.30] sm:scale-100"
+          />
+        </div>
+        <div className="absolute h-[160px] place-content-end sm:h-auto right-0 sm:right-5 -bottom-10 max-w-[130px] sm:max-w-[270px] z-10 overflow-hidden">
+          <img
+            src="img5.webp"
+            alt="img3"
+            className="scale-[1.35] sm:scale-100"
+          />
+        </div>
         <div className="w-full h-full z-20 bg-transparent top-0 left-0 flex items-center justify-center">
-          <Section2_SpinningLogo />
+          <Section2_SpinningLogo
+            className={"hidden sm:flex mt-32 ml-16"}
+            diameter={"240"}
+            padding={8}
+            logoSize={130}
+          />
+          <Section2_SpinningLogo
+            className={"flex sm:hidden mt-20 ml-4"}
+            diameter={"160"}
+            padding={4}
+            logoSize={100}
+          />
         </div>
       </div>
-      <div className="flex flex-col gap-7  items-start justify-center p-6 pl-20">
-        <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
+      <div className="flex flex-col gap-7 items-start justify-center text-gray-800 sm:p-6 sm:pl-20">
+        <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           ABOUT COMPANY
         </div>
-        <div className="text-5xl font-semibold">
+        <div className="text-4xl sm:text-5xl font-semibold">
           Solarva believes in sustainable energy practices
         </div>
         <div className="text-gray-500">
@@ -44,7 +61,7 @@ export default function AboutSection() {
           <div className="font-bold text-lg">
             Solarva Solar Energy specialty:
           </div>
-          <div className="grid grid-cols-2 gap-4 w-full tracking-wide">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full tracking-wide">
             <div className="flex flex-row items-center gap-2">
               <div className="bg-green-600 rounded-full p-0.5 w-fit text-gray-100">
                 <RiCheckFill className="" />

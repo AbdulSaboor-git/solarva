@@ -5,16 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function SkillsSection() {
   return (
-    <div className="w-full grid grid-cols-2">
-      <div className="relative h-full">
-        <div className="h-full w-full bg-gradient-to-tr from-gray-100  to-blue-200  max-w-[60%]" />
-        <div className="absolute w-full h-[600px]  right-0 top-20 z-10 aspect-auto">
+    <div className="w-full grid grid-cols-1 gap-14 sm:gap-0 sm:grid-cols-2">
+      <div className="relative w-full h-full">
+        <div className="h-full w-full absolute top-0 left-0 sm:block overflow-hidden aspect-auto sm:max-w-[60%]">
+          <img
+            src="bg.png"
+            alt="bg"
+            className="w-full h-full opacity-55 scale-150 aspect-auto"
+          />
+        </div>
+        <div className="flex p-6 sm:p-0 items-center justify-center sm:absolute w-full h-[600px] right-0 top-20 z-10 aspect-auto">
           <img
             src="img6.webp"
             alt="img6"
-            className="absolute w-[500px] right-0 bottom-0"
+            className="absolute hidden sm:block w-[500px] right-0 bottom-0"
           />
-          <div className="flex flex-col gap-8 p-12 py-14 bg-green-600 w-[350px] absolute left-6 bottom-0 overflow-hidden">
+          <div className="flex flex-col gap-8 p-7 py-12 sm:p-12 sm:py-14 z-10 h-fit bg-green-600 sm:w-[350px] sm:absolute left-6 bottom-0 overflow-hidden">
             <div className="h-full">
               <Swiper slidesPerView={1} loop={true} spaceBetween={30}>
                 <SwiperSlide>
@@ -50,18 +56,18 @@ export default function SkillsSection() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-7 items-start justify-center p-6 pl-12 mt-44">
+      <div className="flex flex-col gap-7 items-start justify-center p-6 sm:pl-12 sm:mt-44">
         <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
           COMPANY SKILLS
         </div>
-        <div className="text-5xl font-semibold">
+        <div className="text-4xl sm:text-5xl font-semibold">
           Trusted Solar services since beginning
         </div>
         <div className="text-gray-500 text-lg">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
         </div>
-        <div className="flex flex-col gap-6 w-full max-w-md pb-30">
+        <div className="flex flex-col gap-6 w-full max-w-md sm:pb-30">
           <ProgressBar value={87} title={"Solar Installation"} />
           <ProgressBar value={75} title={"Solar Cleaning"} />
           <ProgressBar value={69} title={"Connecting Grids"} />

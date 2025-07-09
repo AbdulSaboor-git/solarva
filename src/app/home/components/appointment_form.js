@@ -7,18 +7,18 @@ import { SlArrowDown } from "react-icons/sl";
 
 export default function AppointmentForm({ services }) {
   return (
-    <div className="flex flex-col items-center gap-8 rounded-xl bg-slate-900 p-12 py-16 text-gray-100">
+    <div className="flex flex-col items-center gap-8 rounded-xl bg-slate-900  p-8 py-14 sm:p-12 sm:py-16 text-gray-100">
       <div className="flex flex-col items-center gap-2">
-        <h1 className="text-3xl font-semibold">Make Appointment</h1>
-        <p className="max-w-[250px] text-center">
+        <h1 className="text-3xl font-semibold text-center">Make Appointment</h1>
+        <p className="sm:max-w-[250px] text-center">
           Solarva offers full range of solar energy services for renewable
           energy
         </p>
       </div>
-      <div className="flex flex-col gap-6 min-w-sm w-full">
+      <div className="flex flex-col gap-6 sm:min-w-sm w-full">
         <div className="relative w-full text-gray-500">
           <input
-            className="p-4 px-6 w-full pr-14 bg-gray-100 placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
             type="text"
             placeholder="Your Name"
           />
@@ -28,7 +28,7 @@ export default function AppointmentForm({ services }) {
         </div>
         <div className="relative w-full text-gray-500">
           <input
-            className="p-4 px-6 w-full pr-14 bg-gray-100 placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
             type="text"
             placeholder="Email Address"
           />
@@ -38,7 +38,7 @@ export default function AppointmentForm({ services }) {
         </div>
         <div className="relative w-full text-gray-500">
           <input
-            className="p-4 px-6 w-full pr-14 bg-gray-100 placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
             type="text"
             placeholder="Phone"
           />
@@ -49,7 +49,7 @@ export default function AppointmentForm({ services }) {
         <div className="relative">
           <select
             id="dropdown"
-            className="p-4 px-6 appearance-none w-full pr-14 bg-gray-100 text-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 appearance-none w-full pr-14 bg-white text-gray-500 rounded-lg outline-none"
             defaultValue={0}
           >
             <option value="0" disabled hidden>
