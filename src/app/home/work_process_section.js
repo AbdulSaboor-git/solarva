@@ -23,13 +23,13 @@ export default function WorkProcessSection() {
     },
   ];
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 w-full sm:pt-12 p-6">
-      <div className="sm:col-span-2 flex flex-col gap-7 items-center text-center sm:text-start sm:items-start justify-center text-gray-800 max-w-2xl">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-0 w-full sm:pt-12 p-6">
+      <div className="sm:col-span-2 flex flex-col gap-5 sm:gap-7 items-start justify-center text-gray-800 max-w-2xl">
         <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR WORK PROCESS
         </div>
         <div className="text-4xl sm:text-5xl font-semibold">
-          We always follow the best solar ways
+          We always follow the best solar <br /> ways
         </div>
         <div className="text-gray-500">
           We’re finding ways to bring energy to more people in more ways every

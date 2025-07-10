@@ -3,7 +3,7 @@ import React from "react";
 export default function StepsDiv({ classname, step }) {
   return (
     <div
-      className={`${classname} flex flex-col items-center sm:items-start p-6 sm:px-10 gap-2 h-full`}
+      className={`${classname} flex flex-col items-start sm:p-6 sm:px-10 gap-2 h-full`}
     >
       <div className="w-full pb-14 ">
         <div className="relative w-fit place-self-center ">
@@ -23,10 +23,10 @@ export default function StepsDiv({ classname, step }) {
           </div>
         </div>
       </div>
-      <h1 className="text-2xl text-blue-950/90 font-semibold pb-3">
+      <h1 className="text-2xl text-blue-950/90 font-semibold pb-1 sm:pb-3">
         Step {step?.id}: {step?.title}
       </h1>
-      <p className="text-lg tracking-wide text-gray-500 text-center sm:text-start">
+      <p className="text-lg tracking-wide text-gray-500 text-start">
         {step?.desc}
       </p>
     </div>
