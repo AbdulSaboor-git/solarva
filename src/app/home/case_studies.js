@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import SlideContent from "./components/caseStudies_slide_content";
 
-export default function CaseStudies() {
+export default function CaseStudiesSection() {
   const projects = [
     {
       id: 0,
@@ -85,7 +85,7 @@ export default function CaseStudies() {
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
   return (
-    <div className="flex flex-col items-center gap-12 bg-blue-950 p-6 py-12 pt-30">
+    <div className="flex w-full flex-col items-center gap-12 bg-blue-950 p-4 sm:p-6 py-24 sm:py-12 sm:pt-30">
       <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
         <div className="bg-green-600 font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR CASE STUDIES
@@ -94,13 +94,20 @@ export default function CaseStudies() {
           Review our case studies to get a better idea
         </div>
       </div>
-      <div className="px-6 relative group z-20 w-full text-gray-800">
+      <div className="sm:px-6 relative group z-20 w-full text-gray-800">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           loop={true}
           centeredSlides={true}
           spaceBetween={28}
-          slidesPerView={1.25}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1.25,
+            },
+          }}
         >
           {Projects?.map((proj, index) => (
             <SwiperSlide key={index}>
@@ -110,7 +117,7 @@ export default function CaseStudies() {
         </Swiper>
         <button
           onClick={goPrev}
-          className="absolute z-30 left-10 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
+          className="hidden sm:block absolute z-30 left-10 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
            bg-gray-100 text-blue-950 border border-gray-500/40 hover:bg-blue-950 
            hover: hover:text-gray-100 transition-all duration-500"
         >
@@ -118,7 +125,7 @@ export default function CaseStudies() {
         </button>
         <button
           onClick={goNext}
-          className="absolute z-30 right-10 opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
+          className="hidden sm:block absolute z-30 right-10 opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
            bg-gray-100 text-blue-950 border border-gray-500/40 
            hover:bg-blue-950 hover: hover:text-gray-100 transition-all duration-500"
         >

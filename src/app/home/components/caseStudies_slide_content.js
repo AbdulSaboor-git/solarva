@@ -6,23 +6,23 @@ export default function SlideContent({ proj }) {
   const { isActive } = useSwiperSlide();
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden flex flex-col sm:relative">
       <img
         src={proj.img}
         alt={proj.title}
-        className="w-full h-[90vh] object-cover"
+        className="w-full  sm:h-[90vh] object-cover aspect-video"
       />
 
       <div
         className={`
-          absolute bottom-12 left-10 transition-all duration-1000
-          ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"}
+          sm:absolute sm:bottom-12 sm:left-10 transition-all duration-1000
+          ${isActive ? "opacity-100" : "sm:opacity-0 sm:pointer-events-none"}
         bg-white
         `}
       >
-        <div className="absolute h-full w-full top-2 z-0 left-2 bg-white/50" />
-        <div className="bg-white p-10 relative z-10 px-12 flex flex-col gap-6">
-          <div className="flex flex-row relative gap-1">
+        <div className="hidden sm:block absolute h-full w-full top-2 z-0 left-2 bg-white/50" />
+        <div className="bg-white p-10 relative z-10 px-6 sm:px-12 flex flex-col gap-6">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap relative gap-1 sm:overflow-auto">
             {proj.categories?.map((categ, i) => (
               <div
                 key={i}
@@ -58,8 +58,8 @@ export default function SlideContent({ proj }) {
               </p>
             </div>
             <button
-              className="relative flex p-4 items-center hover:bg-blue-950 justify-center
-             bg-green-600 text-4xl text-white aspect-square transition-all duration-500"
+              className="relative flex p-3 sm:p-4 items-center hover:bg-blue-950 justify-center
+             bg-green-600 text-2xl sm:text-4xl text-white aspect-square transition-all duration-500"
             >
               <BsArrowRight className="-rotate-45" />
             </button>

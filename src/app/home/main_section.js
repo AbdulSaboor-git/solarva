@@ -3,6 +3,8 @@ import Header from "@/components/header";
 import React, { useEffect, useState } from "react";
 import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
+import { BiMenu } from "react-icons/bi";
+import MobileHeader from "@/components/mobile_header";
 
 export default function MainSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -23,7 +25,8 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-screen sm:h-[42lh] overflow-hidden p-5">
+      <MobileHeader />
+      <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
         <div className="bg-slate-900 absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
         <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
           <div
@@ -56,7 +59,7 @@ export default function MainSection() {
                   Expert <span className="text-green-600"> Solar</span> service
                   since 1998
                 </div>
-                <div className="text-gray-400 text-[22px] font-medium">
+                <div className="text-gray-400 text-xl sm:text-[22px] sm:font-medium">
                   We believe in sustainable energy practices that can help
                   topnotch solar panel installation services.
                 </div>
