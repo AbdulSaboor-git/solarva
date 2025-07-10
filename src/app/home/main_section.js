@@ -25,7 +25,7 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full">
-      <MobileHeader />
+      <MobileHeader className={"block sm:hidden"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
         <div className="bg-slate-900 absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
         <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">

@@ -39,7 +39,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <div className="flex w-full flex-col items-center gap-12 p-6 bg-green-50 pt-24 sm:pt:20">
+    <div className="flex w-full flex-col items-center gap-12 p-6 bg-green-100/70 pt-24 sm:pt:20">
       <div className="flex flex-col gap-4 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
         <div className="bg-green-600 font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR TEAM MEMBERS

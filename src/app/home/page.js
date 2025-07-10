@@ -6,6 +6,7 @@ import WhyUsSection from "./why_us_section";
 import SkillsSection from "./skills_section";
 import CaseStudiesSection from "./case_studies";
 import TeamSection from "./team_section";
+import WorkProcessSection from "./work_process_section";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
         <CaseStudiesSection />
         <TeamSection />
       </div>
+      <WorkProcessSection />
     </div>
   );
 }
