@@ -60,7 +60,7 @@ export default function TeamSection() {
                 <img
                   src={member.img}
                   alt={member.role}
-                  className="aspect-auto hover:scale-104 hover:rotate-1 transition-all duration-500"
+                  className="aspect-auto group-hover:scale-104 group-hover:rotate-1 transition-all duration-500"
                 />
                 <div
                   className="absolute opacity-0 scale-x-0 group-hover:scale-x-100 group-hover:opacity-100 transition-all duration-500 
@@ -84,8 +84,8 @@ export default function TeamSection() {
                 className="absolute cursor-pointer right-12 group-hover:translate-y-3 group-hover:opacity-100 transition-all duration-500
              -bottom-8 rounded-full bg-white p-1"
               >
-                <div className="bg-green-600 p-1 text-5xl text-white rounded-full">
-                  <BsPlus className="group-hover:rotate-45 transition-all duration-500" />
+                <div className="bg-green-600 p-1 text-5xl group-hover:bg-blue-900 group-hover:opacity-60 transition-all duration-500 text-white rounded-full">
+                  <BsPlus className="group-hover:rotate-45  transition-all duration-500" />
                 </div>
               </div>
             </div>
