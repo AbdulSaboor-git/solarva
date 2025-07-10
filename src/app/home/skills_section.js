@@ -24,14 +24,14 @@ export default function SkillsSection() {
             <div className="h-full">
               <Swiper slidesPerView={1} loop={true} spaceBetween={30}>
                 <SwiperSlide>
-                  <div className="text-gray-100 text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
+                  <div className="text-white text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
                     We’re finding ways to bring energy to more people in more
                     ways every day, so that all of us can be part of the
                     changing energy system.
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="text-gray-100 text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
+                  <div className="text-white text-xl tracking-wide line-clamp-6 min-h-[8.4rem]">
                     We’re finding ways to bring energy to more people in more
                     ways every day, so that all of us can be part of the
                     changing energy system.
@@ -57,7 +57,7 @@ export default function SkillsSection() {
         </div>
       </div>
       <div className="flex flex-col gap-7 items-start justify-center p-6 sm:pl-12 sm:mt-44">
-        <div className="bg-green-600 font-semibold tracking-wider text-gray-100 px-3 py-1 rounded-[5px] text-xs">
+        <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           COMPANY SKILLS
         </div>
         <div className="text-4xl sm:text-5xl font-semibold">

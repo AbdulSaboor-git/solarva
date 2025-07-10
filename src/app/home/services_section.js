@@ -80,7 +80,7 @@ export default function ServicesSection() {
         <div className="absolute hidden sm:block left-0 top-0 bg-gradient-to-br from-blue-950 via-100% to-green-900 h-full w-[60%]" />
         <div
           className="flex flex-col bg-gradient-to-br from-blue-950 via-100% to-green-900 sm:bg-transparent gap-5 sm:gap-6 
-          pb-95 sm:pb-120 text-gray-100 items-start justify-center p-6 py-20 sm:py-36 z-10 relative sm:max-w-[840px]"
+          pb-95 sm:pb-120 text-white items-start justify-center p-6 py-20 sm:py-36 z-10 relative sm:max-w-[840px]"
         >
           <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             OUR SERVICES
@@ -114,7 +114,6 @@ export default function ServicesSection() {
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={24}
-            // slidesPerView={3}
             loop={true}
             pagination={{ clickable: true }}
             centeredSlides={true}

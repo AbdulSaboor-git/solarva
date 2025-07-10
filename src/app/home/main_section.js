@@ -37,7 +37,7 @@ export default function MainSection() {
         from-slate-900/80 via-slate-900/50 to-transparent "
           ></div>
         </div>
-        <div className="z-10 absolute left-0 px-5 text-gray-100 w-full h-full">
+        <div className="z-10 absolute left-0 px-5 text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
             <Section1_Top className={"hidden sm:flex"} />
             <Header className={"hidden sm:grid"} />

@@ -66,7 +66,7 @@ export default function WhyUsSection() {
               className="flex flex-col gap-3 sm:gap-5 justify-start pt-12 group"
             >
               <div className="w-fit">
-                <div className="rounded-full relative z-10 w-fit text-gray-100 bg-green-600 p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">
+                <div className="rounded-full relative z-10 w-fit text-white bg-green-600 p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">
                   <service.logo size={30} />
                 </div>
                 <div className="bg-gray-500 aspect-square rounded-full scale-85 scale-y-[40%] -mt-9 opacity-0 group-hover:opacity-50 blur-md  transition-all duration-500" />
