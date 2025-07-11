@@ -3,14 +3,23 @@ import Header from "@/components/header";
 import React, { useEffect, useState } from "react";
 import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
-import { BiMenu } from "react-icons/bi";
-import MobileHeader from "@/components/mobile_header";
 
 export default function MainSection() {
   const [offsetY, setOffsetY] = useState(0);
   let employees = 20;
   let satisfaction = 100;
   let installations = "6k";
+
+  const [showHeader, setShowHeader] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowHeader(window.scrollY > 45);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +33,8 @@ export default function MainSection() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
-      <MobileHeader className={"block sm:hidden"} />
+    <div className="flex flex-col w-full z-50">
+      <Header className={"block sm:hidden"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
         <div className="bg-slate-900 absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
         <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
@@ -40,11 +49,24 @@ export default function MainSection() {
         from-slate-900/80 via-slate-900/50 to-transparent "
           ></div>
         </div>
-        <div className="z-10 absolute left-0 px-5 text-white w-full h-full">
+        <div className="z-10 absolute left-0 text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
-            <Section1_Top className={"hidden sm:flex"} />
-            <Header className={"hidden sm:grid"} />
-            <div className="w-full h-full max-w-lg flex flex-col gap-7 items-start justify-center">
+            <div className="w-full px-5">
+              <Section1_Top className={"hidden sm:flex"} />
+            </div>
+            <div
+              className={`z-50 w-full px-5 ${
+                showHeader && "fixed top-[20px]"
+              } transition-all duration-300`}
+              // style={{ top: showHeader ? "20px" : "-100px" }}
+            >
+              <Header
+                className={`hidden sm:grid sm:mx-0 sm:w-full ${
+                  showHeader && "mx-5"
+                }`}
+              />
+            </div>
+            <div className="w-full px-5 h-full max-w-lg flex flex-col gap-7 items-start justify-center">
               <div className="flex flex-row items-center justify-start gap-2.5 text-green-600 ">
                 <div className="flex items-center">
                   <div className="h-[1px] w-10 bg-green-600" />

@@ -1,46 +1,110 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import {
   RiHeadphoneFill,
   RiSearchLine,
   RiShoppingBag4Line,
 } from "react-icons/ri";
 import NavbarButton from "./navbar_button";
+import { BiMenu } from "react-icons/bi";
+import { MdClose } from "react-icons/md";
 
 export default function Header({ className }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isSidebarOpen]);
+
   const CartItems = [1, 4, 2];
   const buttons = [
-    {
-      name: "Home",
-    },
-    {
-      name: "About",
-    },
-    {
-      name: "Team",
-    },
-    {
-      name: "Services",
-    },
-    {
-      name: "Case Studies",
-    },
-    {
-      name: "Blog",
-    },
+    { name: "Home" },
+    { name: "About" },
+    { name: "Team" },
+    { name: "Services" },
+    { name: "Case Studies" },
+    { name: "Blog" },
   ];
+
+  const containerRef = useRef(null);
+  const btnRefs = useRef([]);
+  const [underlineStyle, setUnderlineStyle] = useState({ opacity: 0 });
+
+  const handleHover = (index) => {
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const itemRect = btnRefs.current[index].getBoundingClientRect();
+    const left = itemRect.left - containerRect.left;
+    const width = itemRect.width;
+
+    setUnderlineStyle({
+      left,
+      width,
+      opacity: 1,
+    });
+  };
+
+  const clearHover = () => {
+    setUnderlineStyle({ opacity: 0 });
+  };
+
   return (
     <div
-      className={`${className} grid grid-cols-[0.7fr_3fr_0.7fr] 
-    items-center gap-6 bg-gradient-to-r from-blue-950 to-slate-800 w-full px-8 rounded-lg`}
+      className={`${className} w-full sm:w-auto flex flex-row sm:grid sm:grid-cols-[0.7fr_3fr_0.7fr] p-4 sm:py-0 sm:px-8 
+      items-center justify-between gap-6 sm:text-white bg-white sm:bg-gradient-to-r sm:from-blue-950 sm:to-slate-800 sm:rounded-lg`}
     >
-      <img src="logo.png" alt="logo" className="h-9 cursor-pointer" />
-      <div className="flex flex-row gap-1.5 items-center px-4 justify-center">
+      <img
+        src="logo2.png"
+        alt="logo"
+        className="block sm:hidden aspect-auto h-12"
+      />
+      <BiMenu
+        size={30}
+        className={`block sm:hidden ${
+          isSidebarOpen && "-rotate-180 scale-0"
+        } transition-all duration-500`}
+        onClick={() => setIsSidebarOpen(true)}
+      />
+      <img
+        src="logo.png"
+        alt="logo"
+        className="hidden sm:block h-9 cursor-pointer"
+      />
+
+      {/* Navigation Buttons + Underline */}
+      <div
+        className="hidden sm:flex flex-row gap-1.5 items-center px-4 justify-center relative"
+        ref={containerRef}
+        onMouseLeave={clearHover}
+      >
         {buttons.map((btn, i) => (
-          <NavbarButton key={i} name={btn.name} />
+          <NavbarButton
+            key={i}
+            name={btn.name}
+            ref={(el) => (btnRefs.current[i] = el)}
+            onHover={() => handleHover(i)}
+          />
         ))}
+        <div
+          className="hidden sm:block absolute bottom-0 h-1 bg-green-600 transition-all duration-300 ease-in-out"
+          style={{
+            boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.2)",
+            width: underlineStyle.width,
+            left: underlineStyle.left,
+            opacity: underlineStyle.opacity,
+          }}
+        />
       </div>
-      <div className="flex flex-row items-center ">
-        <div className="h-full p-6 border-l border-gray-500/40 group  cursor-pointer">
+
+      {/* Right side icons */}
+      <div className="hidden sm:flex flex-row items-center">
+        <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
           <div className="border border-gray-500/40 p-2 rounded-full">
             <RiHeadphoneFill size={24} className="group-hover-shake" />
           </div>
@@ -53,6 +117,41 @@ export default function Header({ className }) {
           <div className="absolute right-0 bottom-0 bg-green-600 p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
             {CartItems.length}
           </div>
+        </div>
+      </div>
+      <div
+        className={`sm:hidden fixed left-0 top-0 bg-white w-screen h-screen z-50 p-7 py-10 flex flex-col gap-9
+         -translate-x-full ${
+           isSidebarOpen && "translate-x-0"
+         } transition-all duration-500
+          `}
+      >
+        <MdClose
+          className={`absolute top-5 right-5 text-3xl ${
+            !isSidebarOpen && "-rotate-180 scale-0"
+          } transition-all duration-500`}
+          onClick={() => setIsSidebarOpen(false)}
+        />
+        <img src="logo2.png" alt="logo" className="w-40" />
+        <div className="relative w-full">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full outline-none rounded-lg text-gray-700 border border-gray-400/40 focus:border-green-600 px-5 py-3 pr-14"
+          />
+          <div className="absolute flex items-center justify-center top-0 right-0 rounded-lg h-full text-white bg-green-600  aspect-square text-xl">
+            <RiSearchLine className="" />
+          </div>
+        </div>
+        <div className="flex flex-col">
+          {buttons.map((btn, i) => (
+            <div
+              key={i}
+              className="w-full text-gray-900 font-semibold hover:text-green-600 py-3 border-b border-gray-400/40 transition-all duration-300"
+            >
+              {btn.name}
+            </div>
+          ))}
         </div>
       </div>
     </div>
