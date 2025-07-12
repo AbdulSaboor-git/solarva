@@ -27,9 +27,9 @@ export default function Header({ className }) {
   const buttons = [
     { name: "Home" },
     { name: "About" },
-    { name: "Team" },
     { name: "Services" },
     { name: "Case Studies" },
+    { name: "Team" },
     { name: "Blog" },
   ];
 
@@ -56,8 +56,8 @@ export default function Header({ className }) {
 
   return (
     <div
-      className={`${className} w-full sm:w-auto flex flex-row sm:grid sm:grid-cols-[0.7fr_3fr_0.7fr] p-4 sm:py-0 sm:px-8 
-      items-center justify-between gap-6 sm:text-white bg-white sm:bg-gradient-to-r sm:from-blue-950 sm:to-slate-800 sm:rounded-lg`}
+      className={`${className} z-50 w-full sm:w-auto flex flex-row sm:grid sm:grid-cols-[0.7fr_3fr_0.7fr] p-4 sm:py-0 sm:px-8 
+      items-center justify-between gap-6 sm:text-white bg-white sm:bg-[var(--dark-blue-2)] sm:rounded-lg`}
     >
       <img
         src="logo2.png"
@@ -79,7 +79,7 @@ export default function Header({ className }) {
 
       {/* Navigation Buttons + Underline */}
       <div
-        className="hidden sm:flex flex-row gap-1.5 items-center px-4 justify-center relative"
+        className="hidden h-full sm:flex flex-row gap-1.5 items-center px-4 justify-center relative"
         ref={containerRef}
         onMouseLeave={clearHover}
       >
@@ -92,7 +92,7 @@ export default function Header({ className }) {
           />
         ))}
         <div
-          className="hidden sm:block absolute bottom-0 h-1 bg-green-600 transition-all duration-300 ease-in-out"
+          className="hidden sm:block absolute bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
           style={{
             boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.2)",
             width: underlineStyle.width,
@@ -109,12 +109,12 @@ export default function Header({ className }) {
             <RiHeadphoneFill size={24} className="group-hover-shake" />
           </div>
         </div>
-        <div className="h-full p-4 px-6 border-l hover:text-green-600 transition-all duration-500 border-gray-500/40 cursor-pointer">
+        <div className="h-full p-4 px-6 border-l hover:text-[var(--primary-color)] transition-all duration-500 border-gray-500/40 cursor-pointer">
           <RiSearchLine size={24} />
         </div>
         <div className="h-full p-2 pl-6 relative border-l group border-gray-500/40 cursor-pointer">
           <RiShoppingBag4Line size={22} className="group-hover-shake" />
-          <div className="absolute right-0 bottom-0 bg-green-600 p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
+          <div className="absolute right-0 bottom-0 bg-[var(--primary-color)] p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
             {CartItems.length}
           </div>
         </div>
@@ -137,9 +137,9 @@ export default function Header({ className }) {
           <input
             type="text"
             placeholder="Search..."
-            className="w-full outline-none rounded-lg text-gray-700 border border-gray-400/40 focus:border-green-600 px-5 py-3 pr-14"
+            className="w-full outline-none rounded-lg text-gray-700 border border-gray-400/40 focus:border-[var(--primary-color)] px-5 py-3 pr-14"
           />
-          <div className="absolute flex items-center justify-center top-0 right-0 rounded-lg h-full text-white bg-green-600  aspect-square text-xl">
+          <div className="absolute flex items-center justify-center top-0 right-0 rounded-lg h-full text-white bg-[var(--primary-color)]  aspect-square text-xl">
             <RiSearchLine className="" />
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Header({ className }) {
           {buttons.map((btn, i) => (
             <div
               key={i}
-              className="w-full text-gray-900 font-semibold hover:text-green-600 py-3 border-b border-gray-400/40 transition-all duration-300"
+              className="w-full text-gray-900 font-semibold hover:text-[var(--primary-color)] py-3 border-b border-gray-400/40 transition-all duration-300"
             >
               {btn.name}
             </div>

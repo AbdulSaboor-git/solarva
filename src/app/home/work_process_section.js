@@ -24,14 +24,14 @@ export default function WorkProcessSection() {
   ];
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-0 w-full sm:pt-12 p-6">
-      <div className="sm:col-span-2 flex flex-col gap-5 sm:gap-7 items-start justify-center text-gray-800 max-w-2xl">
-        <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+      <div className="sm:col-span-2 flex flex-col gap-5 sm:gap-7 items-start justify-center text-[var(--dark-blue-2)] max-w-2xl">
+        <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR WORK PROCESS
         </div>
         <div className="text-4xl sm:text-5xl font-semibold">
           We always follow the best solar <br /> ways
         </div>
-        <div className="text-gray-500">
+        <div className="text-[var(--text-1)]">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
           Because Powering Progress means providing more & cleaner energy across

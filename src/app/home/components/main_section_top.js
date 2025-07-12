@@ -27,18 +27,18 @@ export default function MainSection_Top({ className }) {
     >
       <div className="flex flex-row w-full items-center justify-start gap-6">
         <div className="flex flex-row items-center gap-4 group cursor-pointer">
-          <div className="bg-green-600 p-2 rounded-full">
+          <div className="bg-[var(--primary-color)] p-2 rounded-full">
             <RiMailLine className="group-hover-flicker" />
           </div>
-          <p className="group-hover:text-green-600 tracking-wide transition-all duration-500 text-lg pr-6 border-r border-gray-500">
+          <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg pr-6 border-r border-gray-500">
             {email}
           </p>
         </div>
         <div className="flex flex-row items-center gap-4 group  cursor-pointer">
-          <div className="bg-green-600 p-2 rounded-full ">
+          <div className="bg-[var(--primary-color)] p-2 rounded-full ">
             <RiMapPinLine className="group-hover-flicker" />
           </div>
-          <p className="group-hover:text-green-600 tracking-wide transition-all duration-500 text-lg">
+          <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg">
             {address}
           </p>
         </div>

@@ -4,10 +4,10 @@ import React, { useState } from "react";
 export default function Button1({
   text,
   className = "",
-  bg = "#f3f4f6",
-  hoverBg = "#16A34A",
-  textColor = "#1d293d",
-  hoverTextColor = "#f3f4f6",
+  bg = "#ffffff",
+  hoverBg = "var(--primary-color)",
+  textColor = "var(--dark-2)",
+  hoverTextColor = "#ffffff",
 }) {
   const [isHovered, setIsHovered] = useState(false);
 

@@ -14,39 +14,37 @@ export default function MainSection() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeader(window.scrollY > 45);
+      setShowHeader(window.scrollY > 52);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
+    const handleScroll2 = () => {
+      const scrollY = window.scrollY * 20;
       const limitedOffset = Math.min(scrollY, 90);
       setOffsetY(limitedOffset);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll2);
+    return () => {
+      window.removeEventListener("scroll", handleScroll2);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <div className="flex flex-col w-full z-50">
-      <Header className={"block sm:hidden"} />
+      <Header className={"block sm:hidden z-50"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
-        <div className="bg-slate-900 absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
+        <div className="bg-[var(--dark-3)] absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
         <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
           <div
             className="h-full bg-gradient-to-r 
-        from-slate-900 via-slate-900/70 to-transparent "
+        from-[var(--dark-3)] via-[var(--dark-3)]/70 to-[var(--dark-3)]/20 "
           ></div>
         </div>
         <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
           <div
             className="h-full bg-gradient-to-b sm:hidden 
-        from-slate-900/80 via-slate-900/50 to-transparent "
+        from-[var(--dark-3)]/80 via-[var(--dark-3)]/50 to-transparent "
           ></div>
         </div>
         <div className="z-10 absolute left-0 text-white w-full h-full">
@@ -66,11 +64,15 @@ export default function MainSection() {
                 }`}
               />
             </div>
-            <div className="w-full px-5 h-full max-w-lg flex flex-col gap-7 items-start justify-center">
-              <div className="flex flex-row items-center justify-start gap-2.5 text-green-600 ">
+            <div
+              className={`
+                  ${showHeader ? "p-[44px]" : "hidden"}`}
+            ></div>
+            <div className="w-full px-5 h-full max-w-[550px] flex flex-col gap-7 items-start justify-center">
+              <div className="flex flex-row items-center justify-start gap-2.5 text-[var(--primary-color)] ">
                 <div className="flex items-center">
-                  <div className="h-[1px] w-10 bg-green-600" />
-                  <div className="w-2.5 animate-[spin_4s_linear_infinite] aspect-square bg-green-600" />
+                  <div className="h-[1px] w-10 bg-[var(--primary-color)]" />
+                  <div className="w-2.5 animate-[spin_4s_linear_infinite] aspect-square bg-[var(--primary-color)]" />
                 </div>
                 <p className="tracking-wider font-[600] text-sm">
                   SOLARVA SOLAR ENERGY SERVICES INC
@@ -78,10 +80,11 @@ export default function MainSection() {
               </div>
               <div className="flex flex-col items-start justify-center gap-6 mb-7">
                 <div className="text-5xl sm:text-7xl font-extrabold tracking-tight">
-                  Expert <span className="text-green-600"> Solar</span> service
-                  since 1998
+                  Expert{" "}
+                  <span className="text-[var(--primary-color)]"> Solar</span>{" "}
+                  service since 1998
                 </div>
-                <div className="text-gray-400 text-xl sm:text-[22px] sm:font-medium">
+                <div className="text-[var(--text-2)] text-xl sm:text-[22px] sm:font-medium">
                   We believe in sustainable energy practices that can help
                   topnotch solar panel installation services.
                 </div>
@@ -97,7 +100,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute z-10 hidden sm:absolute right-0 bottom-0 h-150 transition-transform duration-[3s]"
+          className="absolute hidden sm:block right-0 bottom-0 h-150 transition-transform ease-in-out duration-[2s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}
@@ -114,7 +117,7 @@ export default function MainSection() {
             We have {employees}+ amazing expert solar expert for repair &
             installation
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-green-600 animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
         <div className="relative p-14 sm:p-16 px-10 border-b sm:border-b-0 sm:border-r border-gray-500/40 flex flex-col  sm:flex-row  items-center justify-center gap-4 sm:gap-8">
@@ -129,7 +132,7 @@ export default function MainSection() {
             We achieved {satisfaction}% of our client satisfaction through our
             work
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-green-600 animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
         <div className="p-14 sm:p-16 px-10 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">

@@ -14,7 +14,7 @@ export default function AboutSection_SpinningLogo({
         viewBox="0 0 300 300"
         width={diameter}
         height={diameter}
-        className={`text-green-600 animate-[spin_24s_linear_infinite]`}
+        className={`text-[var(--primary-color)] animate-[spin_24s_linear_infinite]`}
         style={{
           padding: padding,
         }}

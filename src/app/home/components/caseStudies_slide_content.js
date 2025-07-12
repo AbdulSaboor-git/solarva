@@ -26,8 +26,8 @@ export default function SlideContent({ proj }) {
             {proj.categories?.map((categ, i) => (
               <div
                 key={i}
-                className="tracking-wide bg-green-100 px-3 py-1 rounded-md 
-              text-green-600 hover:text-gray-600 transition-all duration-300"
+                className="tracking-wide bg-[var(--light-green-1)] px-3 py-1 rounded-md 
+              text-[var(--primary-color)] hover:text-[var(--text-1)] cursor-pointer transition-all duration-300"
               >
                 {categ}
               </div>
@@ -39,27 +39,29 @@ export default function SlideContent({ proj }) {
           </div>
           <hr className="text-gray-400/60" />
           <div className="flex flex-row items-end justify-between gap-5">
-            <div className="flex flex-col items-start gap-3 text-gray-500">
+            <div className="flex flex-col items-start gap-3 text-[var(--text-1)]">
               <p>
-                <span className="font-semibold text-blue-950/80">Client: </span>
+                <span className="font-semibold text-[var(--dark-blue-1)]">
+                  Client:{" "}
+                </span>
                 {proj.client}
               </p>
               <p>
-                <span className="font-semibold text-blue-950/80">
+                <span className="font-semibold text-[var(--dark-blue-1)]">
                   Finish Day:{" "}
                 </span>
                 {proj.date}
               </p>
               <p>
-                <span className="font-semibold text-blue-950/80">
+                <span className="font-semibold text-[var(--dark-blue-1)]">
                   Total Value:{" "}
                 </span>
                 {proj.value}
               </p>
             </div>
             <button
-              className="relative flex p-3 sm:p-4 items-center hover:bg-blue-950 justify-center
-             bg-green-600 text-2xl sm:text-4xl text-white aspect-square transition-all duration-500"
+              className="relative flex p-3 sm:p-4 items-center hover:bg-[var(--dark-2)] justify-center
+             bg-[var(--primary-color)] text-2xl sm:text-4xl text-white aspect-square transition-all duration-500"
             >
               <BsArrowRight className="-rotate-45" />
             </button>

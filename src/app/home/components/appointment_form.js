@@ -7,7 +7,7 @@ import { SlArrowDown } from "react-icons/sl";
 
 export default function AppointmentForm({ services }) {
   return (
-    <div className="flex flex-col items-center gap-8 rounded-xl bg-slate-900  p-8 py-14 sm:p-12 sm:py-16 text-gray-100">
+    <div className="flex flex-col items-center gap-8 rounded-xl bg-[var(--secondary-color)]  p-8 py-14 sm:p-12 sm:py-16 text-white">
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-3xl font-semibold text-center">Make Appointment</h1>
         <p className="sm:max-w-[250px] text-center">
@@ -15,10 +15,10 @@ export default function AppointmentForm({ services }) {
           energy
         </p>
       </div>
-      <div className="flex flex-col gap-6 sm:min-w-sm w-full">
-        <div className="relative w-full text-gray-500">
+      <div className="flex flex-col gap-6 sm:min-w-sm w-full text-[var(--text-1)]">
+        <div className="relative w-full">
           <input
-            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-[var(--text-1)] rounded-lg outline-none"
             type="text"
             placeholder="Your Name"
           />
@@ -26,9 +26,9 @@ export default function AppointmentForm({ services }) {
             <BiUser size={22} />
           </div>
         </div>
-        <div className="relative w-full text-gray-500">
+        <div className="relative w-full">
           <input
-            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-[var(--text-1)] rounded-lg outline-none"
             type="text"
             placeholder="Email Address"
           />
@@ -36,9 +36,9 @@ export default function AppointmentForm({ services }) {
             <IoMailOpenOutline size={22} />
           </div>
         </div>
-        <div className="relative w-full text-gray-500">
+        <div className="relative w-full">
           <input
-            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-[var(--text-1)] rounded-lg outline-none"
             type="text"
             placeholder="Phone"
           />
@@ -49,7 +49,7 @@ export default function AppointmentForm({ services }) {
         <div className="relative">
           <select
             id="dropdown"
-            className="p-5 sm:p-4 px-6 appearance-none w-full pr-14 bg-white text-gray-500 rounded-lg outline-none"
+            className="p-5 sm:p-4 px-6 appearance-none w-full pr-14 bg-white rounded-lg outline-none"
             defaultValue={0}
           >
             <option value="0" disabled hidden>
@@ -61,17 +61,17 @@ export default function AppointmentForm({ services }) {
               </option>
             ))}
           </select>
-          <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 text-gray-500">
+          <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 text-[var(--text-1)]">
             <SlArrowDown size={14} />
           </div>
         </div>
         <Button1
           text={"Send Us Your Mail"}
           className="py-5 font-semibold tracking-wide"
-          bg="#16A34A"
-          textColor="#f3f4f6"
-          hoverBg="#f3f4f6"
-          hoverTextColor="#1d293d"
+          bg="var(--primary-color)"
+          textColor="#ffffff"
+          hoverBg="#ffffff"
+          hoverTextColor="var(--dark-2)"
         />
       </div>
     </div>

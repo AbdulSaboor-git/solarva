@@ -5,10 +5,10 @@ const NavbarButton = forwardRef(({ name, onHover }, ref) => {
   return (
     <div
       ref={ref}
-      className="relative py-8 group px-5 cursor-pointer"
+      className="relative h-full flex justify-center items-center group px-5 cursor-pointer"
       onMouseEnter={onHover}
     >
-      <p className="font-semibold transition-colors duration-300 group-hover:text-green-600">
+      <p className="font-semibold transition-colors duration-300 group-hover:text-[var(--primary-color)]">
         {name}
       </p>
     </div>

@@ -20,7 +20,7 @@ export default function SkillsSection() {
             alt="img6"
             className="absolute hidden sm:block w-[500px] right-0 bottom-0"
           />
-          <div className="flex flex-col gap-8 p-7 py-12 sm:p-12 sm:py-14 z-10 h-fit bg-green-600 sm:w-[350px] sm:absolute left-6 bottom-0 overflow-hidden">
+          <div className="flex flex-col gap-8 p-7 py-12 sm:p-12 sm:py-14 z-10 h-fit bg-[var(--primary-color)] sm:w-[350px] sm:absolute left-6 bottom-0 overflow-hidden">
             <div className="h-full">
               <Swiper slidesPerView={1} loop={true} spaceBetween={30}>
                 <SwiperSlide>
@@ -42,28 +42,26 @@ export default function SkillsSection() {
             <hr className="text-gray-300/70" />
             <div className="flex gap-3 items-center justify-between">
               <div className="flex items-center justify-start">
-                <div className="bg-[url('/user1.jpg')] bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
-                <div className="bg-[url('/user2.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
-                <div className="bg-[url('/user3.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 " />
-                <div className="bg-yellow-400 flex items-center justify-center text-gray-800 font-medium -ml-7 rounded-full h-[52px] bg-cover aspect-square border-2 border-gray-100 ">
+                <div className="bg-[url('/user1.jpg')] bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-white " />
+                <div className="bg-[url('/user2.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-white " />
+                <div className="bg-[url('/user3.jpg')] -ml-7 bg-center rounded-full h-[52px] bg-cover aspect-square border-2 border-white " />
+                <div className="bg-[var(--yellow)] flex items-center justify-center text-gray-800 font-medium -ml-7 rounded-full h-[52px] bg-cover aspect-square border-2 border-white ">
                   17K+
                 </div>
               </div>
-              <div className="font-semibold text-gray-100">
-                Solar Users in USA
-              </div>
+              <div className="font-semibold text-white">Solar Users in USA</div>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-7 items-start justify-center p-6 sm:pl-12 sm:mt-44">
-        <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+        <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           COMPANY SKILLS
         </div>
-        <div className="text-4xl sm:text-5xl font-semibold">
+        <div className="text-4xl text-[var(--dark-blue-2)] sm:text-5xl font-semibold">
           Trusted Solar services since beginning
         </div>
-        <div className="text-gray-500 text-lg">
+        <div className="text-[var(--text-1)] text-lg">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
         </div>

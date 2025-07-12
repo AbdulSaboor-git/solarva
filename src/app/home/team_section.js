@@ -39,12 +39,12 @@ export default function TeamSection() {
   ];
 
   return (
-    <div className="flex w-full flex-col items-center gap-12 p-6 bg-green-100/70 pt-24 sm:pt:20">
+    <div className="flex w-full flex-col items-center gap-12 p-6 bg-gradient-to-b from-transparent via-[var(--light-green-2)] to-[var(--light-green-2)] pt-24 sm:pb-24">
       <div className="flex flex-col gap-4 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
-        <div className="bg-green-600 font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+        <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR TEAM MEMBERS
         </div>
-        <div className="text-4xl w-full sm:text-5xl text-blue-950 font-semibold text-center">
+        <div className="text-4xl w-full sm:text-5xl text-[var(--dark-blue-2)] font-semibold text-center">
           Meet our <br className="block sm:hidden" /> amazing team of solar
           energy experts
         </div>
@@ -63,19 +63,19 @@ export default function TeamSection() {
                   className="aspect-auto group-hover:scale-104 group-hover:rotate-1 transition-all duration-500"
                 />
                 <div
-                  className="absolute opacity-0 scale-x-0 group-hover:scale-x-100 group-hover:opacity-100 transition-all duration-500 
-                flex flex-col gap-3 text-[28px] p-4.5 pt-6 pb-8 rounded-t-full bg-green-600 text-white right-12 bottom-0"
+                  className="absolute opacity-0 scale-x-0 translate-y-12 group-hover:scale-x-100 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 
+                flex flex-col gap-3 text-[28px] p-4.5 pt-6 pb-8 rounded-t-full bg-[var(--primary-color)] text-white right-12 bottom-0"
                 >
-                  <div className="-rotate-90 cursor-pointer hover:text-blue-950 transition-all duration-300">
+                  <div className="-rotate-90 cursor-pointer hover:text-[var(--dark-blue-1)] transition-all duration-300">
                     <RiLinkedinFill />
                   </div>
-                  <div className="-rotate-90 cursor-pointer hover:text-blue-950 transition-all duration-300">
+                  <div className="-rotate-90 cursor-pointer hover:text-[var(--dark-blue-1)] transition-all duration-300">
                     <RiInstagramLine />
                   </div>
-                  <div className="-rotate-90 cursor-pointer hover:text-blue-950 transition-all duration-300">
+                  <div className="-rotate-90 cursor-pointer hover:text-[var(--dark-blue-1)] transition-all duration-300">
                     <RiTwitterXFill />
                   </div>
-                  <div className="-rotate-90 cursor-pointer hover:text-blue-950 transition-all duration-300">
+                  <div className="-rotate-90 cursor-pointer hover:text-[var(--dark-blue-1)] transition-all duration-300">
                     <RiFacebookFill />
                   </div>
                 </div>
@@ -84,16 +84,16 @@ export default function TeamSection() {
                 className="absolute cursor-pointer right-12 group-hover:translate-y-3 group-hover:opacity-100 transition-all duration-500
              -bottom-8 rounded-full bg-white p-1"
               >
-                <div className="bg-green-600 p-1 text-5xl group-hover:bg-blue-900 group-hover:opacity-60 transition-all duration-500 text-white rounded-full">
+                <div className="bg-[var(--primary-color)] p-1 text-5xl group-hover:bg-[var(--dark-blue-2)]/50 transition-all duration-500 text-white rounded-full">
                   <BsPlus className="group-hover:rotate-45  transition-all duration-500" />
                 </div>
               </div>
             </div>
             <div className="p-6 px-10 tracking-wide flex flex-col gap-1">
-              <h1 className="text-2xl text-blue-950/90 font-semibold cursor-pointer w-fit hover:text-green-600 transition-all duration-300">
+              <h1 className="text-2xl text-[var(--dark-blue-1)] font-semibold cursor-pointer w-fit hover:text-[var(--primary-color)] transition-all duration-300">
                 {member.name}
               </h1>
-              <p className="text-xl text-gray-500 ">
+              <p className="text-xl text-[var(--text-1)] ">
                 {member.role}, {member.institute}
               </p>
             </div>

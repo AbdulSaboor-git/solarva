@@ -13,7 +13,7 @@ export default function HomePage() {
     <div
       className="container w-full 
     flex flex-col items-center justify-start 
-    gap-24 sm:gap-20 bg-white text-gray-800"
+    gap-24 sm:gap-20"
     >
       <MainSection />
       <AboutSection />

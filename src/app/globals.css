@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,11 +7,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #4aab3d;
+  --gradient-first-color: #ffa800;
+  --secondary-color: #072032;
+  --third-color: #00c5fe;
+  --dark-color: #000;
+  --body-bg-color: #fff;
+  --link-color: #072032;
+  --link-color-hover: #4aab3d;
+  --link-color-active: #4aab3d;
+  --gradient-color-from: #ffcd28;
+  --gradient-color-to: #27b671;
+  --gradient-color-from2: #8c92f6;
+  --gradient-color-to2: #f9d78f;
+  --dark-2: #072032;
+  --dark-3: #051b36;
+  --text-1: #5c6972;
+  --text-2: #9b9b9b;
+  --text-3: #b0b6bc;
+  --light-blue-grey-1: #f5f7fa;
+  --light-green-1: #e4f3e2;
+  --light-green-2: #e7f8f0;
+  --boarder-grey-1: #d7d7d7;
+  --dark-1: #1e2227;
+  --dark-blue-1: #003973;
+  --dark-blue-2: #024;
+  --dark-blue-3: #002850;
+  --dark-blue-3-beta: #002850cc;
+  --yellow: #fec51b;
 }
 
 body {
@@ -26,14 +47,20 @@ body {
   user-select: none;
 }
 
-button{
-cursor: pointer;
+button {
+  cursor: pointer;
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1;
-  scale: 1; } /* Start and end at full opacity */
-  50% { opacity: 0.6; scale: 0.8; } /* Dip to lower opacity in the middle */
+  0%,
+  100% {
+    opacity: 1;
+    scale: 1;
+  } /* Start and end at full opacity */
+  50% {
+    opacity: 0.6;
+    scale: 0.8;
+  } /* Dip to lower opacity in the middle */
 }
 
 .hover-flicker:hover {
@@ -48,12 +75,25 @@ cursor: pointer;
   animation: flicker 0.7s ease-in-out; /* Run animation once on group hover */
 }
 @keyframes shake {
-  0%, 100% { transform: rotate(0deg); }
-  16.6% { transform: rotate(10deg); }
-  33.3% { transform: rotate(-10deg); }
-  50% { transform: rotate(10deg); }
-  66.6% { transform: rotate(-10deg); }
-  83.3% { transform: rotate(10deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  16.6% {
+    transform: rotate(10deg);
+  }
+  33.3% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  66.6% {
+    transform: rotate(-10deg);
+  }
+  83.3% {
+    transform: rotate(10deg);
+  }
 }
 
 .hover-shake:hover {

@@ -44,14 +44,14 @@ export default function AboutSection() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-7 items-start justify-center text-gray-800 sm:p-6 sm:pl-20">
-        <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+      <div className="flex flex-col gap-7 items-start justify-center text-[var(--dark-2)] sm:p-6 sm:pl-20">
+        <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           ABOUT COMPANY
         </div>
-        <div className="text-4xl sm:text-5xl font-semibold">
+        <div className="text-4xl  sm:text-5xl font-semibold">
           Solarva believes in sustainable energy practices
         </div>
-        <div className="text-gray-500">
+        <div className="text-[var(--text-1)]">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
           Because Powering Progress means providing more & cleaner energy across
@@ -63,32 +63,36 @@ export default function AboutSection() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full tracking-wide">
             <div className="flex flex-row items-center gap-2">
-              <div className="bg-green-600 rounded-full p-0.5 w-fit text-gray-100">
+              <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
                 <RiCheckFill className="" />
               </div>
               Lower Energy Costs
             </div>
             <div className="flex flex-row items-center gap-2">
-              <div className="bg-green-600 rounded-full p-0.5 w-fit text-gray-100">
+              <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
                 <RiCheckFill className="" />
               </div>
               Increase Home Value
             </div>
             <div className="flex flex-row items-center gap-2">
-              <div className="bg-green-600 rounded-full p-0.5 w-fit text-gray-100">
+              <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
                 <RiCheckFill className="" />
               </div>
               Environmentally Friendly
             </div>
             <div className="flex flex-row items-center gap-2">
-              <div className="bg-green-600 rounded-full p-0.5 w-fit text-gray-100">
+              <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
                 <RiCheckFill className="" />
               </div>
               Energy Independence
             </div>
           </div>
         </div>
-        <Button1 text={"Contact Solarva"} bg="#1d293d" textColor="#f3f4f6" />
+        <Button1
+          text={"Contact Solarva"}
+          bg="var(--dark-2)"
+          textColor="#ffffff"
+        />
       </div>
     </div>
   );

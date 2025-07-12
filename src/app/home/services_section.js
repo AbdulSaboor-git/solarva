@@ -76,44 +76,45 @@ export default function ServicesSection() {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col pt-150 sm:pt-0 relative bg-[url('/bg.png')] bg-top sm:bg-left-top w-full">
-        <div className="absolute w-full h-full top-0 left-0 bg-blue-950/80" />
-        <div className="absolute hidden sm:block left-0 top-0 bg-gradient-to-br from-blue-950 via-100% to-green-900 h-full w-[60%]" />
+        <div className="absolute w-full h-full top-0 left-0 bg-[var(--dark-blue-3-beta)]" />
+        {/* <div className="absolute hidden sm:block left-0 top-0 bg-gradient-to-br from-blue-950/70 via-100% toh-full w-[60%]" /> */}
         <div
-          className="flex flex-col bg-gradient-to-br from-blue-950 via-100% to-green-900 sm:bg-transparent gap-5 sm:gap-6 
-          pb-95 sm:pb-120 text-white items-start justify-center p-6 py-20 sm:py-36 z-10 relative sm:max-w-[840px]"
+          className="flex flex-col gap-5 sm:gap-6 
+          pb-95 sm:pb-120 text-white items-start justify-center p-5 sm:p-6 py-20 sm:py-36 z-10 relative sm:max-w-[60%]"
         >
-          <div className="bg-green-600 font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+          <div className="absolute -z-20 top-0 left-0 w-full h-full overflow-hidden bg-[var(--dark-blue-3)] ">
+            <div className="w-full h-full bg-radial absolute top-10 left-1/2 z-10 to-transparent via-transparent scale-200 from-[var(--primary-color)]/40"></div>
+          </div>
+          <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             OUR SERVICES
           </div>
           <div className="text-4xl sm:text-5xl font-semibold max-w-xl">
             Complete solar solution with repair services
           </div>
-          <div className="flex justify-between gap-12">
-            <div className="tracking-wide font-medium">
-              We’re finding ways to bring energy to more people in more ways
-              every day, so that us can be part of the changing energy system.
-              Because Powering Progress.
-            </div>
-            <div className="hidden sm:flex text-blue-950 mt-1 ">
-              <button
-                onClick={goPrev}
-                className="p-5 bg-gray-100 border border-gray-500/40 hover:bg-green-600 hover: hover:text-gray-100 transition-all duration-500"
-              >
-                <SlArrowLeft />
-              </button>
-              <button
-                onClick={goNext}
-                className="p-5 bg-gray-100 border border-gray-500/40 hover:bg-green-600 hover: hover:text-gray-100 transition-all duration-500"
-              >
-                <SlArrowRight />
-              </button>
-            </div>
+          <div className="tracking-wide font-medium max-w-xl">
+            We’re finding ways to bring energy to more people in more ways every
+            day, so that us can be part of the changing energy system. Because
+            Powering Progress.
+          </div>
+          <div className="hidden sm:flex text-blue-950 mt-1 absolute -right-[58px] top-1/3 ">
+            <button
+              onClick={goPrev}
+              className="p-5 bg-white border border-gray-500/40 hover:bg-[var(--primary-color)] hover: hover:text-white transition-all duration-500"
+            >
+              <SlArrowLeft />
+            </button>
+            <button
+              onClick={goNext}
+              className="p-5 bg-white border border-gray-500/40 hover:bg-[var(--primary-color)] hover: hover:text-white transition-all duration-500"
+            >
+              <SlArrowRight />
+            </button>
           </div>
         </div>
-        <div className="px-6 absolute z-30 -bottom-28 w-full left-0">
+        <div className="absolute z-30 -bottom-28 w-full left-0">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            spaceBetween={24}
+            spaceBetween={0}
             loop={true}
             pagination={{ clickable: true }}
             centeredSlides={true}
@@ -130,7 +131,7 @@ export default function ServicesSection() {
             }}
           >
             {services.map((service) => (
-              <SwiperSlide key={service.id}>
+              <SwiperSlide key={service.id} className="px-4">
                 <ServiceSlide service={service} />
               </SwiperSlide>
             ))}

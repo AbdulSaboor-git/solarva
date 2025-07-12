@@ -1,6 +1,5 @@
 import React from "react";
 import { FaSolarPanel } from "react-icons/fa";
-import { FcElectricity } from "react-icons/fc";
 import { SiGreenhouse, SiSunrise } from "react-icons/si";
 import AppointmentForm from "./components/appointment_form";
 import { GiElectric } from "react-icons/gi";
@@ -46,13 +45,13 @@ export default function WhyUsSection() {
   return (
     <div className="flex w-full flex-col items-center p-5 sm:p-6 gap-6">
       <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
-        <div className="bg-green-600 font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+        <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           WHY CHOOSE US
         </div>
-        <div className="text-4xl w-full sm:text-5xl font-semibold text-center">
+        <div className="text-4xl w-full text-[var(--dark-2)] sm:text-5xl font-semibold text-center">
           Reasons that make us best solar professionals
         </div>
-        <div className="text-gray-500 text-center text-lg mt-1 sm:mt-2">
+        <div className="text-[var(--text-1)] text-center text-lg mt-1 sm:mt-2">
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
           Because Powering Progress.
@@ -66,18 +65,18 @@ export default function WhyUsSection() {
               className="flex flex-col gap-3 sm:gap-5 justify-start pt-12 group"
             >
               <div className="w-fit">
-                <div className="rounded-full relative z-10 w-fit text-white bg-green-600 p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">
+                <div className="rounded-full relative z-10 w-fit text-white bg-[var(--primary-color)] p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">
                   <service.logo size={30} />
                 </div>
-                <div className="bg-gray-500 aspect-square rounded-full scale-85 scale-y-[40%] -mt-9 opacity-0 group-hover:opacity-50 blur-md  transition-all duration-500" />
+                <div className="bg-[var(--text-1)] aspect-square rounded-full scale-85 scale-y-[40%] -mt-9 opacity-0 group-hover:opacity-50 blur-md  transition-all duration-500" />
               </div>
               <h1
                 // onClick={}
-                className="text-blue-950 cursor-pointer group-hover:text-green-600 transition-all duration-500 font-bold text-2xl tracking-normal line-clamp-1"
+                className="text-blue-950 cursor-pointer group-hover:text-[var(--primary-color)] transition-all duration-500 font-bold text-2xl tracking-normal line-clamp-1"
               >
                 {service.title}
               </h1>
-              <p className="text-gray-500 tracking-wide text-lg min-h-[81px] line-clamp-3">
+              <p className="text-[var(--text-1)] tracking-wide text-lg min-h-[81px] line-clamp-3">
                 {service.description}
               </p>
             </div>

@@ -14,19 +14,19 @@ export default function StepsDiv({ classname, step }) {
           />
           <div
             className="absolute flex items-center justify-center w-14 aspect-square 
-            text-white -bottom-6 -left-6 bg-green-600 rounded-full font-semibold text-2xl"
+            text-white -bottom-6 -left-6 bg-[var(--primary-color)] rounded-full font-semibold text-2xl"
           >
             {step?.id}
           </div>
-          <div className="absolute text-green-100 -bottom-24 -right-10 rounded-full font-semibold text-[140px]">
+          <div className="absolute text-[var(--light-green-1)] -bottom-24 -right-10 rounded-full font-semibold text-[140px]">
             {step?.id}
           </div>
         </div>
       </div>
-      <h1 className="text-2xl text-blue-950/90 font-semibold pb-1 sm:pb-3">
+      <h1 className="text-2xl text-[var(--dark-blue-1)] font-semibold pb-1 sm:pb-3">
         Step {step?.id}: {step?.title}
       </h1>
-      <p className="text-lg tracking-wide text-gray-500 text-start">
+      <p className="text-lg tracking-wide text-[var(--text-1)] text-start">
         {step?.desc}
       </p>
     </div>
