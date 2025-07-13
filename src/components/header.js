@@ -85,6 +85,7 @@ export default function Header({ className }) {
       >
         {buttons.map((btn, i) => (
           <NavbarButton
+            className={""}
             key={i}
             name={btn.name}
             ref={(el) => (btnRefs.current[i] = el)}
@@ -92,9 +93,9 @@ export default function Header({ className }) {
           />
         ))}
         <div
-          className="hidden sm:block absolute bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
+          className="hidden sm:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-500 ease-in-out"
           style={{
-            boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.2)",
+            boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.3)",
             width: underlineStyle.width,
             left: underlineStyle.left,
             opacity: underlineStyle.opacity,

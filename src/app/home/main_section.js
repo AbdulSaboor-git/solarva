@@ -106,41 +106,41 @@ export default function MainSection() {
           }}
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40">
+      <div className="grid grid-cols-1 text-[var(--dark-blue-1)] sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40">
         {/*  */}
-        <div className="relative p-14 sm:p-16 px-10 border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col  sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <div className="flex flex-col text-blue-950 items-center justify-center gap-1 sm:gap-2">
+        <div className="relative px-10 py-14 sm:py-16  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col  sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <div className="flex flex-col  items-center justify-center gap-1 sm:gap-2">
             <div className="text-5xl font-bold">{employees}+</div>
             <div className="font-semibold text-center">Employees</div>
           </div>
-          <div className="text-gray-500 tracking-wide">
+          <div className=" tracking-wide text-[var(--text-1)]">
             We have {employees}+ amazing expert solar expert for repair &
             installation
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="relative p-14 sm:p-16 px-10 border-b sm:border-b-0 sm:border-r border-gray-500/40 flex flex-col  sm:flex-row  items-center justify-center gap-4 sm:gap-8">
+        <div className="relative px-10 py-14 sm:py-16 border-b sm:border-b-0 sm:border-r border-gray-500/40 flex flex-col  sm:flex-row  items-center justify-center gap-4 sm:gap-8">
           <div
             className="flex flex-col min-w-fit
-           text-blue-950 items-center justify-center gap-1 sm:gap-2"
+           items-center justify-center gap-1 sm:gap-2"
           >
             <div className="text-5xl font-bold">{satisfaction}%</div>
             <div className="font-semibold text-center">Client Satisfaction</div>
           </div>
-          <div className="text-gray-500 tracking-wide">
+          <div className="text-[var(--text-1)] tracking-wide">
             We achieved {satisfaction}% of our client satisfaction through our
             work
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="p-14 sm:p-16 px-10 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">
-          <div className="flex flex-col text-blue-950 items-center justify-center gap-1 sm:gap-2">
+        <div className="px-10 py-14 sm:py-16 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">
+          <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
             <div className="text-5xl font-bold">{installations}+</div>
             <div className="font-semibold  text-center">installations</div>
           </div>
-          <div className="text-gray-500 tracking-wide">
+          <div className="text-[var(--text-1)] tracking-wide">
             We have 20 years of experience in installing panels for our clients.
           </div>
         </div>

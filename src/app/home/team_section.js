@@ -45,8 +45,7 @@ export default function TeamSection() {
           OUR TEAM MEMBERS
         </div>
         <div className="text-4xl w-full sm:text-5xl text-[var(--dark-blue-2)] font-semibold text-center">
-          Meet our <br className="block sm:hidden" /> amazing team of solar
-          energy experts
+          Meet our amazing team of solar energy experts
         </div>
       </div>
       <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-3">
