@@ -80,7 +80,7 @@ export default function ServicesSection() {
         {/* <div className="absolute hidden sm:block left-0 top-0 bg-gradient-to-br from-blue-950/70 via-100% toh-full w-[60%]" /> */}
         <div
           className="flex flex-col gap-5 sm:gap-6 
-          pb-95 sm:pb-120 text-white items-start justify-center p-5 sm:p-6 py-20 sm:py-36 z-10 relative sm:max-w-[60%]"
+          pb-[380px] sm:pb-[480px] text-white items-start justify-center p-5 sm:p-6 py-20 sm:py-36 z-10 relative sm:max-w-[60%]"
         >
           <div className="absolute -z-20 top-0 left-0 w-full h-full overflow-hidden bg-[var(--dark-blue-3)] ">
             <div className="w-full h-full bg-radial absolute top-10 left-1/2 z-10 to-transparent via-transparent scale-200 from-[var(--primary-color)]/40"></div>

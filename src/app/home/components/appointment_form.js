@@ -15,7 +15,7 @@ export default function AppointmentForm({ services }) {
           energy
         </p>
       </div>
-      <div className="flex flex-col gap-6 sm:min-w-sm w-full text-[var(--text-1)]">
+      <div className="flex flex-col gap-6 sm:min-w-[380px] w-full text-[var(--text-1)]">
         <div className="relative w-full">
           <input
             className="p-5 sm:p-4 px-6 w-full pr-14 bg-white placeholder-[var(--text-1)] rounded-lg outline-none"

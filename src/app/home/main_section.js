@@ -66,7 +66,7 @@ export default function MainSection() {
             </div>
             <div
               className={`
-                  ${showHeader ? "p-[44px]" : "hidden"}`}
+                  ${showHeader ? "sm:p-[44px]" : "hidden"}`}
             ></div>
             <div className="w-full px-5 h-full max-w-[550px] flex flex-col gap-7 items-start justify-center">
               <div className="flex flex-row items-center justify-start gap-2.5 text-[var(--primary-color)] ">

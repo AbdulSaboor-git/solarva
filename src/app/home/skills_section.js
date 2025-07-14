@@ -65,7 +65,7 @@ export default function SkillsSection() {
           We’re finding ways to bring energy to more people in more ways every
           day, so that all of us can be part of the changing energy system.
         </div>
-        <div className="flex flex-col gap-6 w-full max-w-md sm:pb-30">
+        <div className="flex flex-col gap-6 w-full max-w-md sm:pb-32">
           <ProgressBar value={87} title={"Solar Installation"} />
           <ProgressBar value={75} title={"Solar Cleaning"} />
           <ProgressBar value={69} title={"Connecting Grids"} />

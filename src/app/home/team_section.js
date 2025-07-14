@@ -63,7 +63,7 @@ export default function TeamSection() {
                 />
                 <div
                   className="absolute opacity-0 scale-x-0 translate-y-12 group-hover:scale-x-100 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 
-                flex flex-col gap-3 text-[28px] p-4.5 pt-6 pb-8 rounded-t-full bg-[var(--primary-color)] text-white right-12 bottom-0"
+                flex flex-col gap-3 text-[28px] p-[18px] pt-6 pb-8 rounded-t-full bg-transparent group-hover:bg-[var(--primary-color)] text-white right-12 bottom-0"
                 >
                   <div className="-rotate-90 cursor-pointer hover:text-[var(--dark-blue-1)] transition-all duration-300">
                     <RiLinkedinFill />
@@ -83,7 +83,7 @@ export default function TeamSection() {
                 className="absolute cursor-pointer right-12 group-hover:translate-y-3 group-hover:opacity-100 transition-all duration-500
              -bottom-8 rounded-full bg-white p-1"
               >
-                <div className="bg-[var(--primary-color)] p-1 text-5xl group-hover:bg-[var(--dark-blue-2)]/50 transition-all duration-500 text-white rounded-full">
+                <div className="bg-[var(--primary-color)] p-1 text-5xl group-hover:bg-[var(--text-1)] transition-all duration-500 text-white rounded-full">
                   <BsPlus className="group-hover:rotate-45  transition-all duration-500" />
                 </div>
               </div>

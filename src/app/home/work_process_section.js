@@ -137,12 +137,12 @@ export default function WorkProcessSection() {
                 </div>
               </div>
             </div>
-            <div className="h-full w-full sm:w-md absolute right-0 sm:right-1/6 bottom-0 ">
+            <div className="h-full w-full sm:max-w-md absolute right-0 sm:right-[16%] bottom-0 ">
               <div className="h-full w-full">
                 <img
                   src="user7.png"
                   alt="abc"
-                  className="absolute h-[304px] left-1/2 -translate-x-1/2 sm:-translate-x-0 sm:h-96 bottom-0 sm:left-5 z-10 aspect-auto"
+                  className="absolute h-[304px] left-1/2 -translate-x-1/2 sm:-translate-x-0 sm:h-96 bottom-0 sm:left-6 z-10 aspect-auto"
                 />
                 <div className="hidden sm:block absolute h-full right-2 bottom-0">
                   <img
