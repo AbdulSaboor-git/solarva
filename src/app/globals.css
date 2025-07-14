@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
 
 @theme inline {
   --color-background: var(--background);

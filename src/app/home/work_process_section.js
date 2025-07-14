@@ -250,23 +250,30 @@ export default function WorkProcessSection() {
           </div>
         </div>
       </div>
-      <div className="px-6 py-20 font-medium text-[var(--dark-blue-1)] w-full flex flex-col items-center gap-10 text-center text-xl">
-        <p className="">
+      <div className="sm:px-6 py-20 pb-40 font-semibold text-[var(--dark-blue-1)] w-full flex flex-col items-center gap-12 text-center text-lg sm:text-xl">
+        <p className="px-4 sm:px-0">
           We’ve worked on over 200 projects
           <span className="text-[var(--primary-color)]">
             {" "}
             with 150+ clients
           </span>
         </p>
-        <marquee className="overflow-hidden w-full">
-          <div className="flex flex-row items-center justify-evenly gap-4 ">
-            {Clients.map((c, index) => (
-              <span key={index} className="inline-block mx-4 text-6xl">
-                <c.logo />
-              </span>
-            ))}
+        <div className="overflow-hidden group w-full">
+          <div className="relative flex whitespace-nowrap">
+            <div className="animate-marquee flex group-hover:[animation-play-state:paused]">
+              {[...Clients, ...Clients].map((item, i) => (
+                <div key={`1-${i}`} className="px-8 sm:px-10 text-7xl">
+                  <item.logo />
+                </div>
+              ))}
+              {[...Clients, ...Clients].map((item, i) => (
+                <div key={`2-${i}`} className="px-8 sm:px-10 text-7xl">
+                  <item.logo />
+                </div>
+              ))}
+            </div>
           </div>
-        </marquee>
+        </div>
       </div>
     </div>
   );
