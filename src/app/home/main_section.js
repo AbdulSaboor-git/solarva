@@ -14,7 +14,7 @@ export default function MainSection({ id }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeader(window.scrollY > 52);
+      setShowHeader(window.scrollY > 30);
     };
     const handleScroll2 = () => {
       const scrollY = window.scrollY;
@@ -53,10 +53,11 @@ export default function MainSection({ id }) {
               <Section1_Top className={"hidden sm:flex"} />
             </div>
             <div
-              className={`z-50 w-full px-5 ${
-                showHeader && "fixed top-[20px]"
+              className={`z-50 w-full px-5 transition-all duration-300 ${
+                showHeader
+                  ? "fixed translate-y-3 top-2 "
+                  : "block translate-y-0 transition-none"
               } `}
-              // style={{ top: showHeader ? "20px" : "-100px" }}
             >
               <Header
                 className={`hidden sm:grid sm:mx-0 sm:w-full ${
