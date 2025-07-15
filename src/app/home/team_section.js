@@ -62,7 +62,7 @@ export default function TeamSection() {
                 <img
                   src={member.img}
                   alt={member.role}
-                  className="aspect-auto group-hover:scale-104 group-hover:rotate-1 transition-all duration-500"
+                  className="aspect-auto group-hover:scale-[104%] group-hover:rotate-1 transition-all duration-500"
                 />
                 <div
                   className="absolute opacity-0 scale-x-0 translate-y-12 group-hover:scale-x-100 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 
