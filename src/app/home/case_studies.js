@@ -85,7 +85,10 @@ export default function CaseStudiesSection() {
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
   return (
-    <div className="flex w-full flex-col items-center gap-12 bg-[var(--dark-blue-3)] p-4 sm:p-6 py-24 sm:py-12 sm:pt-30">
+    <div
+      id="case-studies"
+      className="flex w-full flex-col items-center gap-12 bg-[var(--dark-blue-3)] p-4 sm:p-6 py-24 sm:py-12 sm:pt-30"
+    >
       <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
         <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR CASE STUDIES

@@ -90,7 +90,7 @@ export default function WorkProcessSection() {
     },
   ];
   return (
-    <div className="flex flex-col w-full gap-20">
+    <div id="work-process" className="flex flex-col w-full gap-20">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-0 w-full sm:pt-12 p-6">
         <div className="sm:col-span-2 flex flex-col gap-5 sm:gap-7 items-start justify-center text-[var(--dark-blue-2)] max-w-2xl">
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
@@ -155,7 +155,7 @@ export default function WorkProcessSection() {
             </div>
           </div>
         </div>
-        <div className="bg-[var(--dark-blue-3)] px-4 w-full flex flex-col gap-14 items-center py-24 pt-104 sm:pt-48">
+        <div className="bg-[var(--dark-blue-3)] px-4 w-full flex flex-col gap-14 items-center py-24 pt-[400px] sm:pt-48">
           <div className="flex flex-col gap-4 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
             <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
               CLIENT TESTIMONAL

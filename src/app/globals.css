@@ -153,3 +153,19 @@ button {
 .shake {
   animation: shake-rotate-five 3s infinite;
 }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite ease-in-out;
+}

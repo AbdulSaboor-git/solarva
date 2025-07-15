@@ -43,7 +43,10 @@ let services = [
 ];
 export default function WhyUsSection() {
   return (
-    <div className="flex w-full flex-col items-center p-5 sm:p-6 gap-6">
+    <div
+      id="why-us"
+      className="flex w-full flex-col items-center p-5 sm:p-6 gap-6"
+    >
       <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
         <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           WHY CHOOSE US

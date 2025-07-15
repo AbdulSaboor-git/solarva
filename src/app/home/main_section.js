@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
 
-export default function MainSection() {
+export default function MainSection({ id }) {
   const [offsetY, setOffsetY] = useState(0);
   let employees = 20;
   let satisfaction = 100;
@@ -31,7 +31,7 @@ export default function MainSection() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full z-50">
+    <div className="flex flex-col w-full z-40" id="home">
       <Header className={"block sm:hidden z-50"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
         <div className="bg-[var(--dark-3)] absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
@@ -55,7 +55,7 @@ export default function MainSection() {
             <div
               className={`z-50 w-full px-5 ${
                 showHeader && "fixed top-[20px]"
-              } transition-all duration-300`}
+              } `}
               // style={{ top: showHeader ? "20px" : "-100px" }}
             >
               <Header

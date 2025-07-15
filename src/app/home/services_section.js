@@ -74,7 +74,7 @@ export default function ServicesSection() {
     },
   ];
   return (
-    <div className="flex flex-col w-full">
+    <div id="services" className="flex flex-col w-full">
       <div className="flex flex-col pt-150 sm:pt-0 relative bg-[url('/bg.png')] bg-top sm:bg-left-top w-full">
         <div className="absolute w-full h-full top-0 left-0 bg-[var(--dark-blue-3-beta)]" />
         {/* <div className="absolute hidden sm:block left-0 top-0 bg-gradient-to-br from-blue-950/70 via-100% toh-full w-[60%]" /> */}

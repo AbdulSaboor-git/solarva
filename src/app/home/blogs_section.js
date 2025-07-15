@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "./styles/slider.css";
 import Blog from "./components/blog";
 
-export default function BlogSection() {
+export default function BlogSection({ id }) {
   const blogs = [
     {
       id: 0,
@@ -56,14 +56,18 @@ export default function BlogSection() {
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
   return (
-    <div className="flex flex-col gap-16 w-full py-24 bg-gray-100/90">
+    <div
+      id="blogs"
+      className="flex flex-col gap-16 w-full py-24 bg-gray-100/90"
+    >
       <div className="flex flex-col sm:flex-row gap-12 sm:gap-5 sm:items-end sm:justify-between w-full px-6">
         <div className="flex flex-col gap-5 sm:gap-7 items-start justify-center text-[var(--dark-blue-2)]">
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             LATEST NEWS
           </div>
           <div className="text-4xl sm:text-5xl font-semibold">
-            Read our solar energy <br /> Blogs & articles
+            Read our solar energy <br className="hidden sm:block" /> Blogs &
+            articles
           </div>
         </div>
         <div className="flex text-[var(--dark-blue-2)] ">

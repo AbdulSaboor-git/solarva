@@ -23,15 +23,30 @@ export default function Header({ className }) {
     };
   }, [isSidebarOpen]);
 
-  const CartItems = [1, 4, 2];
+  const scrollTo = (id) => {
+    if (typeof window === "undefined") return;
+    let offset = 0;
+    if (id != "home" && !isSidebarOpen) {
+      offset = 60;
+    }
+    const el = document.getElementById(id);
+    setIsSidebarOpen(false);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const buttons = [
-    { name: "Home" },
-    { name: "About" },
-    { name: "Services" },
-    { name: "Case Studies" },
-    { name: "Team" },
-    { name: "Blog" },
+    { name: "Home", onClick: () => scrollTo("home") },
+    { name: "About", onClick: () => scrollTo("about") },
+    { name: "Services", onClick: () => scrollTo("services") },
+    { name: "Case Studies", onClick: () => scrollTo("case-studies") },
+    { name: "Team", onClick: () => scrollTo("team") },
+    { name: "Blog", onClick: () => scrollTo("blogs") },
   ];
+
+  const CartItems = [1, 4, 2];
 
   const containerRef = useRef(null);
   const btnRefs = useRef([]);
@@ -90,6 +105,7 @@ export default function Header({ className }) {
             name={btn.name}
             ref={(el) => (btnRefs.current[i] = el)}
             onHover={() => handleHover(i)}
+            onClick={btn.onClick}
           />
         ))}
         <div
@@ -128,7 +144,7 @@ export default function Header({ className }) {
           `}
       >
         <MdClose
-          className={`absolute top-5 right-5 text-3xl ${
+          className={`absolute top-5 right-4 text-3xl ${
             !isSidebarOpen && "-rotate-180 scale-0"
           } transition-all duration-500`}
           onClick={() => setIsSidebarOpen(false)}
@@ -148,6 +164,7 @@ export default function Header({ className }) {
           {buttons.map((btn, i) => (
             <div
               key={i}
+              onClick={btn.onClick}
               className="w-full text-gray-900 font-semibold hover:text-[var(--primary-color)] py-3 border-b border-gray-400/40 transition-all duration-300"
             >
               {btn.name}
