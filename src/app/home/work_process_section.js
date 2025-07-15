@@ -250,7 +250,7 @@ export default function WorkProcessSection() {
           </div>
         </div>
       </div>
-      <div className="sm:px-6 py-20 pb-40 font-semibold text-[var(--dark-blue-1)] w-full flex flex-col items-center gap-12 text-center text-lg sm:text-xl">
+      <div className="sm:px-6 sm:py-7 font-semibold text-[var(--dark-blue-1)] w-full flex flex-col items-center gap-10 sm:gap-12 text-center text-lg sm:text-xl">
         <p className="px-4 sm:px-0">
           We’ve worked on over 200 projects
           <span className="text-[var(--primary-color)]">

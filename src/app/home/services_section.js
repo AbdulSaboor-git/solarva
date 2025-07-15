@@ -96,7 +96,7 @@ export default function ServicesSection() {
             day, so that us can be part of the changing energy system. Because
             Powering Progress.
           </div>
-          <div className="hidden sm:flex text-blue-950 mt-1 absolute -right-[58px] top-1/3 ">
+          <div className="hidden sm:flex text-[var(--dark-blue-2)] mt-1 absolute -right-[58px] top-1/3 ">
             <button
               onClick={goPrev}
               className="p-5 bg-white border border-gray-500/40 hover:bg-[var(--primary-color)] hover: hover:text-white transition-all duration-500"

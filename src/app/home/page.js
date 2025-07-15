@@ -7,11 +7,13 @@ import SkillsSection from "./skills_section";
 import CaseStudiesSection from "./case_studies";
 import TeamSection from "./team_section";
 import WorkProcessSection from "./work_process_section";
+import BlogSection from "./blogs_section";
+import Footer from "@/components/footer";
 
 export default function HomePage() {
   return (
     <div
-      className="container w-full 
+      className="relative container w-full 
     flex flex-col items-center justify-start 
     gap-24 sm:gap-20"
     >
@@ -25,6 +27,10 @@ export default function HomePage() {
         <TeamSection />
       </div>
       <WorkProcessSection />
+      <div className="w-full">
+        <BlogSection />
+        <Footer />
+      </div>
     </div>
   );
 }

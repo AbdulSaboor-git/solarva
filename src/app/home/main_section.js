@@ -17,7 +17,7 @@ export default function MainSection() {
       setShowHeader(window.scrollY > 52);
     };
     const handleScroll2 = () => {
-      const scrollY = window.scrollY * 20;
+      const scrollY = window.scrollY;
       const limitedOffset = Math.min(scrollY, 90);
       setOffsetY(limitedOffset);
     };
@@ -84,7 +84,7 @@ export default function MainSection() {
                   <span className="text-[var(--primary-color)]"> Solar</span>{" "}
                   service since 1998
                 </div>
-                <div className="text-[var(--text-2)] text-xl sm:text-[22px] sm:font-medium">
+                <div className="text-[var(--text-3)] text-xl sm:text-[22px] sm:font-medium">
                   We believe in sustainable energy practices that can help
                   topnotch solar panel installation services.
                 </div>
@@ -100,7 +100,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden sm:block right-0 bottom-0 h-150 transition-transform ease-in-out duration-[2s]"
+          className="absolute hidden sm:block right-0 bottom-0 h-[600px] transition-transform ease-in-out duration-[2s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}

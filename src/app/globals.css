@@ -30,7 +30,7 @@
   --text-1: #5c6972;
   --text-2: #9b9b9b;
   --text-3: #b0b6bc;
-  --text-4: #d6dee7ff;
+  --text-4: #d2d8e0ff;
   --light-blue-grey-1: #f5f7fa;
   --light-green-1: #e4f3e2;
   --light-green-2: #e7f8f0;
@@ -77,6 +77,7 @@ button {
 .group:hover .group-hover-flicker {
   animation: flicker 0.7s ease-in-out; /* Run animation once on group hover */
 }
+
 @keyframes shake {
   0%,
   100% {
@@ -109,4 +110,46 @@ button {
 
 .group:hover .group-hover-shake {
   animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake-rotate-five {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(15deg);
+  }
+  10% {
+    transform: rotate(-15deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-15deg);
+  }
+  35% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  45% {
+    transform: rotate(0deg);
+  }
+
+  /* Pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.shake {
+  animation: shake-rotate-five 3s infinite;
 }
