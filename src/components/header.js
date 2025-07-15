@@ -10,7 +10,48 @@ import { BiMenu } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 
 export default function Header({ className }) {
+  const [activeSection, setActiveSection] = useState("home");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [hoverStyle, setHoverStyle] = useState({ opacity: 0 });
+  const [activeStyle, setActiveStyle] = useState({ opacity: 0 });
+
+  useEffect(() => {
+    const sectionIds = [
+      "home",
+      "about",
+      "services",
+      "case-studies",
+      "team",
+      "blog",
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -60% 0px", // Trigger when top is 40% from top of screen
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     if (isSidebarOpen) {
       document.body.style.overflow = "hidden";
@@ -43,14 +84,13 @@ export default function Header({ className }) {
     { name: "Services", onClick: () => scrollTo("services") },
     { name: "Case Studies", onClick: () => scrollTo("case-studies") },
     { name: "Team", onClick: () => scrollTo("team") },
-    { name: "Blog", onClick: () => scrollTo("blogs") },
+    { name: "Blog", onClick: () => scrollTo("blog") },
   ];
 
   const CartItems = [1, 4, 2];
 
   const containerRef = useRef(null);
   const btnRefs = useRef([]);
-  const [underlineStyle, setUnderlineStyle] = useState({ opacity: 0 });
 
   const handleHover = (index) => {
     const containerRect = containerRef.current.getBoundingClientRect();
@@ -58,7 +98,7 @@ export default function Header({ className }) {
     const left = itemRect.left - containerRect.left;
     const width = itemRect.width;
 
-    setUnderlineStyle({
+    setHoverStyle({
       left,
       width,
       opacity: 1,
@@ -66,8 +106,26 @@ export default function Header({ className }) {
   };
 
   const clearHover = () => {
-    setUnderlineStyle({ opacity: 0 });
+    setHoverStyle({ opacity: 0 });
   };
+
+  useEffect(() => {
+    const index = buttons.findIndex(
+      (btn) => btn.name.toLowerCase().replace(" ", "-") === activeSection
+    );
+    if (index !== -1 && btnRefs.current[index]) {
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const itemRect = btnRefs.current[index].getBoundingClientRect();
+      const left = itemRect.left - containerRect.left;
+      const width = itemRect.width;
+
+      setActiveStyle({
+        left,
+        width,
+        opacity: 1,
+      });
+    }
+  }, [activeSection]);
 
   return (
     <div
@@ -100,21 +158,36 @@ export default function Header({ className }) {
       >
         {buttons.map((btn, i) => (
           <NavbarButton
-            className={""}
             key={i}
+            className={""}
             name={btn.name}
             ref={(el) => (btnRefs.current[i] = el)}
             onHover={() => handleHover(i)}
             onClick={btn.onClick}
+            activeSection={activeSection}
           />
         ))}
+        {/* ACTIVE underline */}
         <div
           className="hidden sm:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-500 ease-in-out"
           style={{
             boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.3)",
-            width: underlineStyle.width,
-            left: underlineStyle.left,
-            opacity: underlineStyle.opacity,
+            width: activeStyle.width,
+            left: activeStyle.left,
+            opacity: activeStyle.opacity,
+            zIndex: 0,
+          }}
+        />
+
+        {/* HOVER underline */}
+        <div
+          className="hidden sm:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
+          style={{
+            boxShadow: "0 0 12px rgba(0,255,0,0.4)",
+            width: hoverStyle.width,
+            left: hoverStyle.left,
+            opacity: hoverStyle.opacity,
+            zIndex: 1,
           }}
         />
       </div>
