@@ -86,8 +86,8 @@ export default function TeamSection() {
                 className="absolute cursor-pointer right-12 group-hover:translate-y-3 group-hover:opacity-100 transition-all duration-500
              -bottom-8 rounded-full bg-white p-1"
               >
-                <div className="bg-[var(--primary-color)] p-1 text-5xl group-hover:bg-[var(--text-1)] transition-all duration-500 text-white rounded-full">
-                  <BsPlus className="group-hover:rotate-45  transition-all duration-500" />
+                <div className="bg-[var(--primary-color)] p-1 text-5xl transition-all duration-500 text-white rounded-full">
+                  <BsPlus className="transition-all duration-500" />
                 </div>
               </div>
             </div>

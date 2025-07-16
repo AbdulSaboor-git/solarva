@@ -34,18 +34,21 @@ export default function MainSection({ id }) {
     <div className="flex flex-col w-full z-40" id="home">
       <Header className={"block sm:hidden z-50"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
-        <div className="bg-[var(--dark-3)] absolute top-0 left-0 h-full w-64 hidden sm:block"></div>
-        <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
+        {/* <div className="bg-[var(--dark-3)] absolute top-0 left-0 h-full w-64 hidden sm:block"></div> */}
+        {/* <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
           <div
             className="h-full bg-gradient-to-r 
         from-[var(--dark-3)] via-[var(--dark-3)]/70 to-[var(--dark-3)]/20 "
           ></div>
-        </div>
-        <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
+        </div> */}
+        {/* <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
           <div
             className="h-full bg-gradient-to-b sm:hidden 
         from-[var(--dark-3)]/80 via-[var(--dark-3)]/50 to-transparent "
           ></div>
+        </div> */}
+        <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
+          <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
         <div className="z-10 absolute left-0 text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">

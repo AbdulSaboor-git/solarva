@@ -101,7 +101,7 @@ export default function Header({ className }) {
     setHoverStyle({
       left,
       width,
-      opacity: 1,
+      opacity: 0.75,
     });
   };
 
