@@ -1,16 +1,18 @@
 "use client";
 import Header from "@/components/header";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
 
 export default function MainSection({ id }) {
   const [offsetY, setOffsetY] = useState(0);
-  let employees = 20;
-  let satisfaction = 100;
-  let installations = "6k";
+  const [employees, setEmployees] = useState(0);
+  const [satisfaction, setSatisfaction] = useState(0);
+  const [installations, setInstallations] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false); // prevents re-animating
 
   const [showHeader, setShowHeader] = useState(false);
+  const statsRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,8 +20,8 @@ export default function MainSection({ id }) {
     };
     const handleScroll2 = () => {
       const scrollY = window.scrollY;
-      const limitedOffset = Math.min(scrollY, 90);
-      setOffsetY(limitedOffset);
+      const limitedOffset = Math.min(scrollY, 630);
+      setOffsetY(limitedOffset / 7);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,23 +32,50 @@ export default function MainSection({ id }) {
     };
   }, []);
 
+  useEffect(() => {
+    const animateValue = (start, end, setter, duration = 1000) => {
+      const range = end - start;
+      const stepTime = 20;
+      let current = start;
+      const step = range / (duration / stepTime);
+
+      const interval = setInterval(() => {
+        current += step;
+        if ((step > 0 && current >= end) || (step < 0 && current <= end)) {
+          current = end;
+          clearInterval(interval);
+        }
+        setter(Math.round(current));
+      }, stepTime);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          animateValue(0, 20, setEmployees);
+          animateValue(0, 100, setSatisfaction);
+          animateValue(0, 6000, setInstallations);
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% visible
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
   return (
     <div className="flex flex-col w-full z-40" id="home">
       <Header className={"block sm:hidden z-50"} />
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
-        {/* <div className="bg-[var(--dark-3)] absolute top-0 left-0 h-full w-64 hidden sm:block"></div> */}
-        {/* <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
-          <div
-            className="h-full bg-gradient-to-r 
-        from-[var(--dark-3)] via-[var(--dark-3)]/70 to-[var(--dark-3)]/20 "
-          ></div>
-        </div> */}
-        {/* <div className="absolute h-full w-full top-0 left-0 pl-0 sm:pl-64 ">
-          <div
-            className="h-full bg-gradient-to-b sm:hidden 
-        from-[var(--dark-3)]/80 via-[var(--dark-3)]/50 to-transparent "
-          ></div>
-        </div> */}
         <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
           <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
@@ -104,13 +133,16 @@ export default function MainSection({ id }) {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden sm:block right-0 bottom-0 h-[600px] transition-transform ease-in-out duration-[2s]"
+          className="absolute hidden sm:block right-0 bottom-0 h-[600px] transition-transform ease-linear duration-[1s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}
         />
       </div>
-      <div className="grid grid-cols-1 text-[var(--dark-blue-1)] sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40">
+      <div
+        ref={statsRef}
+        className="grid grid-cols-1 text-[var(--dark-blue-1)] sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40"
+      >
         {/*  */}
         <div className="relative px-10 py-14 sm:py-16  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col  sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <div className="flex flex-col  items-center justify-center gap-1 sm:gap-2">
@@ -141,7 +173,11 @@ export default function MainSection({ id }) {
         {/*  */}
         <div className="px-10 py-14 sm:py-16 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">
           <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
-            <div className="text-5xl font-bold">{installations}+</div>
+            <div className="text-5xl font-bold">
+              {installations >= 1000
+                ? `${(installations / 1000).toFixed(1)}k+`
+                : `${installations}+`}
+            </div>
             <div className="font-semibold  text-center">installations</div>
           </div>
           <div className="text-[var(--text-1)] tracking-wide">
