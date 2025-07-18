@@ -97,8 +97,9 @@ export default function Service({ params }) {
   }, [service_id]);
 
   return (
-    <div>
-      <div className="w-full container">
+    <div className="w-full container">
+      <Header className={"block sm:hidden z-50"} />
+      <div className="w-full">
         <div className="w-full bg-blue-100">
           <div className="flex flex-col pt-5 gap-5 items-start justify-center w-full h-full">
             <div className="w-full px-5 text-[var(--dark-blue-2)]">

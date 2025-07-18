@@ -242,7 +242,7 @@ export default function Header({ className, showCurrentPageHighlight }) {
           } transition-all duration-500`}
           onClick={() => setIsSidebarOpen(false)}
         />
-        <img src="logo2.png" alt="logo" className="w-40" />
+        <img src={logo2} alt="logo" className="w-40" />
         <div className="relative w-full">
           <input
             type="text"
