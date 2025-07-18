@@ -13,7 +13,7 @@ import {
 const email = "solarva@gmail.com";
 const address = "213 Madison street, London";
 
-export default function MainSection_Top({ className }) {
+export default function Header_Top({ className }) {
   const socials = [
     { name: "Facebook", icon: RiFacebookFill },
     { name: "Instagram", icon: RiInstagramFill },
@@ -28,7 +28,7 @@ export default function MainSection_Top({ className }) {
       <div className="flex flex-row w-full items-center justify-start gap-6">
         <div className="flex flex-row items-center gap-4 group cursor-pointer">
           <div className="bg-[var(--primary-color)] p-2 rounded-full">
-            <RiMailLine className="group-hover-flicker" />
+            <RiMailLine className="group-hover-flicker text-white" />
           </div>
           <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg pr-6 border-r border-gray-500">
             {email}
@@ -36,7 +36,7 @@ export default function MainSection_Top({ className }) {
         </div>
         <div className="flex flex-row items-center gap-4 group  cursor-pointer">
           <div className="bg-[var(--primary-color)] p-2 rounded-full ">
-            <RiMapPinLine className="group-hover-flicker" />
+            <RiMapPinLine className="group-hover-flicker text-white" />
           </div>
           <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg">
             {address}

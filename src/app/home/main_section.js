@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header";
 import React, { useEffect, useRef, useState } from "react";
-import Section1_Top from "./components/main_section_top";
+import Header_Top from "@/components/header_top";
 import Button1 from "@/components/button1";
 
 export default function MainSection() {
@@ -86,7 +86,7 @@ export default function MainSection() {
         <div className="z-10 absolute left-0 text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
             <div className="w-full px-5">
-              <Section1_Top className={"hidden sm:flex"} />
+              <Header_Top className={"hidden sm:flex"} />
             </div>
             <div
               className={`z-50 w-full px-5 transition-all duration-300 ${

@@ -17,6 +17,7 @@ import {
 } from "react-icons/ri";
 
 export default function Footer() {
+  const logo = "/logo.png";
   return (
     <div className="flex flex-col gap-16 sm:gap-20 w-full bg-[var(--secondary-color)]">
       <div className="grid grid-cols-1 px-4 sm:px-0 text-white sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40">
@@ -59,7 +60,7 @@ export default function Footer() {
       </div>
       <div className="w-full px-4 sm:px-6 sm:pb-10 grid gap-12 text-[17px] text-[var(--text-2)] grid-cols-1 sm:grid-cols-[1.6fr_1fr_1fr_1fr_1.6fr]">
         <div className="flex flex-col items-start justify-start gap-8">
-          <img src="logo.png" alt="logo" className="w-40 aspect-auto" />
+          <img src={logo} alt="logo" className="w-40 aspect-auto" />
           <div className="flex text-xl text-white items-center gap-[2px]">
             <div className="bg-white/10 p-4 hover:bg-[var(--primary-color)] cursor-pointer transition-colors duration-300">
               <RiFacebookFill />

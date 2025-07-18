@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { FaSolarPanel } from "react-icons/fa";
 import { MdSolarPower } from "react-icons/md";
-
+import { useRouter } from "next/navigation";
 import { SiGreenhouse, SiSunrise } from "react-icons/si";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,9 +13,14 @@ import { GiElectric } from "react-icons/gi";
 import ServiceSlide from "./components/service_slide";
 
 export default function ServicesSection() {
+  const router = useRouter();
   const swiperRef = useRef(null);
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
+
+  function handleServiceClick(id) {
+    router.push(`/service/${id}`);
+  }
 
   let services = [
     {
@@ -73,6 +78,7 @@ export default function ServicesSection() {
       link: "solar-panel-production",
     },
   ];
+
   return (
     <div id="services" className="flex flex-col w-full">
       <div className="flex flex-col pt-150 sm:pt-0 relative bg-[url('/bg.png')] bg-top sm:bg-left-top w-full">
@@ -131,7 +137,10 @@ export default function ServicesSection() {
           >
             {services.map((service) => (
               <SwiperSlide key={service.id} className="px-4">
-                <ServiceSlide service={service} />
+                <ServiceSlide
+                  service={service}
+                  onClick={() => handleServiceClick(service.id)}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

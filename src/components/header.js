@@ -9,11 +9,13 @@ import NavbarButton from "./navbar_button";
 import { BiMenu } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 
-export default function Header({ className }) {
-  const [activeSection, setActiveSection] = useState("home");
+export default function Header({ className, showCurrentPageHighlight }) {
+  const [activeSection, setActiveSection] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [hoverStyle, setHoverStyle] = useState({ opacity: 0 });
   const [activeStyle, setActiveStyle] = useState({ opacity: 0 });
+  const logo = `/logo.png`;
+  const logo2 = "/logo2.png";
 
   useEffect(() => {
     const sectionIds = [
@@ -79,12 +81,30 @@ export default function Header({ className }) {
   };
 
   const buttons = [
-    { name: "Home", onClick: () => scrollTo("home") },
-    { name: "About", onClick: () => scrollTo("about") },
-    { name: "Services", onClick: () => scrollTo("services") },
-    { name: "Case Studies", onClick: () => scrollTo("case-studies") },
-    { name: "Team", onClick: () => scrollTo("team") },
-    { name: "Blog", onClick: () => scrollTo("blog") },
+    {
+      name: "Home",
+      onClick: () => showCurrentPageHighlight && scrollTo("home"),
+    },
+    {
+      name: "About",
+      onClick: () => showCurrentPageHighlight && scrollTo("about"),
+    },
+    {
+      name: "Services",
+      onClick: () => showCurrentPageHighlight && scrollTo("services"),
+    },
+    {
+      name: "Case Studies",
+      onClick: () => showCurrentPageHighlight && scrollTo("case-studies"),
+    },
+    {
+      name: "Team",
+      onClick: () => showCurrentPageHighlight && scrollTo("team"),
+    },
+    {
+      name: "Blog",
+      onClick: () => showCurrentPageHighlight && scrollTo("blog"),
+    },
   ];
 
   const CartItems = [1, 4, 2];
@@ -133,7 +153,7 @@ export default function Header({ className }) {
       items-center justify-between gap-6 sm:text-white bg-white sm:bg-[var(--dark-blue-2)] sm:rounded-lg`}
     >
       <img
-        src="logo2.png"
+        src={logo2}
         alt="logo"
         className="block sm:hidden aspect-auto h-12"
       />
@@ -145,7 +165,7 @@ export default function Header({ className }) {
         onClick={() => setIsSidebarOpen(true)}
       />
       <img
-        src="logo.png"
+        src={logo}
         alt="logo"
         className="hidden sm:block h-9 cursor-pointer"
       />

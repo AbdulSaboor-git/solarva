@@ -1,8 +1,11 @@
 import React from "react";
 
-export default function ServiceSlide({ service }) {
+export default function ServiceSlide({ service, onClick }) {
   return (
-    <div className="bg-white cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden">
+    <div
+      className="bg-white cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden"
+      onClick={onClick}
+    >
       <div className="p-6 pt-10 sm:pt-12 sm:p-12 flex flex-col items-start gap-5">
         <div className="text-[22px] sm:text-2xl text-[var(--link-color)] font-semibold line-clamp-1">
           {service.title}
