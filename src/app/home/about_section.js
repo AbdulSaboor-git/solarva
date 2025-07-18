@@ -9,7 +9,7 @@ export default function AboutSection() {
       id="about"
       className="w-full p-5 grid grid-cols-1 gap-20 sm:gap-0 sm:grid-cols-[1.08fr_1fr] "
     >
-      <div className="relative  bg-[url('/img2.png')] bg-cover aspect-square">
+      <div className="relative   bg-[url('/img2.png')] bg-cover aspect-square sm:aspect-auto">
         <div className="absolute w-full h-full top-0 left-0 bg-white/50" />
         <div className="absolute h-[280px] sm:h-auto max-w-[165px] sm:max-w-[310px] left-0 bottom-0 z-10 overflow-hidden">
           <img

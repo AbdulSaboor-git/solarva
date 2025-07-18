@@ -37,7 +37,7 @@ export default function MainSection() {
   }, []);
 
   useEffect(() => {
-    const animateValue = (start, end, setter, duration = 1000) => {
+    const animateValue = (start, end, setter, duration = 1400) => {
       const range = end - start;
       const stepTime = 20;
       let current = start;
@@ -91,7 +91,7 @@ export default function MainSection() {
             <div
               className={`z-50 w-full px-5 transition-all duration-300 ${
                 showHeader
-                  ? "fixed translate-y-3 top-2 "
+                  ? "fixed translate-y-3 top-2"
                   : "block translate-y-0 transition-none"
               } `}
             >
@@ -154,7 +154,7 @@ export default function MainSection() {
             <div className="font-semibold text-center">Employees</div>
           </div>
           <div className=" tracking-wide text-[var(--text-1)]">
-            We have {employeesCounter}+ amazing expert solar expert for repair &
+            We have {employees}+ amazing expert solar expert for repair &
             installation
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
@@ -169,8 +169,8 @@ export default function MainSection() {
             <div className="font-semibold text-center">Client Satisfaction</div>
           </div>
           <div className="text-[var(--text-1)] tracking-wide">
-            We achieved {satisfactionCounter}% of our client satisfaction
-            through our work
+            We achieved {satisfaction}% of our client satisfaction through our
+            work
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
