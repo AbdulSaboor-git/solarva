@@ -4,11 +4,15 @@ import React, { useEffect, useRef, useState } from "react";
 import Section1_Top from "./components/main_section_top";
 import Button1 from "@/components/button1";
 
-export default function MainSection({ id }) {
+export default function MainSection() {
+  const employees = 20;
+  const satisfaction = 100;
+  const installations = 6000;
+
   const [offsetY, setOffsetY] = useState(0);
-  const [employees, setEmployees] = useState(0);
-  const [satisfaction, setSatisfaction] = useState(0);
-  const [installations, setInstallations] = useState(0);
+  const [employeesCounter, setEmployeesCounter] = useState(0);
+  const [satisfactionCounter, setSatisfactionCounter] = useState(0);
+  const [installationsCounter, setInstallationsCounter] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false); // prevents re-animating
 
   const [showHeader, setShowHeader] = useState(false);
@@ -52,9 +56,9 @@ export default function MainSection({ id }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
-          animateValue(0, 20, setEmployees);
-          animateValue(0, 100, setSatisfaction);
-          animateValue(0, 6000, setInstallations);
+          animateValue(0, employees, setEmployeesCounter);
+          animateValue(0, satisfaction, setSatisfactionCounter);
+          animateValue(0, installations, setInstallationsCounter);
           setHasAnimated(true);
         }
       },
@@ -146,11 +150,11 @@ export default function MainSection({ id }) {
         {/*  */}
         <div className="relative px-10 py-14 sm:py-16  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col  sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <div className="flex flex-col  items-center justify-center gap-1 sm:gap-2">
-            <div className="text-5xl font-bold">{employees}+</div>
+            <div className="text-5xl font-bold">{employeesCounter}+</div>
             <div className="font-semibold text-center">Employees</div>
           </div>
           <div className=" tracking-wide text-[var(--text-1)]">
-            We have {employees}+ amazing expert solar expert for repair &
+            We have {employeesCounter}+ amazing expert solar expert for repair &
             installation
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
@@ -161,12 +165,12 @@ export default function MainSection({ id }) {
             className="flex flex-col min-w-fit
            items-center justify-center gap-1 sm:gap-2"
           >
-            <div className="text-5xl font-bold">{satisfaction}%</div>
+            <div className="text-5xl font-bold">{satisfactionCounter}%</div>
             <div className="font-semibold text-center">Client Satisfaction</div>
           </div>
           <div className="text-[var(--text-1)] tracking-wide">
-            We achieved {satisfaction}% of our client satisfaction through our
-            work
+            We achieved {satisfactionCounter}% of our client satisfaction
+            through our work
           </div>
           <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
@@ -174,11 +178,11 @@ export default function MainSection({ id }) {
         <div className="px-10 py-14 sm:py-16 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">
           <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
             <div className="text-5xl font-bold">
-              {installations >= 1000
-                ? `${(installations / 1000).toFixed(1)}k+`
-                : `${installations}+`}
+              {installationsCounter >= 1000
+                ? `${(installationsCounter / 1000).toFixed(1)}k+`
+                : `${installationsCounter}+`}
             </div>
-            <div className="font-semibold  text-center">installations</div>
+            <div className="font-semibold  text-center">Installations</div>
           </div>
           <div className="text-[var(--text-1)] tracking-wide">
             We have 20 years of experience in installing panels for our clients.
