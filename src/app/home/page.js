@@ -10,8 +10,8 @@ import TeamSection from "./team_section";
 import WorkProcessSection from "./work_process_section";
 import BlogSection from "./blogs_section";
 import Footer from "@/components/footer";
-import { FaArrowUp } from "react-icons/fa";
 import ScrollToTop from "./components/scroll_to_top";
+import Header from "@/components/header";
 
 export default function HomePage() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -40,28 +40,29 @@ export default function HomePage() {
   return (
     <div
       className="relative container w-full 
-    flex flex-col items-center justify-start 
-    gap-24 sm:gap-20"
+    flex flex-col items-center"
     >
       <ScrollToTop
         showScrollToTop={showScrollToTop}
         onClick={scrollToTop}
         scrollPercent={scrollPercent}
       />
-
-      <MainSection />
-      <AboutSection />
-      <ServicesSection />
-      <WhyUsSection />
-      <div className="w-full">
-        <SkillsSection />
-        <CaseStudiesSection />
-        <TeamSection />
-      </div>
-      <WorkProcessSection />
-      <div className="w-full">
-        <BlogSection />
-        <Footer />
+      <Header theme={"dark"} homePage={true} />
+      <div className="w-full flex flex-col items-center gap-24 sm:gap-20 justify-start">
+        <MainSection />
+        <AboutSection />
+        <ServicesSection />
+        <WhyUsSection />
+        <div className="w-full">
+          <SkillsSection />
+          <CaseStudiesSection />
+          <TeamSection />
+        </div>
+        <WorkProcessSection />
+        <div className="w-full">
+          <BlogSection />
+          <Footer />
+        </div>
       </div>
     </div>
   );

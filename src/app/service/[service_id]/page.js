@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import Header_Top from "@/components/header_top";
 import React, { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 import { FaSolarPanel } from "react-icons/fa";
@@ -68,23 +67,17 @@ export default function Service({ params }) {
       link: "solar-panel-production",
     },
   ];
-  const [showHeader, setShowHeader] = useState(false);
   const [offsetX, setOffsetX] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeader(window.scrollY > 30);
-    };
-    const handleScroll2 = () => {
       const scrollY = window.scrollY;
       const limitedOffset = Math.min(scrollY, 400);
       setOffsetX(limitedOffset / 7);
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScroll2);
     return () => {
-      window.removeEventListener("scroll", handleScroll2);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -97,32 +90,10 @@ export default function Service({ params }) {
   }, [service_id]);
 
   return (
-    <div className="w-full container">
-      <Header className={"block sm:hidden z-50"} />
-      <div className="w-full">
-        <div className="w-full bg-blue-100">
-          <div className="flex flex-col pt-5 gap-5 items-start justify-center w-full h-full">
-            <div className="w-full px-5 text-[var(--dark-blue-2)]">
-              <Header_Top className={"hidden sm:flex"} />
-            </div>
-            <div
-              className={`z-50 w-full px-5 transition-all duration-300 ${
-                showHeader
-                  ? "fixed translate-y-3 top-2"
-                  : "block translate-y-0 transition-none"
-              } `}
-            >
-              <Header
-                className={`hidden sm:grid sm:mx-0 sm:w-full ${
-                  showHeader && "mx-5"
-                }`}
-              />
-            </div>
-            <div
-              className={`
-              ${showHeader ? "sm:p-[44px]" : "hidden"}`}
-            ></div>
-          </div>
+    <div className="w-full container flex flex-col items-center">
+      <Header theme={"light"} />
+      <div className="w-full flex flex-col gap-20 sm:gap-20 items-center justify-start">
+        <div className="w-full pt-48 bg-blue-100">
           <div className="w-full px-5 flex items-center overflow-hidden justify-start relative h-[27rem]">
             <div className="absolute right-0 -bottom-4 overflow-hidden">
               <img
@@ -155,8 +126,8 @@ export default function Service({ params }) {
           </div>
         </div>
         <div className="h-[20rem] w-full"></div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

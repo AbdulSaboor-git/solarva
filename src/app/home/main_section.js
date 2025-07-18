@@ -1,7 +1,5 @@
 "use client";
-import Header from "@/components/header";
 import React, { useEffect, useRef, useState } from "react";
-import Header_Top from "@/components/header_top";
 import Button1 from "@/components/button1";
 
 export default function MainSection() {
@@ -15,29 +13,23 @@ export default function MainSection() {
   const [installationsCounter, setInstallationsCounter] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false); // prevents re-animating
 
-  const [showHeader, setShowHeader] = useState(false);
   const statsRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeader(window.scrollY > 30);
-    };
-    const handleScroll2 = () => {
       const scrollY = window.scrollY;
       const limitedOffset = Math.min(scrollY, 630);
       setOffsetY(limitedOffset / 7);
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScroll2);
     return () => {
-      window.removeEventListener("scroll", handleScroll2);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
-    const animateValue = (start, end, setter, duration = 1400) => {
+    const animateValue = (start, end, setter, duration = 1000) => {
       const range = end - start;
       const stepTime = 20;
       let current = start;
@@ -78,33 +70,13 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full z-40" id="home">
-      <Header className={"block sm:hidden z-50"} />
+      {/* <Header className={"block sm:hidden z-50"} /> */}
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
         <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
           <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
         <div className="z-10 absolute left-0 text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
-            <div className="w-full px-5">
-              <Header_Top className={"hidden sm:flex"} />
-            </div>
-            <div
-              className={`z-50 w-full px-5 transition-all duration-300 ${
-                showHeader
-                  ? "fixed translate-y-3 top-2"
-                  : "block translate-y-0 transition-none"
-              } `}
-            >
-              <Header
-                className={`hidden sm:grid sm:mx-0 sm:w-full ${
-                  showHeader && "mx-5"
-                }`}
-              />
-            </div>
-            <div
-              className={`
-                  ${showHeader ? "sm:p-[44px]" : "hidden"}`}
-            ></div>
             <div className="w-full px-5 h-full max-w-[550px] flex flex-col gap-7 items-start justify-center">
               <div className="flex flex-row items-center justify-start gap-2.5 text-[var(--primary-color)] ">
                 <div className="flex items-center">
