@@ -166,7 +166,7 @@ export default function Service({ params }) {
       <ScrollToTop />
       <Header theme={"light"} />
       <div className="w-full flex flex-col gap-20 sm:gap-32 items-center justify-start">
-        <SubPagesTopSection title={service?.title} />
+        <SubPagesTopSection mainTitle={"Our Services"} title={service?.title} />
         <div className="flex flex-col-reverse gap-10 sm:gap-0 sm:flex-row w-full px-5">
           <div className="relative min-w-[33%]">
             <div

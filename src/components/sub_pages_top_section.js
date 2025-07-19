@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
-export default function SubPagesTopSection({ title }) {
+export default function SubPagesTopSection({ mainTitle, title }) {
   const [offsetX, setOffsetX] = useState(0);
   const router = useRouter();
 
@@ -38,7 +38,7 @@ export default function SubPagesTopSection({ title }) {
         </div>
         <div className="relative z-10 flex flex-col gap-1 sm:gap-5 h-full sm:mt-52 max-w-[300px] sm:max-w-max">
           <h1 className="text-[40px] sm:text-6xl font-bold text-[var(--dark-3)]">
-            Our Services
+            {mainTitle}
           </h1>
           <div className="flex flow-row gap-5 sm:text-xl text-base items-center">
             <span

@@ -13,7 +13,7 @@ export default function MainSection() {
   const [employeesCounter, setEmployeesCounter] = useState(0);
   const [satisfactionCounter, setSatisfactionCounter] = useState(0);
   const [installationsCounter, setInstallationsCounter] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false); // prevents re-animating
+  const hasAnimated = useRef(false); // prevents re-animating
 
   const statsRef = useRef(null);
 
@@ -49,11 +49,11 @@ export default function MainSection() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry.isIntersecting && !hasAnimated.current) {
           animateValue(0, employees, setEmployeesCounter);
           animateValue(0, satisfaction, setSatisfactionCounter);
           animateValue(0, installations, setInstallationsCounter);
-          setHasAnimated(true);
+          hasAnimated.current = true;
         }
       },
       { threshold: 0.3 } // Trigger when 30% visible

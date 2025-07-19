@@ -2,8 +2,15 @@ import React from "react";
 import Section2_SpinningLogo from "./components/about_section_spinning_logo";
 import { RiCheckFill } from "react-icons/ri";
 import Button1 from "@/components/button1";
+import { useRouter } from "next/navigation";
 
 export default function AboutSection() {
+  const router = useRouter();
+
+  function clickContactUs() {
+    router.push(`/contact-us`);
+  }
+
   return (
     <div
       id="about"
@@ -95,6 +102,7 @@ export default function AboutSection() {
           text={"Contact Solarva"}
           bg="var(--dark-2)"
           textColor="#ffffff"
+          onClick={clickContactUs}
         />
       </div>
     </div>
