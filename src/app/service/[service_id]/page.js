@@ -1,17 +1,27 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { BsChevronRight } from "react-icons/bs";
+import SubPagesTopSection from "@/components/sub_pages_top_section";
+import React, { useEffect, useRef, useState } from "react";
+import { BiChevronRight, BiPhone, BiPhoneCall } from "react-icons/bi";
 import { FaSolarPanel } from "react-icons/fa";
 import { GiElectric } from "react-icons/gi";
-import { MdSolarPower } from "react-icons/md";
+import { MdAdd, MdSolarPower } from "react-icons/md";
 import { SiGreenhouse, SiSunrise } from "react-icons/si";
+import ServiceTitle from "./components/service_title";
+import { useRouter } from "next/navigation";
+import { RiCheckFill } from "react-icons/ri";
+import ScrollToTop from "@/app/home/components/scroll_to_top";
+import FAQ from "./components/faq";
 
 export default function Service({ params }) {
   const [service, setService] = useState(null);
   const { service_id } = React.use(params);
+  const stickyRef = useRef(null);
+  const rightRef = useRef(null);
+  const [isFixed, setIsFixed] = useState(false);
+  const router = useRouter();
+
   const services = [
     {
       id: 1,
@@ -68,24 +78,76 @@ export default function Service({ params }) {
       link: "solar-panel-production",
     },
   ];
-  const [offsetX, setOffsetX] = useState(0);
-  const router = useRouter();
 
-  const gotoHome = () => {
-    router.push("/home");
-  };
+  const freqAskedQuestions = [
+    {
+      question: "What papers needed for solar installation?",
+      answer:
+        "We’re finding ways to bring energy to more people in more ways every day, so that all of us can be part of the changing energy system. Because Powering Progress means providing more",
+    },
+    {
+      question: "How do you evaluate the cost of solar repair?",
+      answer:
+        "We’re finding ways to bring energy to more people in more ways every day, so that all of us can be part of the changing energy system. Because Powering Progress means providing more",
+    },
+    {
+      question: "What is the per square-feet cost of panel installation?",
+      answer:
+        "We’re finding ways to bring energy to more people in more ways every day, so that all of us can be part of the changing energy system. Because Powering Progress means providing more",
+    },
+    {
+      question: "When should we check the battery connections?",
+      answer:
+        "We’re finding ways to bring energy to more people in more ways every day, so that all of us can be part of the changing energy system. Because Powering Progress means providing more",
+    },
+  ];
+
+  const service_options = [
+    {
+      title: "Documentation List",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+    {
+      title: "Application submission",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+    {
+      title: "Inspection",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+    {
+      title: "Documentation List",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+    {
+      title: "Panel Installation",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+    {
+      title: "Grid connection",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus similique veniam quos voluptatum suscipit. ",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const limitedOffset = Math.min(scrollY, 400);
-      setOffsetX(limitedOffset / 7);
+      const stickyBox = stickyRef.current;
+      const rightBox = rightRef.current;
+
+      if (!stickyBox || !rightBox) return;
+
+      const stickyBottom = stickyBox.getBoundingClientRect().bottom;
+      const rightBottom = rightBox.getBoundingClientRect().bottom;
+
+      if (isFixed && rightBottom <= stickyBottom + 20) {
+        setIsFixed(false);
+      } else {
+        setIsFixed(true);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -95,43 +157,163 @@ export default function Service({ params }) {
     }
   }, [service_id]);
 
+  function serviceClick(id) {
+    router.push(`/service/${id}`);
+  }
+
   return (
     <div className="w-full container flex flex-col items-center">
+      <ScrollToTop />
       <Header theme={"light"} />
-      <div className="w-full flex flex-col gap-20 sm:gap-20 items-center justify-start">
-        <div className="w-full pt-48 bg-blue-100">
-          <div className="w-full px-5 flex items-center overflow-hidden justify-start relative h-[25rem] sm:h-[27rem]">
-            <div className="absolute right-0 -bottom-4 overflow-hidden">
+      <div className="w-full flex flex-col gap-20 sm:gap-32 items-center justify-start">
+        <SubPagesTopSection title={service?.title} />
+        <div className="grid grid-cols-[1.4fr_3fr] w-full px-5">
+          <div className="relative">
+            <div
+              ref={stickyRef}
+              className={`flex flex-col w-full gap-8 ${
+                isFixed ? "sticky top-32" : "relative"
+              } transition-all duration-200`}
+            >
+              <div className="flex w-full flex-col gap-4">
+                {services.map((s) => (
+                  <div key={s.id} onClick={() => serviceClick(s.id)}>
+                    <ServiceTitle s={s} isActive={s.id == service_id} />
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-xl flex flex-col items-center justify-end relative overflow-hidden w-full h-screen bg-cover bg-right bg-[url('/user6.webp')] ">
+                <svg
+                  className="w-full h-[400px] absolute bottom-0 left-0"
+                  viewBox="0 0 500 150"
+                  preserveAspectRatio="none"
+                >
+                  {/* Outer curve (dark) */}
+                  <path
+                    d="M0,75 C230,10 490,130 580,-85 L500,150 L0,150 Z"
+                    className="fill-[var(--primary-color)]"
+                  />
+
+                  {/* Inner curve (primary color) */}
+                  <path
+                    d="M-10,90 C230,15 400,85 500,20 L500,150 L0,150 Z"
+                    className="fill-[var(--dark-2)]"
+                  />
+                </svg>
+                <div className="relative flex flex-col items-center justify-center gap-6 z-10 text-white pb-8">
+                  <h1 className="text-3xl font-semibold">Solar Solutions</h1>
+                  <div className="bg-[var(--primary-color)] rounded-lg pr-1.5">
+                    <div className="flec flex-col w-full gap-3 rounded-lg text-[var(--dark-2)] bg-white py-6 px-8 pl-14 relative">
+                      <div className="text-center">Need Help? Call Us Now</div>
+                      <div className="text-center  text-2xl font-semibold tracking-wider">
+                        +92-900-786-01
+                      </div>
+                      <div className="bg-green-400/40 p-1 rounded-full absolute w-fit h-fit top-1/2 -translate-y-1/2 -left-7">
+                        <div className="bg-[var(--primary-color)] p-3  text-white text-3xl w-fit rounded-full">
+                          <BiPhoneCall className="shake" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            ref={rightRef}
+            className="flex flex-col gap-12 text-xl text-[var(--dark-2)] tracking-wide items-start pl-14"
+          >
+            <div className="flex flex-col gap-8">
+              <div className="text-5xl font-semibold ">{service?.title}</div>
+              <div className="text-[var(--text-1)]">
+                We guide our clients through difficult issues, bringing insight
+                and judgment to each situation. Our innovatve approaches create
+                original solutions to our clients’ most complex domestic & multi
+                juristictional deal sid disputes. By thinking on behalf of our
+                clients every day, we anticipate what they want, ineed and build
+                lasting relationships.
+              </div>
+              <div className="text-[var(--primary-color)] font-semibold text-[22px]">
+                Over the last 31 Years we made an impact, we have long way to
+                go.
+              </div>
+              <div className="text-[var(--text-1)]">
+                These are the concepts that shape our distinctive culture &
+                differentiate us from others. They true the unique spirit of our
+                Firm guide the behaviors that enable us to deliver the promises
+                we make to our clients and our people.
+              </div>
+              <div className="text-3xl font-semibold ">Service Process</div>
+              <div className="text-xl font-semibold">
+                At Solarva our culture comes to life through three core values:
+              </div>
+              <div className="flex flex-col text-xl text-[var(--text-1)] gap-4 pl-10">
+                <div className="flex items-center gap-4">
+                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                    <RiCheckFill className="text-sm" />
+                  </div>
+                  We seize opportunities to innovate and grow
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                    <RiCheckFill className="text-sm" />
+                  </div>
+                  We are one firm with a shared sense of purpose
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                    <RiCheckFill className="text-sm" />
+                  </div>
+                  We care about each other and the world around us
+                </div>
+              </div>
+            </div>
+            <div className="grid py-4 w-full h-[250px] overflow-hidden grid-cols-2 gap-8">
               <img
-                src="/img10.webp"
-                alt="img10"
-                className="w-full aspect-auto object-cover transition-all duration-[1s] ease-linear"
-                style={{
-                  transform: `translateX(${offsetX}px)`,
-                }}
+                src="/service1.webp"
+                alt=""
+                className="h-full aspect-auto object-cover"
+              />
+              <img
+                src="/service2.webp"
+                alt=""
+                className="h-full aspect-auto object-cover"
               />
             </div>
-            <div className="flex flex-col gap-5">
-              <h1 className="text-3xl sm:text-6xl font-bold text-[var(--dark-3)]">
-                Our Services
-              </h1>
-              <div className="flex flow-row gap-5 sm:text-xl text-base items-center">
-                <span
-                  className="text-[var(--text-1)] cursor-pointer"
-                  onClick={gotoHome}
-                >
-                  HOME
-                </span>
-                <BsChevronRight className="text-base" />
-                <span className="text-[var(--primary-color)] uppercase">
-                  {service?.title}
-                </span>
+            <div className="flex flex-col text-base w-full gap-4">
+              {freqAskedQuestions.map((item, i) => (
+                <div key={i}>
+                  <FAQ item={item} />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-8 w-full py-10">
+              <div className="text-3xl font-semibold ">Service Options</div>
+              <img
+                src="/img7.webp"
+                alt="abc"
+                className="w-full h-[320px] object-cover aspect-auto"
+              />
+              <div className="grid grid-cols-2 gap-14 pt-6">
+                {service_options.map((s, i) => (
+                  <div key={i} className="w-full">
+                    <div className="flex gap-8 w-full items-start">
+                      <div className=" p-1 shadow-lg shadow-black/20 text-xl font-semibold text-[var(--primary-color)] rounded-full">
+                        <div className="rounded-full flex items-center justify-center aspect-square w-8 text-center">
+                          {i + 1}
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-4 items-start">
+                        <h1 className="font-semibold text-2xl">{s.title}</h1>
+                        <p className="text-lg text-[var(--text-1)]">{s.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div></div>
             </div>
           </div>
         </div>
-        <div className="h-[20rem] w-full"></div>
         <Footer />
       </div>
     </div>

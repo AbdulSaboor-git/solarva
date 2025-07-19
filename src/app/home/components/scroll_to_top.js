@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-export default function ScrollToTop({
-  showScrollToTop,
-  onClick,
-  scrollPercent,
-}) {
+export default function ScrollToTop({}) {
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const handleScroll3 = () => {
+      const scrollY = window.scrollY;
+      const pageHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const percent = (scrollY / pageHeight) * 100;
+
+      setScrollPercent(percent);
+      setShowScrollToTop(scrollY > 500);
+    };
+
+    window.addEventListener("scroll", handleScroll3);
+    handleScroll3(); // trigger once on mount
+    return () => window.removeEventListener("scroll", handleScroll3);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div
-      onClick={onClick}
+      onClick={scrollToTop}
       className={`fixed cursor-pointer z-50 bottom-6 right-6 sm:bottom-8 sm:right-8 
     overflow-visible text-white p-[2px] rounded-full
     ${

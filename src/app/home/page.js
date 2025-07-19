@@ -14,39 +14,12 @@ import ScrollToTop from "./components/scroll_to_top";
 import Header from "@/components/header";
 
 export default function HomePage() {
-  const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [scrollPercent, setScrollPercent] = useState(0);
-
-  useEffect(() => {
-    const handleScroll3 = () => {
-      const scrollY = window.scrollY;
-      const pageHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const percent = (scrollY / pageHeight) * 100;
-
-      setScrollPercent(percent);
-      setShowScrollToTop(scrollY > 500);
-    };
-
-    window.addEventListener("scroll", handleScroll3);
-    handleScroll3(); // trigger once on mount
-    return () => window.removeEventListener("scroll", handleScroll3);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <div
       className="relative container w-full 
     flex flex-col items-center"
     >
-      <ScrollToTop
-        showScrollToTop={showScrollToTop}
-        onClick={scrollToTop}
-        scrollPercent={scrollPercent}
-      />
+      <ScrollToTop />
       <Header theme={"dark"} homePage={true} />
       <div className="w-full flex flex-col items-center gap-24 sm:gap-20 justify-start">
         <MainSection />
