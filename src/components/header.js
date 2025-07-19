@@ -47,7 +47,7 @@ export default function Header({ className, homePage = false, theme }) {
     if (typeof window === "undefined") return;
     let offset = 0;
     if (id != "home" && !isSidebarOpen) {
-      offset = 60;
+      offset = 30;
     }
     const el = document.getElementById(id);
     setIsSidebarOpen(false);
@@ -210,6 +210,7 @@ export default function Header({ className, homePage = false, theme }) {
           ))}
         </div>
       </div>
+      {/* android header */}
       <div
         className={`w-full sm:w-auto flex flex-row sm:grid sm:grid-cols-[0.7fr_3fr_0.7fr] p-4 sm:py-0 sm:px-8 
       items-center justify-between gap-6 sm:text-white bg-white sm:bg-[var(--dark-blue-2)] sm:rounded-lg`}
@@ -221,7 +222,7 @@ export default function Header({ className, homePage = false, theme }) {
         />
         <BiMenu
           size={30}
-          className={`block sm:hidden ${
+          className={`block text-[var(--dark-blue-2)] sm:hidden ${
             isSidebarOpen && "-rotate-180 scale-0"
           } transition-all duration-500`}
           onClick={() => setIsSidebarOpen(true)}
@@ -291,6 +292,7 @@ export default function Header({ className, homePage = false, theme }) {
             </div>
           </div>
         </div>
+        {/* side bar */}
         <div
           className={`sm:hidden fixed left-0 top-0 bg-white w-screen h-screen z-50 p-7 py-10 flex flex-col gap-9
          -translate-x-full ${
@@ -299,9 +301,9 @@ export default function Header({ className, homePage = false, theme }) {
           `}
         >
           <MdClose
-            className={`absolute top-5 right-4 text-3xl ${
-              !isSidebarOpen && "-rotate-180 scale-0"
-            } transition-all duration-500`}
+            className={`text-[var(--dark-blue-2)] absolute top-5 right-4 text-3xl ${
+              !isSidebarOpen && "rotate-180 scale-0"
+            } transition-all duration-700`}
             onClick={() => setIsSidebarOpen(false)}
           />
           <img src={logo2} alt="logo" className="w-40" />
