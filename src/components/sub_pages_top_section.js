@@ -24,20 +24,20 @@ export default function SubPagesTopSection({ title }) {
   }, []);
 
   return (
-    <div className="w-full pt-48 bg-blue-100">
-      <div className="w-full px-5 flex items-center overflow-hidden justify-start relative h-[25rem] sm:h-[27rem]">
-        <div className="absolute right-0 -bottom-4 overflow-hidden">
+    <div className="w-full pt-36 sm:pt-48 bg-cyan-100">
+      <div className="w-full px-5 flex items-center overflow-hidden justify-start relative h-[15rem] sm:h-[27rem]">
+        <div className="absolute h-full -right-32 -bottom-8 sm:right-0 sm:-bottom-8 overflow-hidden">
           <img
             src="/img10.webp"
             alt="img10"
-            className="w-full aspect-auto object-cover transition-all duration-[1s] ease-linear"
+            className="w-full h-full aspect-auto object-cover transition-all duration-[1s] ease-linear "
             style={{
               transform: `translateX(${offsetX}px)`,
             }}
           />
         </div>
-        <div className="flex flex-col gap-5">
-          <h1 className="text-3xl sm:text-6xl font-bold text-[var(--dark-3)]">
+        <div className="relative z-10 flex flex-col gap-1 sm:gap-5 h-full sm:mt-52 max-w-[300px] sm:max-w-max">
+          <h1 className="text-[40px] sm:text-6xl font-bold text-[var(--dark-3)]">
             Our Services
           </h1>
           <div className="flex flow-row gap-5 sm:text-xl text-base items-center">
@@ -52,7 +52,6 @@ export default function SubPagesTopSection({ title }) {
               {title}
             </span>
           </div>
-          <div></div>
         </div>
       </div>
     </div>

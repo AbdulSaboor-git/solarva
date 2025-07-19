@@ -162,27 +162,27 @@ export default function Service({ params }) {
   }
 
   return (
-    <div className="w-full container flex flex-col items-center">
+    <div className="w-full container flex flex-col items-center bg-gray-50">
       <ScrollToTop />
       <Header theme={"light"} />
       <div className="w-full flex flex-col gap-20 sm:gap-32 items-center justify-start">
         <SubPagesTopSection title={service?.title} />
-        <div className="grid grid-cols-[1.4fr_3fr] w-full px-5">
-          <div className="relative">
+        <div className="flex flex-col-reverse gap-10 sm:gap-0 sm:flex-row w-full px-5">
+          <div className="relative min-w-[33%]">
             <div
               ref={stickyRef}
-              className={`flex flex-col w-full gap-8 ${
-                isFixed ? "sticky top-32" : "relative"
+              className={`flex flex-col w-full gap-14 sm:gap-8 ${
+                isFixed ? "sm:sticky top-28" : "sm:relative"
               } transition-all duration-200`}
             >
-              <div className="flex w-full flex-col gap-4">
+              <div className="flex w-full flex-col gap-2">
                 {services.map((s) => (
                   <div key={s.id} onClick={() => serviceClick(s.id)}>
                     <ServiceTitle s={s} isActive={s.id == service_id} />
                   </div>
                 ))}
               </div>
-              <div className="rounded-xl flex flex-col items-center justify-end relative overflow-hidden w-full h-screen bg-cover bg-right bg-[url('/user6.webp')] ">
+              <div className="rounded-xl flex flex-col items-center justify-end relative overflow-hidden w-full h-[500px] sm:h-[600px] bg-cover bg-center bg-[url('/user6.webp')] ">
                 <svg
                   className="w-full h-[400px] absolute bottom-0 left-0"
                   viewBox="0 0 500 150"
@@ -200,12 +200,14 @@ export default function Service({ params }) {
                     className="fill-[var(--dark-2)]"
                   />
                 </svg>
-                <div className="relative flex flex-col items-center justify-center gap-6 z-10 text-white pb-8">
+                <div className="relative w-full pl-8 sm:pl-8 flex flex-col items-center justify-center gap-6 z-10 text-white px-4 sm:px-8 pb-8">
                   <h1 className="text-3xl font-semibold">Solar Solutions</h1>
                   <div className="bg-[var(--primary-color)] rounded-lg pr-1.5">
-                    <div className="flec flex-col w-full gap-3 rounded-lg text-[var(--dark-2)] bg-white py-6 px-8 pl-14 relative">
-                      <div className="text-center">Need Help? Call Us Now</div>
-                      <div className="text-center  text-2xl font-semibold tracking-wider">
+                    <div className="flec flex-col w-full gap-3 rounded-lg text-[var(--dark-2)] bg-white py-6 px-8 pl-12 sm:pl-14 relative">
+                      <div className="text-center text-sm sm:text-base">
+                        Need Help? Call Us Now
+                      </div>
+                      <div className="text-center text-xl sm:text-2xl font-semibold tracking-wider">
                         +92-900-786-01
                       </div>
                       <div className="bg-green-400/40 p-1 rounded-full absolute w-fit h-fit top-1/2 -translate-y-1/2 -left-7">
@@ -221,10 +223,12 @@ export default function Service({ params }) {
           </div>
           <div
             ref={rightRef}
-            className="flex flex-col gap-12 text-xl text-[var(--dark-2)] tracking-wide items-start pl-14"
+            className="flex flex-col gap-12 text-lg sm:text-xl text-[var(--dark-2)] tracking-wide items-start sm:pl-14"
           >
             <div className="flex flex-col gap-8">
-              <div className="text-5xl font-semibold ">{service?.title}</div>
+              <div className="text-4xl sm:text-5xl font-semibold ">
+                {service?.title}
+              </div>
               <div className="text-[var(--text-1)]">
                 We guide our clients through difficult issues, bringing insight
                 and judgment to each situation. Our innovatve approaches create
@@ -233,7 +237,7 @@ export default function Service({ params }) {
                 clients every day, we anticipate what they want, ineed and build
                 lasting relationships.
               </div>
-              <div className="text-[var(--primary-color)] font-semibold text-[22px]">
+              <div className="text-[var(--primary-color)] font-semibold sm:text-[22px]">
                 Over the last 31 Years we made an impact, we have long way to
                 go.
               </div>
@@ -244,31 +248,34 @@ export default function Service({ params }) {
                 we make to our clients and our people.
               </div>
               <div className="text-3xl font-semibold ">Service Process</div>
-              <div className="text-xl font-semibold">
-                At Solarva our culture comes to life through three core values:
-              </div>
-              <div className="flex flex-col text-xl text-[var(--text-1)] gap-4 pl-10">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
-                    <RiCheckFill className="text-sm" />
-                  </div>
-                  We seize opportunities to innovate and grow
+              <div className="flex flex-col w-full gap-4 sm:gap-6">
+                <div className="text-lg sm:text-xl font-semibold">
+                  At Solarva our culture comes to life through three core
+                  values:
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
-                    <RiCheckFill className="text-sm" />
+                <div className="flex flex-col text-lg sm:text-xl text-[var(--text-1)] gap-4 sm:pl-10">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                      <RiCheckFill className="text-sm" />
+                    </div>
+                    We seize opportunities to innovate and grow
                   </div>
-                  We are one firm with a shared sense of purpose
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
-                    <RiCheckFill className="text-sm" />
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                      <RiCheckFill className="text-sm" />
+                    </div>
+                    We are one firm with a shared sense of purpose
                   </div>
-                  We care about each other and the world around us
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[var(--primary-color)] rounded-full p-0.5 w-fit text-white">
+                      <RiCheckFill className="text-sm" />
+                    </div>
+                    We care about each other and the world around us
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="grid py-4 w-full h-[250px] overflow-hidden grid-cols-2 gap-8">
+            <div className="grid sm:py-4 w-full sm:h-[250px] overflow-hidden grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               <img
                 src="/service1.webp"
                 alt=""
@@ -294,17 +301,19 @@ export default function Service({ params }) {
                 alt="abc"
                 className="w-full h-[320px] object-cover aspect-auto"
               />
-              <div className="grid grid-cols-2 gap-14 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-14 sm:pt-6">
                 {service_options.map((s, i) => (
                   <div key={i} className="w-full">
-                    <div className="flex gap-8 w-full items-start">
+                    <div className="flex gap-6 sm:gap-8 w-full items-start">
                       <div className=" p-1 shadow-lg shadow-black/20 text-xl font-semibold text-[var(--primary-color)] rounded-full">
                         <div className="rounded-full flex items-center justify-center aspect-square w-8 text-center">
                           {i + 1}
                         </div>
                       </div>
-                      <div className="flex flex-col gap-4 items-start">
-                        <h1 className="font-semibold text-2xl">{s.title}</h1>
+                      <div className="flex flex-col gap-3 sm:gap-4 items-start">
+                        <h1 className="font-semibold text-xl sm:text-2xl">
+                          {s.title}
+                        </h1>
                         <p className="text-lg text-[var(--text-1)]">{s.desc}</p>
                       </div>
                     </div>

@@ -8,6 +8,7 @@ export default function Button1({
   hoverBg = "var(--primary-color)",
   textColor = "var(--dark-2)",
   hoverTextColor = "#ffffff",
+  onClick,
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -17,6 +18,7 @@ export default function Button1({
       style={{ backgroundColor: bg, color: textColor }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
       <p
         className="relative z-10 transition-colors duration-300"

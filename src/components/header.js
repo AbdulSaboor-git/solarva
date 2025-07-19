@@ -40,7 +40,8 @@ export default function Header({ className, homePage = false, theme }) {
   }, [isSidebarOpen]);
 
   const gotoHome = (sect) => {
-    router.push(`/home#${sect}`);
+    if (sect == "home") router.push(`/home`);
+    else router.push(`/home#${sect}`);
   };
 
   const scrollTo = (id) => {

@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Button1 from "@/components/button1";
+import { useRouter } from "next/navigation";
 
 export default function MainSection() {
   const employees = 20;
   const satisfaction = 100;
   const installations = 6000;
+  const router = useRouter();
 
   const [offsetY, setOffsetY] = useState(0);
   const [employeesCounter, setEmployeesCounter] = useState(0);
@@ -68,6 +70,10 @@ export default function MainSection() {
     };
   }, [hasAnimated]);
 
+  function clickDiscover() {
+    router.push(`/home#services`);
+  }
+
   return (
     <div className="flex flex-col w-full z-40" id="home">
       {/* <Header className={"block sm:hidden z-50"} /> */}
@@ -102,6 +108,7 @@ export default function MainSection() {
                 text={"Discover Solarva"}
                 bg="#f3f4f6"
                 hoverTextColor="#f3f4f6"
+                onClick={clickDiscover}
               />
             </div>
           </div>
