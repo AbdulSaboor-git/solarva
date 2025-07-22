@@ -26,7 +26,7 @@ export default function ServiceSlide({ service, onClick }) {
           <img
             src={service.img}
             alt={service.title}
-            className="bg-cover group-hover:scale-110 group-hover:rotate-3 transition-all duration-500"
+            className="bg-cover group-hover:scale-110 group-hover:rotate-3 w-full transition-all duration-500"
           />
           <div
             className={`absolute text-white text-6xl -top-14 right-7 sm:right-10 ${

@@ -76,8 +76,8 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full z-40" id="home">
-      {/* <Header className={"block sm:hidden z-50"} /> */}
-      <div className="relative bg-[url('/bg.png')] bg-cover bg-right sm:bg-center h-[88vh] sm:h-[42lh] overflow-hidden p-5">
+      {/* <Header className={"block md:hidden z-50"} /> */}
+      <div className="relative bg-[url('/bg.png')] bg-cover bg-right md:bg-center h-[88vh] md:h-[42lh] overflow-hidden p-5">
         <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
           <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
@@ -94,12 +94,12 @@ export default function MainSection() {
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-6 mb-7">
-                <div className="text-5xl sm:text-7xl font-extrabold tracking-tight">
+                <div className="text-5xl md:text-7xl font-extrabold tracking-tight">
                   Expert{" "}
                   <span className="text-[var(--primary-color)]"> Solar</span>{" "}
                   service since 1998
                 </div>
-                <div className="text-[var(--text-3)] text-xl sm:text-[22px] sm:font-medium">
+                <div className="text-[var(--text-3)] text-xl md:text-[22px] md:font-medium">
                   We believe in sustainable energy practices that can help
                   topnotch solar panel installation services.
                 </div>
@@ -116,7 +116,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden sm:block right-0 bottom-0 h-[600px] transition-transform ease-linear duration-[1s]"
+          className="absolute hidden md:block right-0 bottom-0 h-[600px] transition-transform ease-linear duration-[1s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}
@@ -124,11 +124,11 @@ export default function MainSection() {
       </div>
       <div
         ref={statsRef}
-        className="grid grid-cols-1 text-[var(--dark-blue-1)] sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40"
+        className="grid grid-cols-1 text-[var(--dark-blue-1)] md:grid-cols-3 w-full text-center md:text-left md:border-b md:border-r md:border-l md:border-gray-500/40"
       >
         {/*  */}
-        <div className="relative px-10 py-14 sm:py-16  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col  sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <div className="flex flex-col  items-center justify-center gap-1 sm:gap-2">
+        <div className="relative px-10 py-14 md:py-16  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col  md:flex-row items-center justify-center gap-4 md:gap-8">
+          <div className="flex flex-col  items-center justify-center gap-1 md:gap-2">
             <div className="text-5xl font-bold">{employeesCounter}+</div>
             <div className="font-semibold text-center">Employees</div>
           </div>
@@ -136,13 +136,13 @@ export default function MainSection() {
             We have {employees}+ amazing expert solar expert for repair &
             installation
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="relative px-10 py-14 sm:py-16 border-b sm:border-b-0 sm:border-r border-gray-500/40 flex flex-col  sm:flex-row  items-center justify-center gap-4 sm:gap-8">
+        <div className="relative px-10 py-14 md:py-16 border-b md:border-b-0 md:border-r border-gray-500/40 flex flex-col  md:flex-row  items-center justify-center gap-4 md:gap-8">
           <div
             className="flex flex-col min-w-fit
-           items-center justify-center gap-1 sm:gap-2"
+           items-center justify-center gap-1 md:gap-2"
           >
             <div className="text-5xl font-bold">{satisfactionCounter}%</div>
             <div className="font-semibold text-center">Client Satisfaction</div>
@@ -151,11 +151,11 @@ export default function MainSection() {
             We achieved {satisfaction}% of our client satisfaction through our
             work
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="px-10 py-14 sm:py-16 flex flex-col border-b border-gray-500/40 sm:border-none sm:flex-row  items-center justify-center gap-4 sm:gap-8">
-          <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
+        <div className="px-10 py-14 md:py-16 flex flex-col border-b border-gray-500/40 md:border-none md:flex-row  items-center justify-center gap-4 md:gap-8">
+          <div className="flex flex-col items-center justify-center gap-1 md:gap-2">
             <div className="text-5xl font-bold">
               {installationsCounter >= 1000
                 ? `${(installationsCounter / 1000).toFixed(1)}k+`

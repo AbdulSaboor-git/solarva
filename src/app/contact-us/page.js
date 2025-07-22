@@ -10,7 +10,7 @@ import Button1 from "@/components/button1";
 
 export default function ContactUs({ params }) {
   return (
-    <div className="w-full container flex flex-col items-center bg-gray-50 text-[var(--dark-2)]">
+    <div className="w-full flex flex-col items-center bg-gray-50 text-[var(--dark-2)]">
       <ScrollToTop />
       <Header theme={"light"} />
       <div className="w-full flex flex-col gap-20 sm:gap-32 items-center justify-start">

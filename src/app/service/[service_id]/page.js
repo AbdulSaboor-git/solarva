@@ -162,7 +162,7 @@ export default function Service({ params }) {
   }
 
   return (
-    <div className="w-full container flex flex-col items-center bg-gray-50">
+    <div className="w-full flex flex-col items-center bg-gray-50">
       <ScrollToTop />
       <Header theme={"light"} />
       <div className="w-full flex flex-col gap-20 sm:gap-32 items-center justify-start">

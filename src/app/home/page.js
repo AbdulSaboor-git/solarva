@@ -16,12 +16,12 @@ import Header from "@/components/header";
 export default function HomePage() {
   return (
     <div
-      className="relative container w-full 
+      className="relative w-full 
     flex flex-col items-center"
     >
       <ScrollToTop />
       <Header theme={"dark"} homePage={true} />
-      <div className="w-full flex flex-col items-center gap-24 sm:gap-20 justify-start">
+      <div className="w-full flex flex-col items-center gap-24 md:gap-20 justify-start">
         <MainSection />
         <AboutSection />
         <ServicesSection />

@@ -19,10 +19,10 @@ import {
 export default function Footer() {
   const logo = "/logo.png";
   return (
-    <div className="flex flex-col gap-16 sm:gap-20 w-full bg-[var(--secondary-color)]">
-      <div className="grid grid-cols-1 px-4 sm:px-0 text-white sm:grid-cols-3 w-full text-center sm:text-left sm:border-b sm:border-r sm:border-l sm:border-gray-500/40">
+    <div className="flex flex-col gap-16 md:gap-20 w-full bg-[var(--secondary-color)]">
+      <div className="grid grid-cols-1 px-4 md:px-0 text-white md:grid-cols-3 w-full text-center md:text-left md:border-b md:border-r md:border-l md:border-gray-500/40">
         {/*  */}
-        <div className="relative px-10 py-10 sm:py-12 border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <div className="relative px-10 py-10 md:py-12 border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
           <div className="bg-[var(--primary-color)] cursor-pointer text-3xl p-4 rounded-full">
             <MdPhone className="shake" />
           </div>
@@ -32,9 +32,9 @@ export default function Footer() {
               (+92) 900-786-01
             </p>
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
-        <div className="relative px-10 py-10  sm:py-12  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <div className="relative px-10 py-10  md:py-12  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
           <div className="bg-[var(--primary-color)] cursor-pointer text-3xl p-4 rounded-full">
             <MdEmail className="shake" />
           </div>
@@ -44,9 +44,9 @@ export default function Footer() {
               solarvacare@gmail.com
             </p>
           </div>
-          <div className="absolute hidden sm:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
+          <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
-        <div className="relative px-10 py-10 sm:py-12  border-b sm:border-r sm:border-b-0 border-gray-500/40 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <div className="relative px-10 py-10 md:py-12  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
           <div className="bg-[var(--primary-color)]  cursor-pointer  text-3xl p-4 rounded-full">
             <MdLocationPin className="shake" />
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full px-4 sm:px-6 sm:pb-10 grid gap-12 text-[17px] text-[var(--text-2)] grid-cols-1 sm:grid-cols-[1.6fr_1fr_1fr_1fr_1.6fr]">
+      <div className="w-full px-4 md:px-6 md:pb-10 grid gap-12 text-[17px] text-[var(--text-2)] grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr_1.6fr]">
         <div className="flex flex-col items-start justify-start gap-8">
           <img src={logo} alt="logo" className="w-40 aspect-auto" />
           <div className="flex text-xl text-white items-center gap-[2px]">
@@ -161,8 +161,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full px-4 sm:px-6">
-        <div className="border-t border-gray-500/40 text-center w-full text-sm font-medium text-white p-8 sm:p-12">
+      <div className="w-full px-4 md:px-6">
+        <div className="border-t border-gray-500/40 text-center w-full text-sm font-medium text-white p-8 md:p-12">
           © Copyright 2025{" "}
           <span className="text-[var(--primary-color)]">Solarva</span>. All
           rights reserved.

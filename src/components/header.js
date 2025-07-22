@@ -175,12 +175,12 @@ export default function Header({ className, homePage = false, theme }) {
 
   return (
     <div
-      className={`${className} sm:-top-14 sm:left-0 sm:sticky sm:-mb-[184px] z-50 w-full flex flex-col gap-5 sm:p-5 ${
+      className={`${className} md:-top-14 md:left-0 md:sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:p-5 ${
         theme == "light" ? "text-[var(--dark-blue-2)]" : "text-white"
       }`}
     >
       <div
-        className={`hidden sm:flex flex-row w-full items-center justify-end gap-10`}
+        className={`hidden md:flex flex-row w-full items-center justify-end gap-10`}
       >
         <div className="flex flex-row w-full items-center justify-start gap-6">
           <div className="flex flex-row items-center gap-4 group cursor-pointer">
@@ -213,17 +213,17 @@ export default function Header({ className, homePage = false, theme }) {
       </div>
       {/* android header */}
       <div
-        className={`w-full sm:w-auto flex flex-row sm:grid sm:grid-cols-[0.7fr_3fr_0.7fr] p-4 sm:py-0 sm:px-8 
-      items-center justify-between gap-6 sm:text-white bg-white sm:bg-[var(--dark-blue-2)] sm:rounded-lg`}
+        className={`w-full md:w-auto flex flex-row md:grid md:grid-cols-[0.7fr_3fr_0.7fr] p-4 md:py-0 md:px-8 
+      items-center justify-between gap-6 md:text-white bg-white md:bg-[var(--dark-blue-2)] md:rounded-lg`}
       >
         <img
           src={logo2}
           alt="logo"
-          className="block sm:hidden aspect-auto h-12"
+          className="block md:hidden aspect-auto h-12"
         />
         <BiMenu
           size={30}
-          className={`block text-[var(--dark-blue-2)] sm:hidden ${
+          className={`block text-[var(--dark-blue-2)] md:hidden ${
             isSidebarOpen && "-rotate-180 scale-0"
           } transition-all duration-500`}
           onClick={() => setIsSidebarOpen(true)}
@@ -231,12 +231,12 @@ export default function Header({ className, homePage = false, theme }) {
         <img
           src={logo}
           alt="logo"
-          className="hidden sm:block h-9 cursor-pointer"
+          className="hidden md:block h-9 cursor-pointer"
         />
 
         {/* Navigation Buttons + Underline */}
         <div
-          className="hidden h-full sm:flex flex-row gap-1.5 items-center px-4 justify-center relative"
+          className="hidden h-full md:flex flex-row gap-1.5 items-center px-4 justify-center relative"
           ref={containerRef}
           onMouseLeave={clearHover}
         >
@@ -253,7 +253,7 @@ export default function Header({ className, homePage = false, theme }) {
           ))}
           {/* ACTIVE underline */}
           <div
-            className="hidden sm:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-500 ease-in-out"
+            className="hidden md:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-500 ease-in-out"
             style={{
               boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.3)",
               width: activeStyle.width,
@@ -265,7 +265,7 @@ export default function Header({ className, homePage = false, theme }) {
 
           {/* HOVER underline */}
           <div
-            className="hidden sm:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
+            className="hidden md:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
             style={{
               boxShadow: "0 0 12px rgba(0,255,0,0.4)",
               width: hoverStyle.width,
@@ -277,7 +277,7 @@ export default function Header({ className, homePage = false, theme }) {
         </div>
 
         {/* Right side icons */}
-        <div className="hidden sm:flex flex-row items-center">
+        <div className="hidden md:flex flex-row items-center">
           <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
             <div className="border border-gray-500/40 p-2 rounded-full">
               <RiHeadphoneFill size={24} className="shake" />
@@ -295,7 +295,7 @@ export default function Header({ className, homePage = false, theme }) {
         </div>
         {/* side bar */}
         <div
-          className={`sm:hidden fixed left-0 top-0 bg-white w-screen h-screen z-50 p-7 py-10 flex flex-col gap-9
+          className={`md:hidden fixed left-0 top-0 bg-white w-screen h-screen z-50 p-7 py-10 flex flex-col gap-9
          -translate-x-full ${
            isSidebarOpen && "translate-x-0"
          } transition-all duration-500
