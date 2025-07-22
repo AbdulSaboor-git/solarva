@@ -3,11 +3,11 @@ import React from "react";
 export default function ServiceSlide({ service, onClick }) {
   return (
     <div
-      className="bg-white cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden"
+      className="bg-white object-center cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden"
       onClick={onClick}
     >
-      <div className="p-6 pt-10 sm:pt-12 sm:p-12 flex flex-col items-start gap-5">
-        <div className="text-[22px] sm:text-2xl text-[var(--link-color)] font-semibold line-clamp-1">
+      <div className="p-6 pt-10 md:pt-12 md:p-12 flex flex-col items-start gap-5">
+        <div className="text-[22px] md:text-2xl text-[var(--link-color)] font-semibold line-clamp-1">
           {service.title}
         </div>
         <hr className="text-gray-300 w-full mt-1" />
@@ -29,7 +29,7 @@ export default function ServiceSlide({ service, onClick }) {
             className="bg-cover group-hover:scale-110 group-hover:rotate-3 w-full transition-all duration-500"
           />
           <div
-            className={`absolute text-white text-6xl -top-14 right-7 sm:right-10 ${
+            className={`absolute text-white text-6xl -top-14 right-7 md:right-10 ${
               service.id % 2
                 ? " bg-[var(--dark-blue-1)] "
                 : " bg-[var(--primary-color)] "

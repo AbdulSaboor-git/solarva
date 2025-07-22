@@ -175,7 +175,7 @@ export default function Header({ className, homePage = false, theme }) {
 
   return (
     <div
-      className={`${className} md:-top-14 md:left-0 md:sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:p-5 ${
+      className={`${className} top-0 md:-top-14 md:left-0 sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:p-5 ${
         theme == "light" ? "text-[var(--dark-blue-2)]" : "text-white"
       }`}
     >
@@ -187,7 +187,7 @@ export default function Header({ className, homePage = false, theme }) {
             <div className="bg-[var(--primary-color)] p-2 rounded-full">
               <RiMailLine className="group-hover-flicker text-white" />
             </div>
-            <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg pr-6 border-r border-gray-500">
+            <p className="group-hover:text-[var(--primary-color)] line-clamp-1 tracking-wide transition-all duration-500 text-lg pr-6 border-r border-gray-500">
               {email}
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function Header({ className, homePage = false, theme }) {
             <div className="bg-[var(--primary-color)] p-2 rounded-full ">
               <RiMapPinLine className="group-hover-flicker text-white" />
             </div>
-            <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 text-lg">
+            <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 line-clamp-1 text-lg">
               {address}
             </p>
           </div>
@@ -213,13 +213,13 @@ export default function Header({ className, homePage = false, theme }) {
       </div>
       {/* android header */}
       <div
-        className={`w-full md:w-auto flex flex-row md:grid md:grid-cols-[0.7fr_3fr_0.7fr] p-4 md:py-0 md:px-8 
+        className={`w-full md:w-auto flex flex-row md:grid md:grid-cols-[1fr_4fr] lg:grid-cols-[0.7fr_3fr_0.7fr] p-4 md:py-0 md:px-8 
       items-center justify-between gap-6 md:text-white bg-white md:bg-[var(--dark-blue-2)] md:rounded-lg`}
       >
         <img
           src={logo2}
           alt="logo"
-          className="block md:hidden aspect-auto h-12"
+          className="block md:hidden aspect-auto h-8 cursor-pointer"
         />
         <BiMenu
           size={30}
@@ -231,12 +231,12 @@ export default function Header({ className, homePage = false, theme }) {
         <img
           src={logo}
           alt="logo"
-          className="hidden md:block h-9 cursor-pointer"
+          className="hidden md:block w-full max-w-32 cursor-pointer aspect-auto"
         />
 
         {/* Navigation Buttons + Underline */}
         <div
-          className="hidden h-full md:flex flex-row gap-1.5 items-center px-4 justify-center relative"
+          className="hidden w-full h-full md:flex flex-row gap-1.5 items-center px-4 justify-center relative"
           ref={containerRef}
           onMouseLeave={clearHover}
         >
@@ -277,7 +277,7 @@ export default function Header({ className, homePage = false, theme }) {
         </div>
 
         {/* Right side icons */}
-        <div className="hidden md:flex flex-row items-center">
+        <div className="hidden lg:flex flex-row items-center ">
           <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
             <div className="border border-gray-500/40 p-2 rounded-full">
               <RiHeadphoneFill size={24} className="shake" />

@@ -116,7 +116,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden md:block right-0 bottom-0 h-[600px] transition-transform ease-linear duration-[1s]"
+          className="absolute hidden md:block right-0 bottom-0 md:h-[500px] lg:h-[600px] transition-transform ease-linear duration-[1s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}
@@ -127,9 +127,11 @@ export default function MainSection() {
         className="grid grid-cols-1 text-[var(--dark-blue-1)] md:grid-cols-3 w-full text-center md:text-left md:border-b md:border-r md:border-l md:border-gray-500/40"
       >
         {/*  */}
-        <div className="relative px-10 py-14 md:py-16  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col  md:flex-row items-center justify-center gap-4 md:gap-8">
+        <div className="relative px-10 md:px-6 lg:px-10 py-14 lg:py-16  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col  md:flex-row items-center justify-center gap-4 lg:gap-8">
           <div className="flex flex-col  items-center justify-center gap-1 md:gap-2">
-            <div className="text-5xl font-bold">{employeesCounter}+</div>
+            <div className="text-5xl md:text-3xl lg:text-5xl font-bold">
+              {employeesCounter}+
+            </div>
             <div className="font-semibold text-center">Employees</div>
           </div>
           <div className=" tracking-wide text-[var(--text-1)]">
@@ -139,12 +141,11 @@ export default function MainSection() {
           <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="relative px-10 py-14 md:py-16 border-b md:border-b-0 md:border-r border-gray-500/40 flex flex-col  md:flex-row  items-center justify-center gap-4 md:gap-8">
-          <div
-            className="flex flex-col min-w-fit
-           items-center justify-center gap-1 md:gap-2"
-          >
-            <div className="text-5xl font-bold">{satisfactionCounter}%</div>
+        <div className="relative px-10 md:px-6 lg:px-10 py-14 lg:py-16  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col  md:flex-row items-center justify-center gap-4 lg:gap-8">
+          <div className="flex flex-col min-w-fit items-center justify-center gap-1 md:gap-2">
+            <div className="text-5xl md:text-3xl lg:text-5xl font-bold">
+              {satisfactionCounter}%
+            </div>
             <div className="font-semibold text-center">Client Satisfaction</div>
           </div>
           <div className="text-[var(--text-1)] tracking-wide">
@@ -154,9 +155,9 @@ export default function MainSection() {
           <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
         </div>
         {/*  */}
-        <div className="px-10 py-14 md:py-16 flex flex-col border-b border-gray-500/40 md:border-none md:flex-row  items-center justify-center gap-4 md:gap-8">
-          <div className="flex flex-col items-center justify-center gap-1 md:gap-2">
-            <div className="text-5xl font-bold">
+        <div className="relative px-10 md:px-6 lg:px-10 py-14 lg:py-16  border-b md:border-r md:border-b-0 border-gray-500/40 flex flex-col  md:flex-row items-center justify-center gap-4 lg:gap-8">
+          <div className="flex flex-col  items-center justify-center gap-1 md:gap-2">
+            <div className="text-5xl md:text-3xl lg:text-5xl font-bold">
               {installationsCounter >= 1000
                 ? `${(installationsCounter / 1000).toFixed(1)}k+`
                 : `${installationsCounter}+`}

@@ -80,20 +80,17 @@ export default function ServicesSection() {
   ];
 
   return (
-    <div id="services" className="flex flex-col w-full">
-      <div className="flex flex-col relative bg-[url('/bg.png')] bg-top sm:bg-left-top w-full">
+    <div id="services" className="flex flex-col relative w-full">
+      <div className="flex flex-col relative bg-[url('/bg.png')] bg-top md:bg-left-top w-full">
         <div className="absolute w-full h-full top-0 left-0 bg-[var(--dark-blue-3-beta)]" />
-        <div
-          className="flex flex-col gap-5 sm:gap-6 
-          pb-[380px] sm:pb-[480px] text-white items-start justify-center p-5 sm:p-6 py-20 sm:py-36 z-10 relative sm:max-w-[60%]"
-        >
+        <div className="flex flex-col gap-5 md:gap-6 h-full text-white items-start justify-center px-5 md:px-6 pb-28 pt-20 md:pt-28 z-10 relative md:max-w-[60%]">
           <div className="absolute -z-20 top-0 left-0 w-full h-full overflow-hidden bg-[var(--dark-blue-3)] ">
             <div className="w-full h-full bg-radial absolute top-10 left-1/2 z-10 to-transparent via-transparent scale-[200%] from-[var(--primary-color)] opacity-40"></div>
           </div>
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             OUR SERVICES
           </div>
-          <div className="text-4xl sm:text-5xl font-semibold max-w-xl">
+          <div className="text-4xl md:text-5xl font-semibold max-w-xl">
             Complete solar solution with repair services
           </div>
           <div className="tracking-wide font-medium max-w-xl">
@@ -101,7 +98,7 @@ export default function ServicesSection() {
             day, so that us can be part of the changing energy system. Because
             Powering Progress.
           </div>
-          <div className="hidden sm:flex text-[var(--dark-blue-2)] mt-1 absolute -right-[58px] top-1/3 ">
+          <div className="hidden md:flex text-[var(--dark-blue-2)] mt-1 absolute -right-[58px] top-1/3 ">
             <button
               onClick={goPrev}
               className="p-5 bg-white border border-gray-500/40 hover:bg-[var(--primary-color)] hover: hover:text-white transition-all duration-500"
@@ -116,7 +113,7 @@ export default function ServicesSection() {
             </button>
           </div>
         </div>
-        <div className="absolute z-30 -bottom-28 w-full left-0">
+        <div className="w-full -mb-40 -mt-16 relative z-10">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={0}
@@ -136,7 +133,7 @@ export default function ServicesSection() {
             }}
           >
             {services.map((service) => (
-              <SwiperSlide key={service.id} className="px-4">
+              <SwiperSlide key={service.id} className="sm:px-16 md:px-4 px-4">
                 <ServiceSlide
                   service={service}
                   onClick={() => handleServiceClick(service.id)}
@@ -146,7 +143,8 @@ export default function ServicesSection() {
           </Swiper>
         </div>
       </div>
-      <div className="w-full h-28" />
+      <div className="bg-white h-40 w-full"></div>
+      {/* <div className="w-full h-28" /> */}
     </div>
   );
 }

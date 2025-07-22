@@ -7,7 +7,7 @@ import { SlArrowDown } from "react-icons/sl";
 
 export default function AppointmentForm({ services }) {
   return (
-    <div className="flex flex-col items-center gap-8 rounded-xl bg-[var(--secondary-color)]  p-8 py-14 sm:p-12 sm:py-16 text-white">
+    <div className="flex flex-col items-center gap-8 rounded-xl bg-[var(--secondary-color)] self-center max-w-[550px] p-8 py-14 sm:p-12 sm:py-16 text-white">
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-3xl font-semibold text-center">Make Appointment</h1>
         <p className="sm:max-w-[250px] text-center">

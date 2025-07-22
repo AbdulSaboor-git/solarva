@@ -16,7 +16,7 @@ import Header from "@/components/header";
 export default function HomePage() {
   return (
     <div
-      className="relative w-full overflow-hidden 
+      className="relative w-full
     flex flex-col items-center"
     >
       <ScrollToTop />
