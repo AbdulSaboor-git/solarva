@@ -58,9 +58,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full max-w-7xl self-center px-4 md:px-6 md:pb-10 grid gap-12 md:gap-6 lg:gap-12 text-[17px] text-[var(--text-2)] grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr_1.6fr]">
-        <div className="flex flex-col items-start justify-start gap-8">
-          <img src={logo} alt="logo" className="w-40 aspect-auto" />
+      <div className="w-full max-w-7xl self-center px-6 md:pb-10 grid gap-12 text-[17px] text-[var(--text-2)] grid-cols-1 md:grid-cols-[1.6fr_1fr_1.6fr] lg:grid-cols-[1.6fr_1fr_1fr_1fr_1.6fr]">
+        <div className="flex flex-col items-start justify-start gap-8 md:row-span-2 lg:row-span-1">
+          <img src={logo} alt="logo" className="w-40 aspect-auto " />
           <div className="flex flex-row md:flex-wrap lg:flex-row text-xl text-white items-center gap-[2px]">
             <div className="bg-white/10 p-4 hover:bg-[var(--primary-color)] cursor-pointer transition-colors duration-300">
               <RiFacebookFill />

@@ -48,7 +48,7 @@ export default function Header({ className, homePage = false, theme }) {
     if (typeof window === "undefined") return;
     let offset = 0;
     if (id != "home" && !isSidebarOpen) {
-      offset = 30;
+      offset = 40;
     }
     const el = document.getElementById(id);
     setIsSidebarOpen(false);
@@ -219,7 +219,7 @@ export default function Header({ className, homePage = false, theme }) {
         <img
           src={logo2}
           alt="logo"
-          className="block md:hidden aspect-auto h-8 cursor-pointer"
+          className="block md:hidden aspect-auto h-10 cursor-pointer"
         />
         <BiMenu
           size={30}
