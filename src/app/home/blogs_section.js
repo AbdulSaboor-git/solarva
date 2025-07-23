@@ -56,14 +56,17 @@ export default function BlogSection({ id }) {
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
   return (
-    <div id="blog" className="flex flex-col gap-16 w-full py-24 bg-gray-100/90">
-      <div className="flex flex-col sm:flex-row gap-12 sm:gap-5 sm:items-end sm:justify-between w-full px-6">
-        <div className="flex flex-col gap-5 sm:gap-7 items-start justify-center text-[var(--dark-blue-2)]">
+    <div
+      id="blog"
+      className="flex flex-col gap-16 w-full max-w-7xl py-24 bg-gray-100/90"
+    >
+      <div className="flex flex-col md:flex-row gap-12 md:gap-5 md:items-end md:justify-between w-full px-6">
+        <div className="flex flex-col gap-5 md:gap-7 items-start justify-center text-[var(--dark-blue-2)]">
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             LATEST NEWS
           </div>
-          <div className="text-4xl sm:text-5xl font-semibold">
-            Read our solar energy <br className="hidden sm:block" /> Blogs &
+          <div className="text-4xl md:text-5xl font-semibold">
+            Read our solar energy <br className="hidden md:block" /> Blogs &
             articles
           </div>
         </div>
@@ -102,7 +105,7 @@ export default function BlogSection({ id }) {
           }}
         >
           {blogs.map((b) => (
-            <SwiperSlide key={b.id} className="px-6 sm:px-8">
+            <SwiperSlide key={b.id} className="px-6 md:px-8">
               <Blog b={b} />
             </SwiperSlide>
           ))}

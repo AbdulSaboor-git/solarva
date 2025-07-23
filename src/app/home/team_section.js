@@ -41,17 +41,17 @@ export default function TeamSection() {
   return (
     <div
       id="team"
-      className="flex w-full flex-col items-center gap-12 p-6 bg-gradient-to-b from-transparent via-[var(--light-green-2)] to-[var(--light-green-2)] pt-24 sm:pb-24"
+      className="flex w-full max-w-7xl flex-col items-center gap-12 p-6 bg-gradient-to-b from-transparent via-[var(--light-green-2)] to-[var(--light-green-2)] pt-24 md:pb-24"
     >
-      <div className="flex flex-col gap-4 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
-        <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+      <div className="flex flex-col gap-4 md:gap-5 items-center justify-center tracking-wide p-0 md:p-6 max-w-3xl">
+        <div className="bg-[var(--primary-color)] font-semibold md:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR TEAM MEMBERS
         </div>
-        <div className="text-4xl w-full sm:text-5xl text-[var(--dark-blue-2)] font-semibold text-center">
+        <div className="text-4xl w-full md:text-5xl text-[var(--dark-blue-2)] font-semibold text-center">
           Meet our amazing team of solar energy experts
         </div>
       </div>
-      <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-3">
+      <div className="w-full self-center grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {team?.map((member, i) => (
           <div
             key={i}

@@ -45,7 +45,7 @@ export default function WhyUsSection() {
   return (
     <div
       id="why-us"
-      className="flex w-full flex-col items-center p-5 md:p-6 gap-6"
+      className="flex w-full max-w-7xl flex-col items-center p-5 md:p-6 gap-6"
     >
       <div className="flex flex-col gap-3 md:gap-5 items-center justify-center tracking-wide p-0 md:p-6 max-w-3xl">
         <div className="bg-[var(--primary-color)] font-semibold md:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">

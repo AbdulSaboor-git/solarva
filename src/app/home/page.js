@@ -26,13 +26,13 @@ export default function HomePage() {
         <AboutSection />
         <ServicesSection />
         <WhyUsSection />
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center justify-center">
           <SkillsSection />
           <CaseStudiesSection />
           <TeamSection />
         </div>
         <WorkProcessSection />
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center justify-center">
           <BlogSection />
           <Footer />
         </div>

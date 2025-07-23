@@ -14,9 +14,9 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="w-full p-5 grid grid-cols-1 gap-20 md:gap-0 md:grid-cols-[1.08fr_1fr] "
+      className="w-full self-center max-w-7xl p-5 grid grid-cols-1 gap-20 lg:gap-0 lg:grid-cols-[1.08fr_1fr] "
     >
-      <div className="relative   bg-[url('/img2.png')] bg-cover aspect-square md:aspect-auto">
+      <div className="relative bg-[url('/img2.png')] bg-cover aspect-square lg:aspect-auto">
         <div className="absolute w-full h-full top-0 left-0 bg-white/50" />
 
         <div className="absolute w-full h-full grid grid-cols-2">

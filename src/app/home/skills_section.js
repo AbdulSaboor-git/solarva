@@ -7,7 +7,7 @@ export default function SkillsSection() {
   return (
     <div
       id="skills"
-      className="w-full grid grid-cols-1 gap-14 md:gap-0 md:grid-cols-2 pb-24 md:pb-0"
+      className="w-full max-w-7xl self-center grid grid-cols-1 gap-14 md:gap-0 md:grid-cols-2 pb-24 md:pb-0"
     >
       <div className="relative w-full h-full">
         <div className="h-full w-full absolute top-0 left-0 lg:block overflow-hidden aspect-auto lg:max-w-[60%]">

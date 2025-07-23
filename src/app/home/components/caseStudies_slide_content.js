@@ -6,23 +6,23 @@ export default function SlideContent({ proj }) {
   const { isActive } = useSwiperSlide();
 
   return (
-    <div className="overflow-hidden flex flex-col sm:relative">
+    <div className="overflow-hidden flex flex-col md:relative">
       <img
         src={proj.img}
         alt={proj.title}
-        className="w-full  sm:h-[90vh] object-cover aspect-video"
+        className="w-full  md:h-[90vh] max-h-[600px] object-cover aspect-video"
       />
 
       <div
         className={`
-          sm:absolute sm:bottom-12 sm:left-10 transition-all duration-1000
-          ${isActive ? "opacity-100" : "sm:opacity-0 sm:pointer-events-none"}
+          md:absolute md:bottom-12 md:left-10 transition-all duration-1000
+          ${isActive ? "opacity-100" : "md:opacity-0 md:pointer-events-none"}
         bg-white
         `}
       >
-        <div className="hidden sm:block absolute h-full w-full top-2 z-0 left-2 bg-white/50" />
-        <div className="bg-white p-10 relative z-10 px-6 sm:px-12 flex flex-col gap-6">
-          <div className="flex flex-row flex-wrap sm:flex-nowrap relative gap-1 sm:overflow-auto">
+        <div className="hidden md:block absolute h-full w-full top-2 z-0 left-2 bg-white/50" />
+        <div className="bg-white p-10 relative z-10 px-6 md:px-12 flex flex-col gap-6">
+          <div className="flex flex-row flex-wrap md:flex-nowrap relative gap-1 md:overflow-auto">
             {proj.categories?.map((categ, i) => (
               <div
                 key={i}
@@ -60,8 +60,8 @@ export default function SlideContent({ proj }) {
               </p>
             </div>
             <button
-              className="relative flex p-3 sm:p-4 items-center hover:bg-[var(--dark-2)] justify-center
-             bg-[var(--primary-color)] text-2xl sm:text-4xl text-white aspect-square transition-all duration-500"
+              className="relative flex p-3 md:p-4 items-center hover:bg-[var(--dark-2)] justify-center
+             bg-[var(--primary-color)] text-2xl md:text-4xl text-white aspect-square transition-all duration-500"
             >
               <BsArrowRight className="-rotate-45" />
             </button>

@@ -87,17 +87,17 @@ export default function CaseStudiesSection() {
   return (
     <div
       id="case-studies"
-      className="flex w-full flex-col items-center gap-12 bg-[var(--dark-blue-3)] p-4 sm:p-6 py-24 sm:py-12 sm:pt-30"
+      className="flex w-full flex-col items-center gap-12 bg-[var(--dark-blue-3)] p-4 md:p-6 py-24 md:py-12 md:pt-30"
     >
-      <div className="flex flex-col gap-3 sm:gap-5 items-center justify-center tracking-wide p-0 sm:p-6 max-w-3xl">
-        <div className="bg-[var(--primary-color)] font-semibold sm:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
+      <div className="flex flex-col gap-3 md:gap-5 items-center justify-center tracking-wide p-0 md:p-6 max-w-3xl">
+        <div className="bg-[var(--primary-color)] font-semibold md:tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           OUR CASE STUDIES
         </div>
-        <div className="text-4xl w-full sm:text-5xl text-white font-semibold text-center">
+        <div className="text-4xl w-full md:text-5xl text-white font-semibold text-center">
           Review our case studies to get a better idea
         </div>
       </div>
-      <div className="sm:px-6 relative group z-20 w-full text-[var(--dark-blue-2)]">
+      <div className="sm:px-6 max-w-7xl relative group z-20 w-full text-[var(--dark-blue-2)]">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           loop={true}
@@ -120,7 +120,7 @@ export default function CaseStudiesSection() {
         </Swiper>
         <button
           onClick={goPrev}
-          className="hidden sm:block absolute z-30 left-10 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
+          className="hidden md:block absolute z-30 left-10 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
            bg-gray-100 text-[var(--dark-blue-1)] border border-gray-500/40 hover:bg-[var(--dark-blue-1)] 
            hover: hover:text-gray-100 transition-all duration-500"
         >
@@ -128,7 +128,7 @@ export default function CaseStudiesSection() {
         </button>
         <button
           onClick={goNext}
-          className="hidden sm:block absolute z-30 right-10 opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
+          className="hidden md:block absolute z-30 right-10 opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 top-1/2 -translate-y-1/2 p-5
            bg-gray-100 text-[var(--dark-blue-1)] border border-gray-500/40 
            hover:bg-[var(--dark-blue-1)] hover: hover:text-gray-100 transition-all duration-500"
         >

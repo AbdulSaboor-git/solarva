@@ -76,14 +76,13 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full z-40" id="home">
-      {/* <Header className={"block md:hidden z-50"} /> */}
       <div className="relative bg-[url('/bg.png')] bg-cover bg-right md:bg-center h-[88vh] md:h-[42lh] overflow-hidden p-5">
         <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
           <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
-        <div className="z-10 absolute left-0 text-white w-full h-full">
+        <div className="z-10 absolute left-[2%] text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
-            <div className="w-full px-5 h-full max-w-[550px] flex flex-col gap-7 items-start justify-center">
+            <div className="w-full px-5 h-full max-w-[550px] lg:max-w-4xl flex flex-col gap-7 items-start justify-center">
               <div className="flex flex-row items-center justify-start gap-2.5 text-[var(--primary-color)] ">
                 <div className="flex items-center">
                   <div className="h-[1px] w-10 bg-[var(--primary-color)]" />
@@ -116,7 +115,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden md:block right-0 bottom-0 md:h-[500px] lg:h-[600px] transition-transform ease-linear duration-[1s]"
+          className="absolute hidden md:block right-0 lg:right-[5%] bottom-0 md:h-[500px] lg:h-[600px] transition-transform ease-linear duration-[1s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}

@@ -83,8 +83,8 @@ export default function ServicesSection() {
     <div id="services" className="flex flex-col relative w-full">
       <div className="flex flex-col relative bg-[url('/bg.png')] bg-top md:bg-left-top w-full">
         <div className="absolute w-full h-full top-0 left-0 bg-[var(--dark-blue-3-beta)]" />
-        <div className="flex flex-col gap-5 md:gap-6 h-full text-white items-start justify-center px-5 md:px-6 pb-28 pt-20 md:pt-28 z-10 relative md:max-w-[60%]">
-          <div className="absolute -z-20 top-0 left-0 w-full h-full overflow-hidden bg-[var(--dark-blue-3)] ">
+        <div className="flex flex-col gap-5 md:gap-6 h-full text-white items-start justify-center xl:pl-20 px-5 md:px-6 pb-28 pt-20 md:pt-28 z-10 relative md:max-w-[60%]">
+          <div className="absolute -z-20 top-0 left-0 w-full h-full  overflow-hidden bg-[var(--dark-blue-3)] ">
             <div className="w-full h-full bg-radial absolute top-10 left-1/2 z-10 to-transparent via-transparent scale-[200%] from-[var(--primary-color)] opacity-40"></div>
           </div>
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
@@ -113,7 +113,7 @@ export default function ServicesSection() {
             </button>
           </div>
         </div>
-        <div className="w-full -mb-40 -mt-16 relative z-10">
+        <div className="w-full self-center max-w-7xl -mb-40 -mt-16 relative z-10">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={0}
