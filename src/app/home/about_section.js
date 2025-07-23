@@ -45,12 +45,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* <div className="absolute h-[280px] md:h-auto max-w-[165px] md:max-w-[310px] left-0 bottom-0 z-10 overflow-hidden">
-        </div>
-        <div className="absolute h-[190px] place-content-start md:h-auto right-0 md:right-5 top-0 max-w-[145px] md:max-w-[280px] aspect-auto z-10 overflow-hidden">
-        </div>
-        <div className="absolute h-[160px] place-content-end md:h-auto right-0 md:right-5 -bottom-10 max-w-[130px] md:max-w-[270px] z-10 overflow-hidden">
-        </div> */}
         <div className="w-full h-full z-20 bg-transparent top-0 left-0 flex items-center justify-center">
           <Section2_SpinningLogo
             className={"hidden md:flex"}
@@ -66,7 +60,7 @@ export default function AboutSection() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-7 items-start justify-center text-[var(--dark-2)] md:p-6 md:pl-20">
+      <div className="flex flex-col gap-7 items-start justify-center text-[var(--dark-2)] md:p-6 lg:pl-20">
         <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
           ABOUT COMPANY
         </div>

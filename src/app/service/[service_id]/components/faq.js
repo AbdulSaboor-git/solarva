@@ -13,8 +13,8 @@ export default function FAQ({ item }) {
     <div className="flex flex-col text-lg">
       <div
         onClick={togleExpanded}
-        className={`flex font-semibold sm:hover:bg-[var(--primary-color)] sm:hover:text-white 
-      cursor-pointer items-center gap-3 justify-between p-4 px-5 sm:px-8 w-full border border-gray-400/20 rounded-xl 
+        className={`flex font-semibold md:hover:bg-[var(--primary-color)] md:hover:text-white 
+      cursor-pointer items-center gap-3 justify-between p-4 px-5 md:px-8 w-full border border-gray-400/20 rounded-xl 
        transition-all duration-300 ${
          expanded
            ? "bg-[var(--primary-color)] text-white"
@@ -38,7 +38,7 @@ export default function FAQ({ item }) {
           expanded ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden transition-all duration-500`}
       >
-        <div className="p-4 max-h-fit px-5 sm:px-8 sm:pr-14 text-[var(--text-1)]">
+        <div className="p-4 max-h-fit px-5 md:px-8 md:pr-14 text-[var(--text-1)]">
           {item.answer}
         </div>
       </div>

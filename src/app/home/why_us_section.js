@@ -61,11 +61,11 @@ export default function WhyUsSection() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-12 md:gap-8 justify-end w-full">
-        <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-2 md:gap-8 h-fit ">
+        <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 h-fit ">
           {services?.map((service) => (
             <div
               key={service.id}
-              className="flex flex-col gap-3 md:gap-5 justify-start pt-12 group"
+              className="flex flex-col gap-3 md:gap-5 justify-start pt-8 md:pt-6 lg:pt-8 group"
             >
               <div className="w-fit">
                 <div className="rounded-full relative z-10 w-fit text-white bg-[var(--primary-color)] p-3 group-hover:-translate-y-4 transition-all duration-500 shadow-md shadow-gray-100/20">

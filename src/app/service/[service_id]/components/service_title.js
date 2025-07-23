@@ -4,7 +4,7 @@ import { BiChevronRight } from "react-icons/bi";
 export default function ServiceTitle({ s, isActive }) {
   return (
     <div
-      className={`w-full  rounded-lg p-3 group tracking-wide cursor-pointer transition-all duration-300 sm:hover:bg-[var(--dark-2)] sm:hover:text-white ${
+      className={`w-full  rounded-lg p-3 group tracking-wide cursor-pointer transition-all duration-300 md:hover:bg-[var(--dark-2)] md:hover:text-white ${
         isActive
           ? "bg-[var(--dark-2)] text-white "
           : "bg-white text-[var(--dark-2)]"
