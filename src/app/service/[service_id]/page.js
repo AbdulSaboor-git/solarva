@@ -182,7 +182,7 @@ export default function Service({ params }) {
                   </div>
                 ))}
               </div>
-              <div className="rounded-xl flex flex-col items-center justify-end relative overflow-hidden w-full h-[500px] md:h-[600px] bg-cover bg-center bg-[url('/user6.webp')] ">
+              <div className="rounded-xl flex flex-col items-center justify-end relative overflow-hidden w-full max-w-[500px] place-self-center h-[500px] md:h-[600px] bg-cover bg-center bg-[url('/user6.webp')] ">
                 <svg
                   className="w-full h-[400px] absolute bottom-0 left-0"
                   viewBox="0 0 500 150"
@@ -223,7 +223,7 @@ export default function Service({ params }) {
           </div>
           <div
             ref={rightRef}
-            className="flex flex-col gap-12 text-lg md:text-xl text-[var(--dark-2)] tracking-wide items-start md:pl-14"
+            className="flex flex-col gap-12 text-lg md:text-xl text-[var(--dark-2)] tracking-wide items-start lg:pl-14"
           >
             <div className="flex flex-col gap-8">
               <div className="text-4xl md:text-5xl font-semibold ">
