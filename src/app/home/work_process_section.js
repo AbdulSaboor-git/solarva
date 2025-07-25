@@ -123,7 +123,7 @@ export default function WorkProcessSection() {
             w-full gap-56 md:gap-4 flex flex-col md:flex-row items-center justify-between"
             >
               <h1 className="text-3xl md:text-4xl font-semibold text-white md:max-w-md ">
-                Solarva believes in sustainable energy practices
+                3P Solar Solutions believes in sustainable energy practices
               </h1>
               <div className="bg-[var(--dark-blue-1)] md:mr-6 relative z-20 tracking-wide p-3 pr-8 rounded-full text-white flex gap-2 items-center">
                 <div className="p-2 border rounded-full border-gray-500/40 text-3xl">

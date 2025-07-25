@@ -52,7 +52,9 @@ export default function SkillsSection() {
                   17K+
                 </div>
               </div>
-              <div className="font-semibold text-white">Solar Users in USA</div>
+              <div className="font-semibold text-white">
+                Solar Users in Pakistan
+              </div>
             </div>
           </div>
         </div>
@@ -69,9 +71,9 @@ export default function SkillsSection() {
           day, so that all of us can be part of the changing energy system.
         </div>
         <div className="flex flex-col gap-6 w-full max-w-md lg:pb-32">
-          <ProgressBar value={87} title={"Solar Installation"} />
-          <ProgressBar value={75} title={"Solar Cleaning"} />
-          <ProgressBar value={69} title={"Connecting Grids"} />
+          <ProgressBar value={92} title={"Solar Installation"} />
+          <ProgressBar value={99} title={"Solar Cleaning"} />
+          <ProgressBar value={96} title={"Connecting Grids"} />
         </div>
       </div>
     </div>

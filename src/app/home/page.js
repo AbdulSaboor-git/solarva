@@ -12,6 +12,7 @@ import BlogSection from "./blogs_section";
 import Footer from "@/components/footer";
 import ScrollToTop from "./components/scroll_to_top";
 import Header from "@/components/header";
+import ProductsSection from "./products_section";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <div className="w-full flex flex-col items-center gap-24 md:gap-20 justify-start">
         <MainSection />
         <AboutSection />
+        <ProductsSection />
         <ServicesSection />
         <WhyUsSection />
         <div className="w-full flex flex-col items-center justify-center">

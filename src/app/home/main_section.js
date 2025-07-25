@@ -88,8 +88,8 @@ export default function MainSection() {
                   <div className="h-[1px] w-10 bg-[var(--primary-color)]" />
                   <div className="w-2.5 animate-[spin_4s_linear_infinite] aspect-square bg-[var(--primary-color)]" />
                 </div>
-                <p className="tracking-wider font-[600] text-sm">
-                  SOLARVA SOLAR ENERGY SERVICES INC
+                <p className="tracking-wider uppercase font-[600] text-sm">
+                  3P SOLAR SOLUTIONS
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-6 mb-7">
@@ -103,12 +103,7 @@ export default function MainSection() {
                   topnotch solar panel installation services.
                 </div>
               </div>
-              <Button1
-                text={"Discover Solarva"}
-                bg="#f3f4f6"
-                hoverTextColor="#f3f4f6"
-                onClick={clickDiscover}
-              />
+              <Button1 text={"Discover More"} onClick={clickDiscover} />
             </div>
           </div>
         </div>

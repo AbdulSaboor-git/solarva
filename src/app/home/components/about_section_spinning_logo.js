@@ -36,14 +36,14 @@ export default function AboutSection_SpinningLogo({
             lengthAdjust="spacing"
           >
             {"  ·  "}
-            SOLARVA SOLAR ENERGY SERVICES · GREEN ENERGY · SAVE THE PLANET
+            3P SOLAR ENERGY SERVICES · GREEN ENERGY · SAVE THE PLANET
           </textPath>
         </text>
       </svg>
       <img
-        src="icon_solarva.png"
+        src="icon.png"
         alt="icon"
-        className={`absolute aspect-square]`}
+        className={`p-4 absolute aspect-square]`}
         style={{
           width: logoSize,
         }}

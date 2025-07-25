@@ -13,8 +13,8 @@ import {
   RiWhatsappFill,
 } from "react-icons/ri";
 import NavbarButton from "./navbar_button";
-import { BiMenu } from "react-icons/bi";
-import { MdClose } from "react-icons/md";
+import { BiMenu, BiPhone } from "react-icons/bi";
+import { MdClose, MdPhone } from "react-icons/md";
 import SocialButton from "./social_button";
 import { useRouter } from "next/navigation";
 
@@ -23,8 +23,8 @@ export default function Header({ className, homePage = false, theme }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [hoverStyle, setHoverStyle] = useState({ opacity: 0 });
   const [activeStyle, setActiveStyle] = useState({ opacity: 0 });
-  const logo = `/logo.png`;
-  const logo2 = "/logo2.png";
+  const logo = "/logo.png";
+  const logo_alt = "/logo_alt.png";
   const router = useRouter();
 
   useEffect(() => {
@@ -153,8 +153,9 @@ export default function Header({ className, homePage = false, theme }) {
     { name: "Whatsapp", icon: RiWhatsappFill },
   ];
 
-  const email = "solarva@gmail.com";
-  const address = "213 Madison street, London";
+  const email = "info@3psolutions.com.pk";
+  const contact = "+92 321 417 6685";
+
   useEffect(() => {
     const index = buttons.findIndex(
       (btn) => btn.name.toLowerCase().replace(" ", "-") === activeSection
@@ -193,10 +194,10 @@ export default function Header({ className, homePage = false, theme }) {
           </div>
           <div className="flex flex-row items-center gap-4 group  cursor-pointer">
             <div className="bg-[var(--primary-color)] p-2 rounded-full ">
-              <RiMapPinLine className="group-hover-flicker text-white" />
+              <MdPhone className="group-hover-flicker text-white" />
             </div>
             <p className="group-hover:text-[var(--primary-color)] tracking-wide transition-all duration-500 line-clamp-1 text-lg">
-              {address}
+              {contact}
             </p>
           </div>
         </div>
@@ -217,7 +218,7 @@ export default function Header({ className, homePage = false, theme }) {
       items-center justify-between gap-6 md:text-white bg-white md:bg-[var(--dark-blue-2)] md:rounded-lg`}
       >
         <img
-          src={logo2}
+          src={logo_alt}
           alt="logo"
           className="block md:hidden aspect-auto h-10 cursor-pointer"
         />
@@ -231,7 +232,7 @@ export default function Header({ className, homePage = false, theme }) {
         <img
           src={logo}
           alt="logo"
-          className="hidden md:block w-full max-w-32 cursor-pointer aspect-auto"
+          className="hidden md:block w-full max-w-44 cursor-pointer aspect-auto"
         />
 
         {/* Navigation Buttons + Underline */}
@@ -255,7 +256,7 @@ export default function Header({ className, homePage = false, theme }) {
           <div
             className="hidden md:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-500 ease-in-out"
             style={{
-              boxShadow: "0 4px 20px 2px rgba(0, 255, 0, 0.3)",
+              boxShadow: "0 4px 20px 1px var(--primary-color-fade)",
               width: activeStyle.width,
               left: activeStyle.left,
               opacity: activeStyle.opacity,
@@ -267,7 +268,7 @@ export default function Header({ className, homePage = false, theme }) {
           <div
             className="hidden md:block absolute pointer-events-none bottom-0 h-1 bg-[var(--primary-color)] transition-all duration-300 ease-in-out"
             style={{
-              boxShadow: "0 0 12px rgba(0,255,0,0.4)",
+              boxShadow: "0 0 12px var(--primary-color)",
               width: hoverStyle.width,
               left: hoverStyle.left,
               opacity: hoverStyle.opacity,
@@ -307,7 +308,7 @@ export default function Header({ className, homePage = false, theme }) {
             } transition-all duration-700`}
             onClick={() => setIsSidebarOpen(false)}
           />
-          <img src={logo2} alt="logo" className="w-40" />
+          <img src={logo_alt} alt="logo" className="w-52" />
           <div className="relative w-full">
             <input
               type="text"

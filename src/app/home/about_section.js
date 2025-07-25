@@ -65,7 +65,7 @@ export default function AboutSection() {
           ABOUT COMPANY
         </div>
         <div className="text-4xl  md:text-5xl font-semibold">
-          Solarva believes in sustainable energy practices
+          3P Solar Solutions believes in sustainable energy practices
         </div>
         <div className="text-[var(--text-1)]">
           We’re finding ways to bring energy to more people in more ways every
@@ -75,7 +75,7 @@ export default function AboutSection() {
         </div>
         <div className="flex flex-col w-full gap-4 items-start mb-6">
           <div className="font-bold text-lg">
-            Solarva Solar Energy specialty:
+            3P Solar Solutions Solar Energy specialty:
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full tracking-wide">
             <div className="flex flex-row items-center gap-2">
@@ -105,7 +105,7 @@ export default function AboutSection() {
           </div>
         </div>
         <Button1
-          text={"Contact Solarva"}
+          text={"Contact Us"}
           bg="var(--dark-2)"
           textColor="#ffffff"
           onClick={clickContactUs}

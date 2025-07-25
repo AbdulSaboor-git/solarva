@@ -22,9 +22,9 @@ export default function ContactUs({ params }) {
                 alt="img"
                 className="h-[350px] md:h-full w-full aspect-auto object-cover object-left"
               />
-              <div className="py-16 lg:py-0 flex flex-col gap-12 lg:gap-0 items-start justify-evenly lg:-ml-[70px] max-w-2xl w-full place-self-center lg:w-auto  lg:place-self-auto text-white text-lg lg:text-2xl">
+              <div className="py-16 px-3 lg:px-0 lg:py-0 flex flex-col gap-12 lg:gap-0 items-start justify-evenly lg:-ml-[70px] max-w-2xl w-full place-self-center lg:w-auto  lg:place-self-auto text-white text-lg lg:text-2xl">
                 <div className="flex  flex-row gap-6 md:gap-10 items-center justify-center px-4">
-                  <div className="bg-[var(--primary-color)] text-5xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
+                  <div className="bg-[var(--primary-color)] text-4xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
                     <MdLocationPin />
                   </div>
                   <div className="flex w-full flex-col items-start justify-center gap-1 md:gap-2">
@@ -35,7 +35,7 @@ export default function ContactUs({ params }) {
                   </div>
                 </div>
                 <div className="flex flex-row gap-6 md:gap-10 items-center justify-center px-4">
-                  <div className="bg-[var(--primary-color)] text-5xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
+                  <div className="bg-[var(--primary-color)] text-4xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
                     <MdCall />
                   </div>
                   <div className="flex w-full flex-col items-start justify-center gap-1 md:gap-2">
@@ -51,7 +51,7 @@ export default function ContactUs({ params }) {
                   </div>
                 </div>
                 <div className="flex  flex-row gap-6 md:gap-10 items-center justify-center px-4">
-                  <div className="bg-[var(--primary-color)] text-5xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
+                  <div className="bg-[var(--primary-color)] text-4xl md:text-6xl p-4 md:p-6 rounded-xl aspect-square">
                     <MdMail />
                   </div>
                   <div className="flex w-full flex-col items-start justify-center gap-1 md:gap-2">
