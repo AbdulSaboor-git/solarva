@@ -5,7 +5,6 @@ import {
   RiHeadphoneFill,
   RiInstagramFill,
   RiMailLine,
-  RiMapPinLine,
   RiSearchLine,
   RiShoppingBag4Line,
   RiSkypeFill,
