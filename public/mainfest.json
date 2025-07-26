@@ -1,0 +1,15 @@
+{
+  "name": "3P Solutions",
+  "short_name": "3P",
+  "description": "Expert Solar Solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

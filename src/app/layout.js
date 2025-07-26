@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "3P Solutions",
   description: "Expert Solar Solutions",
+  icons: {
+    icon: "/icons/icon-512.png",
+  },
 };
 
 export default function RootLayout({ children }) {
