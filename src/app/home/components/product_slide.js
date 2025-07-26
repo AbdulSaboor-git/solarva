@@ -1,42 +1,51 @@
 import React from "react";
+import { AiFillCloseCircle, AiOutlineClose } from "react-icons/ai";
+import { BiCross } from "react-icons/bi";
+import { FaCross } from "react-icons/fa";
+import { GiCrossMark } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
+import { HiXMark } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
+import { MdClose } from "react-icons/md";
+import { RiCloseFill } from "react-icons/ri";
+import { TiTick } from "react-icons/ti";
 
 export default function ProductSlide({ product, onClick }) {
   return (
     <div
-      className="bg-white object-center cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden"
+      className="bg-white object-center border border-gray-500/40 cursor-pointer tracking-wide group rounded-3xl flex flex-col overflow-hidden"
       onClick={onClick}
     >
       <div className="p-6 pt-10 md:pt-12 md:p-12 flex flex-col items-start gap-5">
-        <div className="text-[22px] md:text-2xl text-[var(--link-color)] font-semibold line-clamp-1">
-          {product.title}
-        </div>
-        <hr className="text-gray-300 w-full mt-1" />
-        <div className="min-h-[4.5em] text-[var(--text-1)] group-hover:text-[var(--link-color)] transition-all duration-300 line-clamp-3">
-          {product.description}
-        </div>
-        <button className="w-fit text-[var(--link-color)] relative overflow-hidden pb-3">
-          Read More
-          <div className="absolute top-[1.5em]  h-[1.5px] w-full bg-[var(--link-color)] block group-hover:hidden"></div>
-          <div className="absolute top-[1.5em]  h-[1.5px] -translate-x-full w-full bg-[var(--link-color)] group-hover:translate-x-[1%] transition-all duration-1000"></div>
-          <div className="absolute top-[1.5em]  h-[1.5px] translate-x-full w-full bg-[var(--link-color)] group-hover:-translate-x-[1%] transition-all duration-1000"></div>
-        </button>
-      </div>
-      <div className="relative">
-        <div className="overflow-hidden">
-          <img
-            src={product.img}
-            alt={product.title}
-            className="bg-cover group-hover:scale-110 group-hover:rotate-3 w-full transition-all duration-500"
-          />
-          <div
-            className={`absolute text-white text-6xl -top-14 right-7 md:right-10 ${
-              product.id % 2
-                ? " bg-[var(--dark-blue-1)] "
-                : " bg-[var(--primary-color)] "
-            }p-4 rounded-xl`}
-          >
-            <product.logo />
+        <div className="flex flex-col gap-1">
+          <div className="text-2xl md:text-4xl text-[var(--dark-2)] font-semibold line-clamp-1">
+            {product.kw}KW
           </div>
+          <div className="text-[var(--text-1)]">
+            Electricity units {product.units}
+          </div>
+        </div>
+        <hr className="bg-gray-400/40 border-none w-full h-[0.5px]" />
+        <div className="flex flex-col gap-1 text-[var(--text-1)] ">
+          <div>Savings: {product.savings} PKR</div>
+          <div>Payback Period: {product.payback_period} years</div>
+        </div>
+        <div className="flex w-full flex-col gap-0 text-[var(--text-1)] text-sm">
+          {product.items.map((item, index) => (
+            <div
+              key={index}
+              className={`w-full flex items-center gap-2 rounded-md p-2 px-4 ${
+                index % 2 === 0 ? "bg-[var(--light-green-3)]" : "bg-white"
+              } `}
+            >
+              {item.value == 0 ? (
+                <RiCloseFill className="text-red-400 text-lg" />
+              ) : (
+                <TiTick className="text-[var(--primary-color)]" />
+              )}
+              {item.key}: {item.value}
+            </div>
+          ))}
         </div>
       </div>
     </div>

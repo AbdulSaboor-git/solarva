@@ -41,7 +41,7 @@ export default function AboutSection_SpinningLogo({
         </text>
       </svg>
       <img
-        src="icon.png"
+        src="icons/icon-512.png"
         alt="icon"
         className={`p-4 absolute aspect-square]`}
         style={{

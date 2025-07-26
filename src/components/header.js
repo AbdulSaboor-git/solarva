@@ -67,6 +67,10 @@ export default function Header({ className, homePage = false, theme }) {
       onClick: () => (homePage ? scrollTo("about") : gotoHome("about")),
     },
     {
+      name: "Products",
+      onClick: () => (homePage ? scrollTo("products") : gotoHome("products")),
+    },
+    {
       name: "Services",
       onClick: () => (homePage ? scrollTo("services") : gotoHome("services")),
     },
@@ -74,10 +78,6 @@ export default function Header({ className, homePage = false, theme }) {
       name: "Case Studies",
       onClick: () =>
         homePage ? scrollTo("case-studies") : gotoHome("case-studies"),
-    },
-    {
-      name: "Team",
-      onClick: () => (homePage ? scrollTo("team") : gotoHome("team")),
     },
     {
       name: "Blog",
@@ -94,9 +94,9 @@ export default function Header({ className, homePage = false, theme }) {
     const sectionIds = [
       "home",
       "about",
+      "products",
       "services",
       "case-studies",
-      "team",
       "blog",
     ];
 

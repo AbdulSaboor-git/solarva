@@ -20,63 +20,153 @@ export default function ProductsSection() {
   const goPrev = () => swiperRef.current?.slidePrev();
 
   function handleProductClick(id) {
-    router.push(`/product/${id}`);
+    router.push(`/products`);
   }
 
-  let products = [
+  const products = [
     {
       id: 1,
-      title: "Solar Power System",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills to a great  extent",
-      logo: GiElectric,
-      img: "product1.webp",
-      link: "solar-power-system",
+      type: "domestic",
+      kw: "3",
+      units: "300-350",
+      savings: "87600",
+      payback_period: "4",
+      items: [
+        { key: "Fans", value: 3 },
+        { key: "Lights", value: 6 },
+        { key: "AC or Iron (one at a time)", value: 1 },
+        { key: "Refrigerator", value: 1 },
+        { key: "Water Pump", value: 0 },
+        { key: "LED TV", value: 1 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 1 clicked"),
     },
     {
       id: 2,
-      title: "Solar Panel Installation",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills",
-      logo: SiSunrise,
-      img: "product2.webp",
-      link: "solar-panel-installation",
+      type: "domestic",
+      kw: "5",
+      units: "450-500",
+      savings: "102000",
+      payback_period: "3.5",
+      items: [
+        { key: "Fans", value: 5 },
+        { key: "Lights", value: 10 },
+        { key: "AC or Iron (one at a time)", value: 1 },
+        { key: "Refrigerator", value: 1 },
+        { key: "Water Pump", value: 1 },
+        { key: "LED TV", value: 2 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 2 clicked"),
     },
     {
       id: 3,
-      title: "Household Solar Panel",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills",
-      logo: SiGreenhouse,
-      img: "product3.webp",
-      link: "household-solar-panel",
+      type: "commercial",
+      kw: "10",
+      units: "1000-1200",
+      savings: "245000",
+      payback_period: "3",
+      items: [
+        { key: "Fans", value: 10 },
+        { key: "Lights", value: 20 },
+        { key: "AC or Iron (one at a time)", value: 2 },
+        { key: "Refrigerator", value: 2 },
+        { key: "Water Pump", value: 1 },
+        { key: "LED TV", value: 0 },
+        { key: "Washing Machine", value: 0 },
+      ],
+      onClick: () => console.log("Product 3 clicked"),
     },
     {
       id: 4,
-      title: "Solar Panel Cleaning",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills",
-      logo: FaSolarPanel,
-      img: "product4.webp",
-      link: "solar-panel-cleaning",
+      type: "domestic",
+      kw: "2",
+      units: "250-300",
+      savings: "76000",
+      payback_period: "4.2",
+      items: [
+        { key: "Fans", value: 2 },
+        { key: "Lights", value: 5 },
+        { key: "AC or Iron (one at a time)", value: 0 },
+        { key: "Refrigerator", value: 1 },
+        { key: "Water Pump", value: 0 },
+        { key: "LED TV", value: 1 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 4 clicked"),
     },
     {
       id: 5,
-      title: "Solar Panel Maintenance",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills",
-      logo: MdSolarPower,
-      img: "product5.webp",
-      link: "solar-panel-maintenance",
+      type: "commercial",
+      kw: "8",
+      units: "850-1000",
+      savings: "200000",
+      payback_period: "3.2",
+      items: [
+        { key: "Fans", value: 8 },
+        { key: "Lights", value: 16 },
+        { key: "AC or Iron (one at a time)", value: 2 },
+        { key: "Refrigerator", value: 1 },
+        { key: "Water Pump", value: 1 },
+        { key: "LED TV", value: 1 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 5 clicked"),
     },
     {
       id: 6,
-      title: "Solar Panel Production",
-      description:
-        "By generatiing your own solar energy, you can reduce your electricity bills",
-      logo: MdSolarPower,
-      img: "product3.webp",
-      link: "solar-panel-production",
+      type: "domestic",
+      kw: "4",
+      units: "380-420",
+      savings: "93000",
+      payback_period: "3.8",
+      items: [
+        { key: "Fans", value: 4 },
+        { key: "Lights", value: 9 },
+        { key: "AC or Iron (one at a time)", value: 1 },
+        { key: "Refrigerator", value: 1 },
+        { key: "Water Pump", value: 1 },
+        { key: "LED TV", value: 1 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 6 clicked"),
+    },
+    {
+      id: 7,
+      type: "commercial",
+      kw: "12",
+      units: "1200-1400",
+      savings: "260000",
+      payback_period: "2.8",
+      items: [
+        { key: "Fans", value: 12 },
+        { key: "Lights", value: 24 },
+        { key: "AC or Iron (one at a time)", value: 3 },
+        { key: "Refrigerator", value: 2 },
+        { key: "Water Pump", value: 2 },
+        { key: "LED TV", value: 0 },
+        { key: "Washing Machine", value: 0 },
+      ],
+      onClick: () => console.log("Product 7 clicked"),
+    },
+    {
+      id: 8,
+      type: "commercial",
+      kw: "6",
+      units: "600-750",
+      savings: "145000",
+      payback_period: "3.6",
+      items: [
+        { key: "Fans", value: 6 },
+        { key: "Lights", value: 12 },
+        { key: "AC or Iron (one at a time)", value: 1 },
+        { key: "Refrigerator", value: 2 },
+        { key: "Water Pump", value: 1 },
+        { key: "LED TV", value: 1 },
+        { key: "Washing Machine", value: 1 },
+      ],
+      onClick: () => console.log("Product 8 clicked"),
     },
   ];
 
@@ -95,7 +185,7 @@ export default function ProductsSection() {
             and other accessories — specially designed for reliable performance
             and long-term energy savings.
           </div>
-          <Button1 text={"View More"} />
+          <Button1 text={"View More"} onClick={handleProductClick} />
           <div className="hidden md:flex text-[var(--dark-blue-2)] mt-1 place-self-end pr-6">
             <button
               onClick={goPrev}
@@ -132,10 +222,7 @@ export default function ProductsSection() {
           >
             {products.map((product) => (
               <SwiperSlide key={product.id} className="sm:px-16 md:px-4 px-4">
-                <ProductSlide
-                  product={product}
-                  onClick={() => handleProductClick(product.id)}
-                />
+                <ProductSlide product={product} onClick={handleProductClick} />
               </SwiperSlide>
             ))}
           </Swiper>
