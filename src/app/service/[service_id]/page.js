@@ -250,7 +250,7 @@ export default function Service({ params }) {
               <div className="text-3xl font-semibold ">Service Process</div>
               <div className="flex flex-col w-full gap-4 md:gap-6">
                 <div className="text-lg md:text-xl font-semibold">
-                  At Solarva our culture comes to life through three core
+                  At 3P Solutions our culture comes to life through three core
                   values:
                 </div>
                 <div className="flex flex-col text-lg md:text-xl text-[var(--text-1)] gap-4 md:pl-10">

@@ -7,18 +7,18 @@ export default function ServiceSlide({ service, onClick }) {
       onClick={onClick}
     >
       <div className="p-6 pt-10 md:pt-12 md:p-12 flex flex-col items-start gap-5">
-        <div className="text-[22px] md:text-2xl text-[var(--link-color)] font-semibold line-clamp-1">
+        <div className="text-[22px] md:text-2xl text-[var(--dark-2)] font-semibold line-clamp-1">
           {service.title}
         </div>
         <hr className="text-gray-300 w-full mt-1" />
-        <div className="min-h-[4.5em] text-[var(--text-1)] group-hover:text-[var(--link-color)] transition-all duration-300 line-clamp-3">
+        <div className="min-h-[4.5em] text-[var(--text-1)] group-hover:text-[var(--dark-2)] transition-all duration-300 line-clamp-3">
           {service.description}
         </div>
-        <button className="w-fit text-[var(--link-color)] relative overflow-hidden pb-3">
+        <button className="w-fit text-[var(--dark-2)] relative overflow-hidden pb-3">
           Read More
-          <div className="absolute top-[1.5em]  h-[1.5px] w-full bg-[var(--link-color)] block group-hover:hidden"></div>
-          <div className="absolute top-[1.5em]  h-[1.5px] -translate-x-full w-full bg-[var(--link-color)] group-hover:translate-x-[1%] transition-all duration-1000"></div>
-          <div className="absolute top-[1.5em]  h-[1.5px] translate-x-full w-full bg-[var(--link-color)] group-hover:-translate-x-[1%] transition-all duration-1000"></div>
+          <div className="absolute top-[1.5em]  h-[1.5px] w-full bg-[var(--dark-2)] block group-hover:hidden"></div>
+          <div className="absolute top-[1.5em]  h-[1.5px] -translate-x-full w-full bg-[var(--dark-2)] group-hover:translate-x-[1%] transition-all duration-1000"></div>
+          <div className="absolute top-[1.5em]  h-[1.5px] translate-x-full w-full bg-[var(--dark-2)] group-hover:-translate-x-[1%] transition-all duration-1000"></div>
         </button>
       </div>
       <div className="relative">

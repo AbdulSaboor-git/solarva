@@ -11,7 +11,7 @@ export default function AppointmentForm({ services }) {
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-3xl font-semibold text-center">Make Appointment</h1>
         <p className="sm:max-w-[250px] text-center">
-          Solarva offers full range of solar energy services for renewable
+          3P Solutions offers full range of solar energy services for renewable
           energy
         </p>
       </div>

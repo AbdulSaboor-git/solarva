@@ -12,7 +12,7 @@ import {
   RiWhatsappFill,
 } from "react-icons/ri";
 import NavbarButton from "./navbar_button";
-import { BiMenu, BiPhone } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import { MdClose, MdPhone } from "react-icons/md";
 import SocialButton from "./social_button";
 import { useRouter } from "next/navigation";
@@ -45,9 +45,9 @@ export default function Header({ className, homePage = false, theme }) {
 
   const scrollTo = (id) => {
     if (typeof window === "undefined") return;
-    let offset = 0;
-    if (id != "home" && !isSidebarOpen) {
-      offset = 40;
+    let offset = 80;
+    if (id == "home") {
+      offset = 0;
     }
     const el = document.getElementById(id);
     setIsSidebarOpen(false);
@@ -67,8 +67,8 @@ export default function Header({ className, homePage = false, theme }) {
       onClick: () => (homePage ? scrollTo("about") : gotoHome("about")),
     },
     {
-      name: "Products",
-      onClick: () => (homePage ? scrollTo("products") : gotoHome("products")),
+      name: "Plans",
+      onClick: () => (homePage ? scrollTo("plans") : gotoHome("plans")),
     },
     {
       name: "Services",
@@ -94,7 +94,7 @@ export default function Header({ className, homePage = false, theme }) {
     const sectionIds = [
       "home",
       "about",
-      "products",
+      "plans",
       "services",
       "case-studies",
       "blog",
@@ -175,7 +175,7 @@ export default function Header({ className, homePage = false, theme }) {
 
   return (
     <div
-      className={`${className} top-0 md:-top-14 md:left-0 sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:p-5 ${
+      className={`${className} top-0 md:-top-14 md:left-0 sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:px-5 ${
         theme == "light" ? "text-[var(--dark-blue-2)]" : "text-white"
       }`}
     >

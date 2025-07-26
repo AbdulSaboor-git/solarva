@@ -39,14 +39,14 @@ export default function ContactUs({ params }) {
                     <MdCall />
                   </div>
                   <div className="flex w-full flex-col items-start justify-center gap-1 md:gap-2">
-                    <h1 className="font-semibold">Visit Our Office</h1>
+                    <h1 className="font-semibold">Call Us Anytime</h1>
                     <div className="text-base md:text-xl">
                       <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
-                        Phone: +99 1234561
+                        Phone: +92 321 417 6685
                       </div>
-                      <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
+                      {/* <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
                         Fax: 1-800-222-0021
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -55,14 +55,14 @@ export default function ContactUs({ params }) {
                     <MdMail />
                   </div>
                   <div className="flex w-full flex-col items-start justify-center gap-1 md:gap-2">
-                    <h1 className="font-semibold">Visit Our Office</h1>
+                    <h1 className="font-semibold">Send Us Mail</h1>
                     <div className="text-base md:text-xl">
                       <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
-                        solarva.care@email.com
+                        info@3psolutions.com.pk
                       </div>
-                      <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
-                        info.solarva@email.com
-                      </div>
+                      {/* <div className="hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
+                        care@3psolutions.com.pk
+                      </div> */}
                     </div>
                   </div>
                 </div>

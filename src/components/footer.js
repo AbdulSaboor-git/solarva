@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="flex flex-col justify-start">
             <p className="text-[var(--text-4)]">Send Us Email</p>
             <p className="text-lg font-semibold hover:text-[var(--primary-color)] cursor-pointer transition-all duration-300">
-              care@3psolutions.com.pk
+              info@3psolutions.com.pk
             </p>
           </div>
           <div className="absolute hidden md:block -right-1.5 -bottom-1.5 w-2.5 aspect-square bg-[var(--primary-color)] animate-[spin_4s_linear_infinite]" />
@@ -134,7 +134,7 @@ export default function Footer() {
             Subscribe to Newsletter
           </p>
           <p className="text-[var(--text-4)]">
-            Get exclusive news & offers through our solarva newsletter
+            Get exclusive news & offers through our 3P Solutions newsletter
           </p>
           <div className="relative w-full">
             <input
