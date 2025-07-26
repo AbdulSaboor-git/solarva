@@ -16,6 +16,8 @@ export const metadata = {
   description: "Expert Solar Solutions",
   icons: {
     icon: "/icons/icon-512.png",
+    type: "image/png",
+    sizes: "512x512",
   },
 };
 
