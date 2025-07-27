@@ -3,13 +3,13 @@ import React from "react";
 
 export default function PlanSlide({ plan, onClick }) {
   return (
-    <div className="bg-white object-center shadow-inner shadow-[var(--primary-color)] border border-[var(--primary-color)] cursor-pointer tracking-wide rounded-3xl flex flex-col overflow-hidden">
+    <div className="bg-white object-center group shadow-inner shadow-[var(--primary-color)] border-b border-[var(--primary-color-fade-2)] cursor-pointer tracking-wide rounded-3xl flex flex-col overflow-hidden">
       <div className="p-6 pt-10 md:pt-12 md:p-12 flex flex-col items-start gap-5">
         <div className="flex flex-col gap-1">
           <div className="text-3xl md:text-4xl text-[var(--dark-2)] font-semibold line-clamp-1">
             {plan.kw}KW
           </div>
-          <div className="text-[var(--text-1)]">
+          <div className="text-[var(--dark-2)]">
             Electricity units {plan.units}
           </div>
         </div>
@@ -22,15 +22,17 @@ export default function PlanSlide({ plan, onClick }) {
             <div>Payback Period: {plan?.payback_period} years</div>
           </div>
         )}
-        <Button1
-          onClick={onClick}
-          text={"Details"}
-          className="py-3 border border-[var(--primary-color)] "
-          bg="#ffffff"
-          textColor="var(--primary-color)"
-          hoverBg="var(--primary-color)"
-          hoverTextColor="#ffffff"
-        />
+        <div className="group-hover-flicker">
+          <Button1
+            onClick={onClick}
+            text={"Details"}
+            className="py-3 border border-[var(--primary-color-fade-2)] "
+            bg="#ffffff"
+            textColor="var(--primary-color)"
+            hoverBg="var(--primary-color)"
+            hoverTextColor="#ffffff"
+          />
+        </div>
       </div>
     </div>
   );

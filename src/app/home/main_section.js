@@ -76,13 +76,13 @@ export default function MainSection() {
 
   return (
     <div className="flex flex-col w-full z-40" id="home">
-      <div className="relative bg-[url('/bg.png')] bg-cover bg-right md:bg-center h-[88vh] md:h-[42lh] overflow-hidden p-5">
+      <div className="relative bg-[url('/bg.png')] bg-cover bg-right md:bg-center h-[90vh] md:h-[42lh] overflow-hidden p-5">
         <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden">
           <div className="w-full z-20 h-full bg-radial-top-right absolute top-0 left-0 to-[var(--dark-3)] via-[var(--dark-3-80)] bg-[length:100%_200%] bg-[position:right_center] from-transparent"></div>
         </div>
         <div className="z-10 absolute left-[2%] text-white w-full h-full">
           <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
-            <div className="w-full px-5 h-full max-w-[550px] lg:max-w-4xl flex flex-col gap-7 items-start justify-center">
+            <div className="w-full px-5 h-full max-w-[550px] lg:max-w-2xl flex flex-col gap-7 items-start justify-center">
               <div className="flex flex-row items-center justify-start gap-2.5 text-[var(--primary-color)] ">
                 <div className="flex items-center">
                   <div className="h-[1px] w-10 bg-[var(--primary-color)]" />
@@ -98,7 +98,7 @@ export default function MainSection() {
                   <span className="text-[var(--primary-color)]"> Solar</span>{" "}
                   service since 1998
                 </div>
-                <div className="text-[var(--text-3)] text-xl md:text-[22px] md:font-medium">
+                <div className="text-[var(--text-4)] text-xl md:text-[22px] md:font-medium">
                   We believe in sustainable energy practices that can help
                   topnotch solar panel installation services.
                 </div>
@@ -110,7 +110,7 @@ export default function MainSection() {
         <img
           src="img1.png"
           alt="img1"
-          className="absolute hidden md:block right-0 lg:right-[5%] bottom-0 md:h-[500px] lg:h-[600px] transition-transform ease-linear duration-[1s]"
+          className="absolute hidden md:block right-0 lg:right-[5%] bottom-0 md:h-[500px] lg:h-[500px] transition-transform ease-linear duration-[1s]"
           style={{
             transform: `translateY(${offsetY}px)`,
           }}

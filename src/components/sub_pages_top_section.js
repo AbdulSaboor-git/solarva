@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";

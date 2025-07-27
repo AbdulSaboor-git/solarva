@@ -1,20 +1,13 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { Swiper, SwiperSlide } from "swiper/react";
-import PlanSlide from "./components/plans_slide";
-import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import SubPagesTopSection from "@/components/sub_pages_top_section";
+import ScrollToTop from "../home/components/scroll_to_top";
+import Header from "@/components/header";
+import Plan from "./components/plan";
+import Footer from "@/components/footer";
 
-export default function PlansSection() {
-  const router = useRouter();
-  const swiperRef = useRef(null);
-  const goNext = () => swiperRef.current?.slideNext();
-  const goPrev = () => swiperRef.current?.slidePrev();
+export default function PlansPage() {
   const [selectedPlanType, setSelectedPlanType] = useState("domestic");
-
-  function handlePlanClick(id) {
-    router.push(`/plans`);
-  }
 
   const domesticPlans = [
     {
@@ -115,17 +108,23 @@ export default function PlansSection() {
   ];
 
   return (
-    <div id="plans" className="flex flex-col pb-10 relative w-full">
-      <div className="flex flex-col relative  w-full">
-        <div className="flex flex-col gap-5 md:gap-6 h-full text-[var(--dark-2)] items-center text-center justify-center px-5 md:px-6 pb-28 md:pt-10 z-10 relative">
-          <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
-            OUR PLANS
+    <div className="w-full flex flex-col items-center bg-gray-50">
+      <ScrollToTop />
+      <Header theme={"light"} />
+      <div className="w-full flex flex-col gap-20 md:gap-32 items-center justify-start">
+        <SubPagesTopSection mainTitle={"Solar Plans"} title={"Plans"} />
+        <div className="flex w-full flex-col gap-7 md:gap-8 h-full text-[var(--dark-2)] items-center justify-center px-5 z-10 relative">
+          <div className="w-full flex flex-col items-start gap-5 md:gap-6 max-w-4xl place-self-start">
+            <div className="text-4xl md:text-5xl font-semibold">
+              High-Quality Solar Plans for Every Need
+            </div>
+            <p className="text-lg text-[var(--text-1)]">
+              We provide affordable solar plans for both domestic and
+              commmercial needs. Using the latest technology, our aim is to
+              provide you with the best and most efficient solar solution.
+            </p>
           </div>
-          <div className="text-4xl md:text-5xl font-semibold max-w-3xl">
-            High-Quality Solar Plans for Every Need
-          </div>
-
-          <div className="flex flex-col mt-6 items-center gap-5">
+          <div className="flex flex-col mt-6 items-center gap-5 ">
             <div className="text-lg font-bold text-[var(--primary-color)]">
               Select Plan Type
             </div>
@@ -155,54 +154,17 @@ export default function PlansSection() {
               </button>
             </div>
           </div>
-        </div>
-        <div className="w-full group/plan overflow-hidden self-center max-w-7xl -mb-40 -mt-16 relative z-10">
-          <button
-            onClick={goPrev}
-            className="hidden md:block absolute z-30 left-2 opacity-0 -translate-x-full group-hover/plan:opacity-100 group-hover/plan:translate-x-0 top-1/2 -translate-y-1/2 p-4
-                     bg-gray-100 text-[var(--dark-blue-1)] border border-gray-500/40 hover:bg-[var(--dark-blue-1)] 
-                     hover: hover:text-gray-100 transition-all duration-500"
-          >
-            <SlArrowLeft />
-          </button>
-          <button
-            onClick={goNext}
-            className="hidden md:block absolute z-30 right-2 opacity-0 translate-x-full group-hover/plan:opacity-100 group-hover/plan:translate-x-0 top-1/2 -translate-y-1/2 p-4
-                     bg-gray-100 text-[var(--dark-blue-1)] border border-gray-500/40 
-                     hover:bg-[var(--dark-blue-1)] hover: hover:text-gray-100 transition-all duration-500"
-          >
-            <SlArrowRight />
-          </button>
-          <Swiper
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            spaceBetween={0}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl w-full">
             {(selectedPlanType === "domestic"
               ? domesticPlans
               : commercialPlans
             ).map((plan) => (
-              <SwiperSlide
-                key={plan.id}
-                className="sm:px-16 md:px-4 px-4 !opacity-100 !transition-none"
-              >
-                <PlanSlide plan={plan} onClick={handlePlanClick} />
-              </SwiperSlide>
+              <Plan key={plan.id} plan={plan} />
             ))}
-          </Swiper>
+          </div>
         </div>
+        <Footer />
       </div>
-      <div className="bg-white h-40 w-full"></div>
     </div>
   );
 }

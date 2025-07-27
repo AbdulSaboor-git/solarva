@@ -16,6 +16,7 @@
   --primary-color: #369f9dff;
   /* --primary-color: #4aab3d; */
   --primary-color-fade: #369f9dc4;
+  --primary-color-fade-2: #369f9d80;
 
   --dark-1: #1e2227;
   --dark-2: #072032;
@@ -62,6 +63,10 @@ button {
     opacity: 0.6;
     scale: 0.8;
   } /* Dip to lower opacity in the middle */
+}
+
+.animate-flicker {
+  animation: flicker 0.7s ease-in-out infinite;
 }
 
 .hover-flicker:hover {

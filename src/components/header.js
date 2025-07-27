@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 export default function Header({ className, homePage = false, theme }) {
   const [activeSection, setActiveSection] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDesktopSearchOpen, setIsDesktopSearchOpen] = useState(false);
   const [hoverStyle, setHoverStyle] = useState({ opacity: 0 });
   const [activeStyle, setActiveStyle] = useState({ opacity: 0 });
   const logo = "/logo.png";
@@ -175,7 +176,7 @@ export default function Header({ className, homePage = false, theme }) {
 
   return (
     <div
-      className={`${className} top-0 md:-top-14 md:left-0 sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:px-5 ${
+      className={`${className} top-0 md:-top-14 md:left-0 sticky md:-mb-[184px] z-50 w-full flex flex-col gap-5 md:pt-5 md:px-5 ${
         theme == "light" ? "text-[var(--dark-blue-2)]" : "text-white"
       }`}
     >
@@ -279,13 +280,33 @@ export default function Header({ className, homePage = false, theme }) {
         {/* Right side icons */}
         <div className="hidden lg:flex flex-row items-center ">
           <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
-            <div className="border border-gray-500/40 p-2 rounded-full">
+            <div
+              className="border border-gray-500/40 p-2 rounded-full"
+              onClick={() => router.push("/contact-us")}
+            >
               <RiHeadphoneFill size={24} className="shake" />
             </div>
           </div>
-          <div className="h-full p-4 px-6 border-l hover:text-[var(--primary-color)] transition-all duration-500 border-gray-500/40 cursor-pointer">
+          <div
+            onClick={() => setIsDesktopSearchOpen((o) => !o)}
+            className="h-full p-4 px-6 border-l hover:text-[var(--primary-color)] transition-all duration-500 border-gray-500/40 cursor-pointer"
+          >
             <RiSearchLine size={24} />
           </div>
+          {isDesktopSearchOpen && (
+            <div className="absolute top-full mt-2 right-5 w-80 bg-white rounded-lg shadow-lg z-50 overflow-hidden">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="w-full outline-none rounded-lg text-[var(--text-1)] border border-[var(--primary-color)] px-5 py-3 pr-12"
+                />
+                <div className="cursor-pointer hover-flicker absolute flex items-center  justify-center top-0 right-0  h-full text-[var(--primary-color)] aspect-square text-xl">
+                  <RiSearchLine />
+                </div>
+              </div>
+            </div>
+          )}
           <div className="h-full p-2 pl-6 relative border-l group border-gray-500/40 cursor-pointer">
             <RiShoppingBag4Line size={22} className="group-hover-shake" />
             <div className="absolute right-0 bottom-0 bg-[var(--primary-color)] p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
@@ -312,7 +333,7 @@ export default function Header({ className, homePage = false, theme }) {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full outline-none rounded-lg text-gray-700 border border-gray-400/40 focus:border-[var(--primary-color)] px-5 py-3 pr-14"
+              className="w-full outline-none rounded-lg text-[var(--text-1)]  border border-gray-400/40 focus:border-[var(--primary-color)] px-5 py-3 pr-14"
             />
             <div className="absolute flex items-center justify-center top-0 right-0 rounded-lg h-full text-white bg-[var(--primary-color)]  aspect-square text-xl">
               <RiSearchLine className="" />
