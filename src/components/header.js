@@ -281,10 +281,13 @@ export default function Header({ className, homePage = false, theme }) {
         <div className="hidden lg:flex flex-row items-center ">
           <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
             <div
-              className="border border-gray-500/40 p-2 rounded-full"
+              className="border border-gray-500/40 p-2 group rounded-full"
               onClick={() => router.push("/contact-us")}
             >
-              <RiHeadphoneFill size={24} className="shake" />
+              <RiHeadphoneFill
+                size={24}
+                className="shake group-hover:text-[var(--primary-color)] transition-all duration-300"
+              />
             </div>
           </div>
           <div
@@ -301,8 +304,8 @@ export default function Header({ className, homePage = false, theme }) {
                   placeholder="Search..."
                   className="w-full outline-none rounded-lg text-[var(--text-1)] border border-[var(--primary-color)] px-5 py-3 pr-12"
                 />
-                <div className="cursor-pointer hover-flicker absolute flex items-center  justify-center top-0 right-0  h-full text-[var(--primary-color)] aspect-square text-xl">
-                  <RiSearchLine />
+                <div className="cursor-pointer group absolute flex items-center  justify-center top-0 right-0  h-full text-[var(--primary-color)] aspect-square text-xl">
+                  <RiSearchLine className="group-hover-flicker" />
                 </div>
               </div>
             </div>
