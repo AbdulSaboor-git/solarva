@@ -1,4 +1,3 @@
-import HomePage from "./home/page";
 import {} from "react-icons/ai";
 import {} from "react-icons/bi";
 import {} from "react-icons/bs";
@@ -25,7 +24,15 @@ import {} from "react-icons/vsc";
 import {} from "react-icons/wi";
 import {} from "react-icons/si";
 import {} from "react-icons/ri";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return <HomePage />;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/home");
+  }, [router]);
+
+  return null;
 }
