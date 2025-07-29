@@ -231,16 +231,16 @@ export default function Header({ className, homePage = false, theme }) {
           alt="logo"
           className="block md:hidden aspect-auto w-full max-w-44 cursor-pointer"
         />
-        <div className="flex  md:hidden items-center gap-4 sm:gap-5">
+        <div className="flex  md:hidden items-center gap-4 sm:gap-5 text-[var(--dark-blue-2)]">
           <div className="h-full p-2 pl-6 relative border-l group border-gray-500/40 cursor-pointer">
-            <RiShoppingBag4Line size={22} className="group-hover-shake" />
+            <RiShoppingBag4Line size={22} className="group-hover-shake " />
             <div className="absolute right-0 bottom-0 bg-[var(--primary-color)] text-white p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
               {CartItems.length}
             </div>
           </div>
           <BiMenu
             size={30}
-            className={`text-[var(--dark-blue-2)] ${
+            className={` ${
               isSidebarOpen && "-rotate-180 scale-0"
             } transition-all duration-500`}
             onClick={() => setIsSidebarOpen(true)}
