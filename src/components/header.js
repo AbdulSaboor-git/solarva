@@ -72,18 +72,27 @@ export default function Header({ className, homePage = false, theme }) {
       onClick: () => (homePage ? scrollTo("plans") : gotoHome("plans")),
     },
     {
+      name: "Products",
+      onClick: () => router.push("/products"),
+      // onClick: () => (homePage ? scrollTo("products") : gotoHome("products")),
+    },
+    {
       name: "Services",
       onClick: () => (homePage ? scrollTo("services") : gotoHome("services")),
     },
     {
-      name: "Case Studies",
-      onClick: () =>
-        homePage ? scrollTo("case-studies") : gotoHome("case-studies"),
+      name: "Contact Us",
+      onClick: () => router.push("/contact-us"),
     },
-    {
-      name: "Blog",
-      onClick: () => (homePage ? scrollTo("blog") : gotoHome("blog")),
-    },
+    // {
+    //   name: "Case Studies",
+    //   onClick: () =>
+    //     homePage ? scrollTo("case-studies") : gotoHome("case-studies"),
+    // },
+    // {
+    //   name: "Blog",
+    //   onClick: () => (homePage ? scrollTo("blog") : gotoHome("blog")),
+    // },
   ];
 
   const CartItems = [1, 4, 2];
@@ -214,30 +223,40 @@ export default function Header({ className, homePage = false, theme }) {
       </div>
       {/* android header */}
       <div
-        className={`w-full md:w-auto flex flex-row md:grid md:grid-cols-[1fr_4fr] lg:grid-cols-[0.7fr_3fr_0.7fr] p-4 md:py-0 md:px-8 
-      items-center justify-between gap-6 md:text-white bg-white md:bg-[var(--dark-blue-2)] md:rounded-lg`}
+        className={`w-full flex flex-row md:grid md:grid-cols-[5fr_1fr] lg:grid-cols-[0.7fr_3fr_0.4fr] xl:grid-cols-[0.7fr_3fr_0.7fr] p-4 md:py-0 lg:px-8 max-w-7xl place-self-center
+      items-center justify-between gap-3 lg:gap-6 md:text-white bg-white md:bg-[var(--dark-blue-2)] md:rounded-lg`}
       >
         <img
           src={logo_alt}
           alt="logo"
-          className="block md:hidden aspect-auto h-10 cursor-pointer"
+          className="block md:hidden aspect-auto w-full max-w-44 cursor-pointer"
         />
-        <BiMenu
-          size={30}
-          className={`block text-[var(--dark-blue-2)] md:hidden ${
-            isSidebarOpen && "-rotate-180 scale-0"
-          } transition-all duration-500`}
-          onClick={() => setIsSidebarOpen(true)}
-        />
+        <div className="flex  md:hidden items-center gap-4 sm:gap-5">
+          <div className="h-full p-2 pl-6 relative border-l group border-gray-500/40 cursor-pointer">
+            <RiShoppingBag4Line size={22} className="group-hover-shake" />
+            <div className="absolute right-0 bottom-0 bg-[var(--primary-color)] text-white p-0.5 text-center w-4 h-4 rounded-full text-[8px]">
+              {CartItems.length}
+            </div>
+          </div>
+          <BiMenu
+            size={30}
+            className={`text-[var(--dark-blue-2)] ${
+              isSidebarOpen && "-rotate-180 scale-0"
+            } transition-all duration-500`}
+            onClick={() => setIsSidebarOpen(true)}
+          />
+        </div>
+
+        {/* desktop header */}
         <img
           src={logo}
           alt="logo"
-          className="hidden md:block w-full max-w-44 cursor-pointer aspect-auto"
+          className="hidden lg:block w-full max-w-44 cursor-pointer aspect-auto"
         />
 
         {/* Navigation Buttons + Underline */}
         <div
-          className="hidden w-full h-full md:flex flex-row gap-1.5 items-center px-4 justify-center relative"
+          className="hidden w-ful h-full md:flex flex-row gap-1.5 items-center px-4 justify-center relative"
           ref={containerRef}
           onMouseLeave={clearHover}
         >
@@ -278,15 +297,15 @@ export default function Header({ className, homePage = false, theme }) {
         </div>
 
         {/* Right side icons */}
-        <div className="hidden lg:flex flex-row items-center ">
-          <div className="h-full p-6 border-l border-gray-500/40 group cursor-pointer">
+        <div className="hidden md:flex flex-row items-center ">
+          <div className="hidden xl:block h-full p-6 border-l border-gray-500/40 group cursor-pointer">
             <div
               className="border border-gray-500/40 p-2 group rounded-full"
               onClick={() => router.push("/contact-us")}
             >
               <RiHeadphoneFill
-                size={24}
-                className="shake group-hover:text-[var(--primary-color)] transition-all duration-300"
+                size={25}
+                className="p-[1px] shake group-hover:text-[var(--primary-color)] transition-all duration-300"
               />
             </div>
           </div>

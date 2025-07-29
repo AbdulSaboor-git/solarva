@@ -9,7 +9,7 @@ const NavbarButton = forwardRef(
       <div
         ref={ref}
         className={`${className} ${isActive && "text-[var(--primary-color)]"} 
-          relative h-full flex justify-center items-center group px-5 md:py-6 cursor-pointer`}
+          relative h-full flex justify-center items-center group px-3 lg:px-5 md:py-6 cursor-pointer`}
         onMouseEnter={onHover}
         onClick={onClick}
       >
