@@ -12,6 +12,10 @@ export default function ProductsPage() {
     setSelectedCategory(category.toLowerCase());
   }
 
+  function handleProductClick(id) {
+    window.location.href = `products/product/${id}`;
+  }
+
   const categories = [
     "Categ 1",
     "Categ 2",
@@ -142,6 +146,7 @@ export default function ProductsPage() {
                 {products.map((prod) => (
                   <div
                     key={prod.id}
+                    onClick={() => handleProductClick(prod.id)}
                     className="group cursor-pointer flex flex-col rounded-2xl overflow-hidden bg-white md:shadow-sm hover:shadow-md transition-all duration-300 md:border md:border-gray-200 md:hover:border-gray-300"
                   >
                     <div className="relative">
