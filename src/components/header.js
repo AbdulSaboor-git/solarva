@@ -47,9 +47,9 @@ export default function Header({ className, homePage = false, theme }) {
   const scrollTo = (id) => {
     if (typeof window === "undefined") return;
     let offset = 80;
-    if (id == "home") {
-      offset = 0;
-    }
+    // if (id == "home") {
+    //   offset = 0;
+    // }
     const el = document.getElementById(id);
     setIsSidebarOpen(false);
     if (el) {
