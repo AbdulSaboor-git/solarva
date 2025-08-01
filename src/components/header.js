@@ -47,9 +47,7 @@ export default function Header({ className, homePage = false, theme }) {
   const scrollTo = (id) => {
     if (typeof window === "undefined") return;
     let offset = 80;
-    // if (id == "home") {
-    //   offset = 0;
-    // }
+
     const el = document.getElementById(id);
     setIsSidebarOpen(false);
     if (el) {
@@ -113,16 +111,18 @@ export default function Header({ className, homePage = false, theme }) {
 
     const observerOptions = {
       root: null,
-      rootMargin: "0px 0px -60% 0px", // Trigger when top is 40% from top of screen
+      rootMargin: "-50% 0px -50% 0px",
       threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+      if (visibleSections.length > 0) {
+        setActiveSection(visibleSections[0].target.id);
+      }
     }, observerOptions);
 
     sectionIds.forEach((id) => {

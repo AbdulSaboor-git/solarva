@@ -74,7 +74,7 @@ export default function ProductsSection() {
   return (
     <div
       id="products"
-      className="flex flex-col items-center gap-5 relative w-full"
+      className="flex flex-col items-center gap-5 md:py-10 relative w-full"
     >
       <div className="w-full flex flex-col items-start gap-5 px-5">
         <div className="bg-[var(--primary-color)] w-fit font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
