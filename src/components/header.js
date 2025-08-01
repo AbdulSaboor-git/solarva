@@ -73,8 +73,8 @@ export default function Header({ className, homePage = false, theme }) {
     },
     {
       name: "Products",
-      onClick: () => router.push("/products"),
-      // onClick: () => (homePage ? scrollTo("products") : gotoHome("products")),
+      // onClick: () => router.push("/products"),
+      onClick: () => (homePage ? scrollTo("products") : gotoHome("products")),
     },
     {
       name: "Services",
@@ -105,6 +105,7 @@ export default function Header({ className, homePage = false, theme }) {
       "home",
       "about",
       "plans",
+      "products",
       "services",
       "case-studies",
       "blog",

@@ -13,6 +13,7 @@ import Footer from "@/components/footer";
 import ScrollToTop from "./components/scroll_to_top";
 import Header from "@/components/header";
 import PlansSection from "./plans_section";
+import ProductsSection from "./products_section";
 
 export default function HomePage() {
   return (
@@ -26,6 +27,7 @@ export default function HomePage() {
         <MainSection />
         <AboutSection />
         <PlansSection />
+        <ProductsSection />
         <ServicesSection />
         <WhyUsSection />
         <div className="w-full flex flex-col items-center justify-center">

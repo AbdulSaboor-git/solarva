@@ -4,6 +4,8 @@ import ScrollToTop from "../home/components/scroll_to_top";
 import Header from "@/components/header";
 import SubPagesTopSection from "@/components/sub_pages_top_section";
 import Footer from "@/components/footer";
+import ProductCard from "@/components/product_card";
+import { useRouter } from "next/navigation";
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -12,8 +14,10 @@ export default function ProductsPage() {
     setSelectedCategory(category.toLowerCase());
   }
 
+  const router = useRouter();
+
   function handleProductClick(id) {
-    window.location.href = `products/product/${id}`;
+    router.push(`/products/product/${id}`);
   }
 
   const categories = [
@@ -144,30 +148,14 @@ export default function ProductsPage() {
               {/* Product Grid */}
               <div className="grid gap-3 sm:gap-4 grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
                 {products.map((prod) => (
-                  <div
+                  <ProductCard
                     key={prod.id}
+                    className={
+                      "md:shadow-sm hover:shadow-md bg-white md:border md:border-gray-200 md:hover:border-gray-300 transition-all duration-300 "
+                    }
+                    prod={prod}
                     onClick={() => handleProductClick(prod.id)}
-                    className="group cursor-pointer flex flex-col rounded-2xl overflow-hidden bg-white md:shadow-sm hover:shadow-md transition-all duration-300 md:border md:border-gray-200 md:hover:border-gray-300"
-                  >
-                    <div className="relative">
-                      <img
-                        src={prod.img}
-                        alt={prod.id}
-                        className="aspect-[5/4] object-cover w-full"
-                      />
-                    </div>
-                    <div className="flex flex-col md:gap-1 p-2 px-3 md:p-4">
-                      <div className="uppercase font-medium text-sm text-gray-700 line-clamp-1">
-                        {prod.title}
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        Rs.{" "}
-                        <span className="text-base font-semibold text-[var(--primary-color)]">
-                          {prod.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  />
                 ))}
               </div>
             </div>

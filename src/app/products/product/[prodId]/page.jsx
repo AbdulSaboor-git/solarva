@@ -23,7 +23,7 @@ export default function ProductPage({ params }) {
       <div className="w-full hidden md:block pt-[164px]" />
 
       {/* Product Section */}
-      <div className="w-full max-w-7xl px-5 flex flex-col gap-8 md:gap-12">
+      <div className="w-full max-w-7xl px-3 md:px-5 flex flex-col gap-8 md:gap-12">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 bg-white ">
           {/* Gallery */}
           <div className="w-full md:w-2/5">

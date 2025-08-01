@@ -117,7 +117,7 @@ export default function PlansSection() {
   return (
     <div id="plans" className="flex flex-col pb-10 relative w-full">
       <div className="flex flex-col relative  w-full">
-        <div className="flex flex-col gap-5 md:gap-6 h-full text-[var(--dark-2)] items-center text-center justify-center px-5 md:px-6 pb-28 md:pt-10 z-10 relative">
+        <div className="flex flex-col gap-5 md:gap-6 h-full text-[var(--dark-2)] items-start text-start justify-center px-5 md:px-6 pb-28 md:pt-10 z-10 relative">
           <div className="bg-[var(--primary-color)] font-semibold tracking-wider text-white px-3 py-1 rounded-[5px] text-xs">
             OUR PLANS
           </div>
@@ -125,7 +125,7 @@ export default function PlansSection() {
             High-Quality Solar Plans for Every Need
           </div>
 
-          <div className="flex flex-col mt-6 items-center gap-5">
+          <div className="flex flex-col mt-6 items-center gap-5 place-self-center">
             <div className="text-lg font-bold text-[var(--primary-color)]">
               Select Plan Type
             </div>
