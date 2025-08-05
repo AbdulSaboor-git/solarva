@@ -124,7 +124,10 @@ export default function PlansPage() {
               provide you with the best and most efficient solar solution.
             </p>
           </div>
-          <div className="flex flex-col mt-6 items-center gap-5 ">
+          <div
+            id="plan_select"
+            className="flex flex-col mt-6 items-center gap-5"
+          >
             <div className="text-lg font-bold text-[var(--primary-color)]">
               Select Plan Type
             </div>
@@ -161,6 +164,26 @@ export default function PlansPage() {
             ).map((plan) => (
               <Plan key={plan.id} plan={plan} />
             ))}
+          </div>
+          <div>
+            See{" "}
+            <span
+              className="text-[var(--primary-color)] font-semibold cursor-pointer hover:underline"
+              onClick={() => {
+                const el = document.getElementById("plan_select");
+                if (el) {
+                  const y =
+                    el.getBoundingClientRect().top + window.pageYOffset - 120;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+                setSelectedPlanType(
+                  selectedPlanType === "domestic" ? "commercial" : "domestic"
+                );
+              }}
+            >
+              {selectedPlanType === "domestic" ? "Commercial" : "Domestic"}{" "}
+              Plans
+            </span>
           </div>
         </div>
         <Footer />
